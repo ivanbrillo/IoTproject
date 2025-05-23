@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "ml-prediction.h": "c",
+        "stdint.h": "c",
+        "string.h": "c",
+        "stdlib.h": "c",
+        "modality-obs.h": "c",
+        "leds.h": "c"
+    }
+}
