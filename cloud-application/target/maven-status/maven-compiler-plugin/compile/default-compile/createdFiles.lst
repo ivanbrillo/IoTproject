@@ -1,4 +1,15 @@
-com/pi/MyServer$2.class
+com/pi/CoapClientApplication.class
+com/pi/UserInterface.class
+com/pi/CoapObserverManager$3.class
+com/pi/DatabaseManager.class
 com/pi/MyServer.class
+com/pi/CoapObserverManager.class
+com/pi/CoapObserverManager$2.class
+com/pi/MyServer$2.class
+com/pi/LogViewer.class
+com/pi/MyServer$3.class
 com/pi/CoAPResourceExample.class
+com/pi/CoapObserverManager$1.class
 com/pi/MyServer$1.class
+com/pi/FloorManager.class
+com/pi/CoapRequestManager.class

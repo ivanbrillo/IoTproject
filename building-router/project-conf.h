@@ -50,8 +50,5 @@
 #define UIP_CONF_TCP 1
 #endif
 
-#if BORDER_ROUTER_CONF_WEBSERVER
-#define UIP_CONF_TCP 1
-#endif
 
 #endif /* PROJECT_CONF_H_ */

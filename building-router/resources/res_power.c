@@ -11,6 +11,7 @@
 #define LOG_MODULE "App"
 #define LOG_LEVEL LOG_LEVEL_APP
 
+
 float last_prediction = 0.0f;
 float last_reading[N_FEATURES] = {0.0f, 0.0f};
 
@@ -39,7 +40,8 @@ static void
 res_get_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset)
 {
   coap_set_header_content_format(response, APPLICATION_JSON);
-  coap_set_payload(response, buffer, snprintf((char *)buffer, preferred_size, "{\"pred\": %.3f, \"last\": [%.3f, %.3f]}", last_prediction, last_reading[0], last_reading[1]));
+  coap_set_payload(response, buffer, snprintf((char *)buffer, preferred_size, "{\"pred\": %.3f, \"last\": [%.3f, %.3f], \"v\": %d}", last_prediction, last_reading[0], last_reading[1], event_counter));
+  event_counter++;
   /* A post_handler that handles subscriptions/observing will be called for periodic resources by the framework. */
 }
 /*
@@ -50,7 +52,6 @@ static void
 res_event_handler(void)
 {
   /* Do the update triggered by the event here, e.g., sampling a sensor. */
-  ++event_counter;
 
   /* Usually a condition is defined under with subscribers are notified, e.g., event was above a threshold. */
   if (1)

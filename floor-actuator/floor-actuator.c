@@ -3,11 +3,15 @@
 #include <string.h>
 #include "contiki.h"
 #include "coap-engine.h"
+#include <locale.h>  
+
 
 /* Log configuration */
 #include "sys/log.h"
 #define LOG_MODULE "App"
 #define LOG_LEVEL LOG_LEVEL_APP
+
+
 
 /*
  * Resources to be activated need to be imported through the extern keyword.
@@ -21,6 +25,7 @@ AUTOSTART_PROCESSES(&er_example_server);
 PROCESS_THREAD(er_example_server, ev, data)
 {
   PROCESS_BEGIN();
+  setlocale(LC_NUMERIC, "C");
 
   PROCESS_PAUSE();
 

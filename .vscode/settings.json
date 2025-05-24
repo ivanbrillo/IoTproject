@@ -7,5 +7,6 @@
         "stdlib.h": "c",
         "modality-obs.h": "c",
         "leds.h": "c"
-    }
+    },
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

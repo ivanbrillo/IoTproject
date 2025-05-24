@@ -32,12 +32,14 @@ EVENT_RESOURCE(res_battery_soc,
 /*
  * Use local resource state that is accessed by res_get_handler() and altered by res_event_handler() or PUT or POST.
  */
+static int32_t event_counter = 0;
 
 static void
 res_get_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset)
 {
   coap_set_header_content_format(response, APPLICATION_JSON);
-  coap_set_payload(response, buffer, snprintf((char *)buffer, preferred_size, "{\"soc\": %.3f}", last_soc));
+  coap_set_payload(response, buffer, snprintf((char *)buffer, preferred_size, "{\"soc\": %.3f, \"v\": %d}", last_soc, event_counter));
+  event_counter++;
 
   /* A post_handler that handles subscriptions/observing will be called for periodic resources by the framework. */
 }

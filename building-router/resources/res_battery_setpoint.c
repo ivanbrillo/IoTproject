@@ -2,12 +2,10 @@
 #include "contiki.h"
 #include "coap-engine.h"
 #include "dev/leds.h"
-
 #include <string.h>
-
-/* Log configuration */
 #include "sys/log.h"
 #include <stdlib.h> // For strtol
+
 #define LOG_MODULE "App"
 #define LOG_LEVEL LOG_LEVEL_RPL
 

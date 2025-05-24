@@ -10,6 +10,7 @@
 #include "sensor-readings.c"
 #include "coap-log.h"
 #include "setpoints-calculator.c"
+#include <locale.h>
 
 #define LOG_MODULE "App"
 #define LOG_LEVEL LOG_LEVEL_APP
@@ -47,6 +48,7 @@ PROCESS_THREAD(er_example_client, ev, data)
   PROCESS_BEGIN();
 
   static coap_message_t request[1]; /* This way the packet can be treated as pointer as usual. */
+  setlocale(LC_NUMERIC, "C");
 
   coap_endpoint_parse(SERVER_EP, strlen(SERVER_EP), &server_ep);
   coap_endpoint_parse(SERVER_EP2, strlen(SERVER_EP2), &server_ep2);

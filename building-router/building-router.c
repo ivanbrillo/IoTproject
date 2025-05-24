@@ -8,6 +8,7 @@
 #include "ml-prediction.h"
 #include "energy-readings.c"
 #include "os/dev/button-hal.h"
+#include <locale.h>
 
 #define LOG_MODULE "BUILDING_ROUTER"
 #define LOG_LEVEL LOG_LEVEL_INFO
@@ -31,14 +32,16 @@ PROCESS_THREAD(udp_server_process, ev, data)
   static struct etimer minute_timer;
   PROCESS_BEGIN();
 
+  setlocale(LC_NUMERIC, "C");
+
 #if BORDER_ROUTER_CONF_WEBSERVER
   PROCESS_NAME(webserver_nogui_process);
   process_start(&webserver_nogui_process, NULL);
 #endif /* BORDER_ROUTER_CONF_WEBSERVER */
 
   coap_activate_resource(&res_power, "power");
-  coap_activate_resource(&res_battery_soc, "battery-soc");
-  coap_activate_resource(&res_battery_setpoint, "battery-setpoint");
+  coap_activate_resource(&res_battery_soc, "battery/soc");
+  coap_activate_resource(&res_battery_setpoint, "battery/setpoint");
   coap_activate_resource(&res_energy_modality, "energy-modality");
   LOG_INFO("Server initialized\n");
 

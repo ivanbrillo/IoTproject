@@ -32,11 +32,14 @@ EVENT_RESOURCE(res_sensors,
                NULL,
                res_event_handler);
 
+static int32_t event_counter = 0;
+
 static void
 res_get_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset)
 {
   coap_set_header_content_format(response, APPLICATION_JSON);
-  coap_set_payload(response, buffer, snprintf((char *)buffer, preferred_size, "{\"light\": %.3f, \"temp\": %.3f}", last_light, last_temperature));
+  coap_set_payload(response, buffer, snprintf((char *)buffer, preferred_size, "{\"light\": %.3f, \"temp\": %.3f, \"v\":%d}", last_light, last_temperature, event_counter));
+  event_counter++;
   /* A post_handler that handles subscriptions/observing will be called for periodic resources by the framework. */
 }
 /*

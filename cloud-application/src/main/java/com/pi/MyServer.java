@@ -10,10 +10,16 @@ public class MyServer extends CoapServer {
 
     public static void main(String[] args) {
         System.out.println("Running it!");
-        //MyServer server = new MyServer();
-        //server.add(new CoAPResourceExample("hellobella"));
+        // MyServer server = new MyServer();
+        // server.add(new CoAPResourceExample("hellobella"));
 
-        CoapClient client = new CoapClient("coap://[fd00::202:2:2:2]:5683/AC/setpoint?on=1&setpoint=18");
+        CoapClient client = new CoapClient("coap://[fd00::203:3:3:3]:5683/AC/setpoint?on=1&setpoint=22");
+        CoapClient client2 = new CoapClient("coap://[fd00::203:3:3:3]:5683/Window/setpoint&setpoint=40");
+
+        CoapClient client3 = new CoapClient("coap://[fd00::202:2:2:2]:5683/TEMP/setpoint&setpoint=18");
+        CoapClient client4 = new CoapClient("coap://[fd00::202:2:2:2]:5683/LIGHT/setpoint&setpoint=400");
+
+        CoapClient client5 = new CoapClient("coap://[fd00::201:1:1:1]:5683/battery/setpoint&setpoint=20");
 
         // CoapResponse response = client.get();
 
@@ -28,12 +34,9 @@ public class MyServer extends CoapServer {
         client.shutdown();
         System.out.println("Client shutdown.");
 
+        CoapClient socObs = new CoapClient("coap://[fd00::201:1:1:1]:5683/battery/soc");
 
-         // Create CoAP client (point it to a resource that supports observation)
-         CoapClient powerObs = new CoapClient("coap://[fd00::201:1:1:1]:5683/power");
-
-        // Observe the resource
-        powerObs.observe(new CoapHandler() {
+        socObs.observe(new CoapHandler() {
             @Override
             public void onLoad(CoapResponse response) {
                 System.out.println("Notification Received:");
@@ -47,10 +50,8 @@ public class MyServer extends CoapServer {
             }
         });
 
-
-        
-         // Create CoAP client (point it to a resource that supports observation)
-         CoapClient sensors = new CoapClient("coap://[fd00::202:2:2:2]:5683/SENSORS/reading");
+        // Create CoAP client (point it to a resource that supports observation)
+        CoapClient sensors = new CoapClient("coap://[fd00::202:2:2:2]:5683/SENSORS/reading");
 
         // Observe the resource
         sensors.observe(new CoapHandler() {
@@ -67,7 +68,25 @@ public class MyServer extends CoapServer {
             }
         });
 
+        // Create CoAP client (point it to a resource that supports observation)
+        CoapClient powerObs = new CoapClient("coap://[fd00::201:1:1:1]:5683/power");
 
+        // Observe the resource
+        powerObs.observe(new CoapHandler() {
+            @Override
+            public void onLoad(CoapResponse response) {
+                System.out.println("Notification Received:");
+                System.out.println("Response Code: " + response.getCode());
+                System.out.println("Payload: " + response.getResponseText());
+            }
+
+            @Override
+            public void onError() {
+                System.err.println("Observation failed or was canceled.");
+            }
+        });
+
+      
         // Keep the client running to receive updates
         try {
             Thread.sleep(60000); // Keep observing for 60 seconds
@@ -77,10 +96,8 @@ public class MyServer extends CoapServer {
 
         client.shutdown();
         System.out.println("Client shutdown.");
-    
 
-
-        //server.start();
+        // server.start();
 
     }
 }
