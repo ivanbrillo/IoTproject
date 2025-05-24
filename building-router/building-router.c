@@ -11,7 +11,7 @@
 #include <locale.h>
 
 #define LOG_MODULE "BUILDING_ROUTER"
-#define LOG_LEVEL LOG_LEVEL_INFO
+#define LOG_LEVEL LOG_LEVEL_WARN
 
 extern coap_resource_t res_power;
 extern coap_resource_t res_battery_setpoint;

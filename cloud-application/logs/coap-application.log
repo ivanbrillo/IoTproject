@@ -686,3 +686,253 @@ Caused by: java.net.URISyntaxException: Malformed IPv6 address at index 8: coap:
 2025-05-24 08:56:16.274 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v13): Active=3.557, Reactive=0.075
 2025-05-24 08:56:16.275 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v13): 0.0 (not stored - no battery table)
 2025-05-24 08:56:22.628 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-24 09:00:39.873 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-24 09:00:39.881 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-24 09:00:39.881 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-24 09:00:39.883 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-24 09:00:40.319 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-24 09:00:40.319 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-24 09:00:40.323 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-24 09:00:40.325 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-24 09:00:40.326 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-24 09:00:40.326 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-24 09:00:40.326 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-24 09:00:40.326 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-24 09:00:40.448 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-24 09:00:40.448 [main] INFO  com.pi.CoapObserverManager - Starting sensors observer
+2025-05-24 09:00:40.450 [main] INFO  com.pi.CoapObserverManager - Sensors observer started
+2025-05-24 09:00:40.450 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-24 09:00:40.450 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-24 09:00:40.450 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-24 09:00:40.450 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-24 09:00:40.450 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-24 09:00:40.569 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v0): Active=1.927, Reactive=0.091
+2025-05-24 09:00:40.587 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v1): Active=1.927, Reactive=0.091
+2025-05-24 09:00:42.526 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v2): Active=3.171, Reactive=0.068
+2025-05-24 09:00:42.648 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v0): Light=201.92, Temp=20.783 (Floor 1)
+2025-05-24 09:00:42.648 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v0): 0.0 (not stored - no battery table)
+2025-05-24 09:00:52.608 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v1): Light=211.92, Temp=20.961 (Floor 1)
+2025-05-24 09:00:52.635 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v3): Active=1.993, Reactive=0.117
+2025-05-24 09:00:52.636 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v1): 0.0 (not stored - no battery table)
+2025-05-24 09:01:02.591 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v2): Light=239.32, Temp=20.87 (Floor 1)
+2025-05-24 09:01:02.605 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v4): Active=1.788, Reactive=0.12
+2025-05-24 09:01:02.605 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v2): 0.0 (not stored - no battery table)
+2025-05-24 09:01:12.575 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v5): Active=4.765, Reactive=0.279
+2025-05-24 09:01:12.576 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v3): 0.0 (not stored - no battery table)
+2025-05-24 09:01:12.606 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v3): Light=231.12, Temp=20.273 (Floor 1)
+2025-05-24 09:01:22.576 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v6): Active=2.654, Reactive=0.177
+2025-05-24 09:01:22.577 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v4): 0.0 (not stored - no battery table)
+2025-05-24 09:01:22.610 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v4): Light=218.36, Temp=20.19 (Floor 1)
+2025-05-24 09:01:32.579 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v7): Active=2.288, Reactive=0.225
+2025-05-24 09:01:32.579 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v5): 0.0 (not stored - no battery table)
+2025-05-24 09:01:32.643 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v5): Light=244.08, Temp=20.03 (Floor 1)
+2025-05-24 09:01:42.560 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v8): Active=1.969, Reactive=0.22
+2025-05-24 09:01:42.562 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v6): 0.0 (not stored - no battery table)
+2025-05-24 09:01:42.602 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v6): Light=249.92, Temp=19.704 (Floor 1)
+2025-05-24 09:01:52.590 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v9): Active=1.863, Reactive=0.368
+2025-05-24 09:01:52.591 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v7): 0.0 (not stored - no battery table)
+2025-05-24 09:01:52.623 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v7): Light=252.68, Temp=19.615 (Floor 1)
+2025-05-24 09:02:10.952 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-24 09:02:10.952 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-24 09:02:10.952 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-24 09:02:10.953 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: sensors
+2025-05-24 09:02:10.953 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: battery_soc
+2025-05-24 09:02:10.953 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: power
+2025-05-24 09:02:10.953 [main] INFO  com.pi.CoapObserverManager - Shutdown client: sensors
+2025-05-24 09:02:10.953 [main] INFO  com.pi.CoapObserverManager - Shutdown client: battery_soc
+2025-05-24 09:02:10.953 [main] INFO  com.pi.CoapObserverManager - Shutdown client: power
+2025-05-24 09:02:10.953 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-24 09:02:10.953 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-24 09:02:10.953 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-24 09:02:10.953 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=7, power=9, battery=7}
+2025-05-24 09:02:10.957 [Thread-1] WARN  com.pi.CoapObserverManager - Empty payload received for battery_soc
+2025-05-24 09:02:10.957 [Thread-1] WARN  com.pi.CoapObserverManager - Empty payload received for power
+2025-05-24 09:02:10.958 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-24 09:02:10.959 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-24 09:02:10.959 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-24 09:02:10.960 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-24 09:02:12.534 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-24 09:02:12.538 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-24 09:02:12.538 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-24 09:02:12.539 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-24 09:02:12.914 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-24 09:02:12.914 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-24 09:02:12.914 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-24 09:02:12.915 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-24 09:02:12.916 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-24 09:02:12.916 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-24 09:02:12.916 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-24 09:02:12.916 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-24 09:02:12.979 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-24 09:02:13.000 [main] INFO  com.pi.CoapObserverManager - Starting sensors observer
+2025-05-24 09:02:13.001 [main] INFO  com.pi.CoapObserverManager - Sensors observer started
+2025-05-24 09:02:13.001 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-24 09:02:13.001 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-24 09:02:13.001 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-24 09:02:13.001 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-24 09:02:13.001 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-24 09:02:13.084 [Thread-1] WARN  com.pi.CoapObserverManager - Empty payload received for battery_soc
+2025-05-24 09:02:13.101 [Thread-1] WARN  com.pi.CoapObserverManager - Empty payload received for power
+2025-05-24 09:02:14.444 [Thread-1] WARN  com.pi.CoapObserverManager - Empty payload received for power
+2025-05-24 09:02:14.445 [Thread-1] WARN  com.pi.CoapObserverManager - Empty payload received for battery_soc
+2025-05-24 09:02:20.024 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v0): Light=187.4, Temp=21.558 (Floor 1)
+2025-05-24 09:02:24.493 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v1): Light=198.48, Temp=21.204 (Floor 1)
+2025-05-24 09:02:24.493 [Thread-1] WARN  com.pi.CoapObserverManager - Empty payload received for power
+2025-05-24 09:02:24.493 [Thread-1] WARN  com.pi.CoapObserverManager - Empty payload received for battery_soc
+2025-05-24 09:02:34.516 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v2): Light=204.04, Temp=21.283 (Floor 1)
+2025-05-24 09:02:34.517 [Thread-1] WARN  com.pi.CoapObserverManager - Empty payload received for power
+2025-05-24 09:02:34.517 [Thread-1] WARN  com.pi.CoapObserverManager - Empty payload received for battery_soc
+2025-05-24 09:02:44.881 [Thread-1] WARN  com.pi.CoapObserverManager - Empty payload received for power
+2025-05-24 09:02:44.885 [Thread-1] WARN  com.pi.CoapObserverManager - Empty payload received for battery_soc
+2025-05-24 09:02:44.923 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v3): Light=213.32, Temp=21.083 (Floor 1)
+2025-05-24 09:02:54.914 [Thread-1] WARN  com.pi.CoapObserverManager - Empty payload received for power
+2025-05-24 09:02:54.916 [Thread-1] WARN  com.pi.CoapObserverManager - Empty payload received for battery_soc
+2025-05-24 09:02:54.988 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v4): Light=212.0, Temp=21.231 (Floor 1)
+2025-05-24 09:03:05.301 [Thread-1] WARN  com.pi.CoapObserverManager - Empty payload received for power
+2025-05-24 09:03:05.302 [Thread-1] WARN  com.pi.CoapObserverManager - Empty payload received for battery_soc
+2025-05-24 09:03:05.370 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v5): Light=216.84, Temp=20.867 (Floor 1)
+2025-05-24 09:03:15.750 [Thread-1] WARN  com.pi.CoapObserverManager - Empty payload received for power
+2025-05-24 09:03:15.750 [Thread-1] WARN  com.pi.CoapObserverManager - Empty payload received for battery_soc
+2025-05-24 09:03:15.798 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v6): Light=238.48, Temp=21.055 (Floor 1)
+2025-05-24 09:03:25.895 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v7): Light=226.76, Temp=20.534 (Floor 1)
+2025-05-24 09:03:25.899 [Thread-1] WARN  com.pi.CoapObserverManager - Empty payload received for power
+2025-05-24 09:03:25.899 [Thread-1] WARN  com.pi.CoapObserverManager - Empty payload received for battery_soc
+2025-05-24 09:03:33.843 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-24 09:03:33.844 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-24 09:03:33.844 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-24 09:03:33.845 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: sensors
+2025-05-24 09:03:33.845 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: battery_soc
+2025-05-24 09:03:33.845 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: power
+2025-05-24 09:03:33.845 [main] INFO  com.pi.CoapObserverManager - Shutdown client: sensors
+2025-05-24 09:03:33.845 [main] INFO  com.pi.CoapObserverManager - Shutdown client: battery_soc
+2025-05-24 09:03:33.845 [main] INFO  com.pi.CoapObserverManager - Shutdown client: power
+2025-05-24 09:03:33.845 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-24 09:03:33.845 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-24 09:03:33.845 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-24 09:03:33.845 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=7, power=-1, battery=-1}
+2025-05-24 09:03:33.853 [Thread-1] WARN  com.pi.CoapObserverManager - Empty payload received for battery_soc
+2025-05-24 09:03:33.854 [Thread-1] WARN  com.pi.CoapObserverManager - Empty payload received for power
+2025-05-24 09:03:33.856 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-24 09:03:33.857 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-24 09:03:33.858 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-24 09:03:33.862 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-24 09:05:24.615 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-24 09:05:24.621 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-24 09:05:24.622 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-24 09:05:24.623 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-24 09:05:24.948 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-24 09:05:24.948 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-24 09:05:24.949 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-24 09:05:24.949 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-24 09:05:24.950 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-24 09:05:24.950 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-24 09:05:24.950 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-24 09:05:24.950 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-24 09:05:25.021 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-24 09:05:25.022 [main] INFO  com.pi.CoapObserverManager - Starting sensors observer
+2025-05-24 09:05:25.032 [main] INFO  com.pi.CoapObserverManager - Sensors observer started
+2025-05-24 09:05:25.034 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-24 09:05:25.045 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-24 09:05:25.048 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-24 09:05:25.049 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-24 09:05:25.052 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-24 09:05:25.066 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v0): 0.0 (not stored - no battery table)
+2025-05-24 09:05:25.129 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v0): Active=0.0, Reactive=0.0
+2025-05-24 09:05:28.462 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v1): Active=2.493, Reactive=0.11
+2025-05-24 09:05:28.464 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v1): 0.0 (not stored - no battery table)
+2025-05-24 09:05:38.470 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v2): Active=1.927, Reactive=0.091
+2025-05-24 09:05:38.471 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v2): 0.0 (not stored - no battery table)
+2025-05-24 09:05:40.846 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v0): Light=199.6, Temp=21.381 (Floor 1)
+2025-05-24 09:05:48.765 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v1): Light=202.72, Temp=21.146 (Floor 1)
+2025-05-24 09:05:48.790 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v3): Active=3.171, Reactive=0.068
+2025-05-24 09:05:48.792 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v3): 0.0 (not stored - no battery table)
+2025-05-24 09:05:58.789 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v4): Active=1.993, Reactive=0.117
+2025-05-24 09:05:58.790 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v4): 0.0 (not stored - no battery table)
+2025-05-24 09:05:58.847 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v2): Light=229.48, Temp=21.266 (Floor 1)
+2025-05-24 09:06:08.813 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v5): Active=1.788, Reactive=0.12
+2025-05-24 09:06:08.813 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v5): 0.0 (not stored - no battery table)
+2025-05-24 09:06:08.851 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v3): Light=238.8, Temp=21.391 (Floor 1)
+2025-05-24 09:06:18.854 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v6): Active=4.765, Reactive=0.279
+2025-05-24 09:06:18.856 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v6): 0.0 (not stored - no battery table)
+2025-05-24 09:06:18.883 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v4): Light=240.2, Temp=21.096 (Floor 1)
+2025-05-24 09:06:28.911 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v5): Light=258.6, Temp=20.962 (Floor 1)
+2025-05-24 09:06:28.930 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v7): Active=2.654, Reactive=0.177
+2025-05-24 09:06:28.931 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v7): 0.0 (not stored - no battery table)
+2025-05-24 09:06:38.893 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v6): Light=242.32, Temp=21.049 (Floor 1)
+2025-05-24 09:06:38.904 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v8): Active=2.288, Reactive=0.225
+2025-05-24 09:06:38.906 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v8): 0.0 (not stored - no battery table)
+2025-05-24 09:06:48.935 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v7): Light=238.36, Temp=21.072 (Floor 1)
+2025-05-24 09:06:48.952 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v9): Active=1.969, Reactive=0.22
+2025-05-24 09:06:48.953 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v9): 0.0 (not stored - no battery table)
+2025-05-24 09:06:58.924 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v10): Active=1.863, Reactive=0.368
+2025-05-24 09:06:58.927 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v10): 0.0 (not stored - no battery table)
+2025-05-24 09:06:58.967 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v8): Light=231.72, Temp=21.11 (Floor 1)
+2025-05-24 09:07:08.933 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v11): Active=1.538, Reactive=0.195
+2025-05-24 09:07:08.934 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v11): 0.0 (not stored - no battery table)
+2025-05-24 09:07:08.970 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v9): Light=242.6, Temp=20.718 (Floor 1)
+2025-05-24 09:07:18.963 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v10): Light=262.6, Temp=20.279 (Floor 1)
+2025-05-24 09:07:18.983 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v12): Active=1.783, Reactive=0.148
+2025-05-24 09:07:18.985 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v12): 0.0 (not stored - no battery table)
+2025-05-24 09:07:28.955 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v13): Active=2.064, Reactive=0.256
+2025-05-24 09:07:28.956 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v13): 0.0 (not stored - no battery table)
+2025-05-24 09:07:28.986 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v11): Light=251.92, Temp=20.612 (Floor 1)
+2025-05-24 09:07:38.939 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v12): Light=237.24, Temp=20.794 (Floor 1)
+2025-05-24 09:07:38.963 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v14): Active=2.121, Reactive=0.259
+2025-05-24 09:07:38.964 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v14): 0.0 (not stored - no battery table)
+2025-05-24 09:07:48.974 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v13): Light=220.4, Temp=20.458 (Floor 1)
+2025-05-24 09:07:48.988 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v15): Active=2.414, Reactive=0.102
+2025-05-24 09:07:48.989 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v15): 0.0 (not stored - no battery table)
+2025-05-24 09:07:52.008 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-24 09:07:52.009 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-24 09:07:52.009 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-24 09:07:52.010 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: sensors
+2025-05-24 09:07:52.010 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: battery_soc
+2025-05-24 09:07:52.010 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: power
+2025-05-24 09:07:52.010 [main] INFO  com.pi.CoapObserverManager - Shutdown client: sensors
+2025-05-24 09:07:52.010 [main] INFO  com.pi.CoapObserverManager - Shutdown client: battery_soc
+2025-05-24 09:07:52.010 [main] INFO  com.pi.CoapObserverManager - Shutdown client: power
+2025-05-24 09:07:52.010 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-24 09:07:52.010 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-24 09:07:52.010 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-24 09:07:52.010 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=13, power=15, battery=15}
+2025-05-24 09:07:52.013 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-24 09:07:52.013 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-24 09:07:52.014 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-24 09:07:52.014 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-24 09:24:31.606 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-24 09:24:31.612 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-24 09:24:31.613 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-24 09:24:31.614 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-24 09:24:32.072 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-24 09:24:32.072 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-24 09:24:32.073 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-24 09:24:32.074 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-24 09:24:32.074 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-24 09:24:32.074 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-24 09:24:32.074 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-24 09:24:32.074 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-24 09:24:32.191 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-24 09:24:32.192 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-24 09:24:32.193 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-24 09:24:32.206 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-24 09:24:32.207 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 1 floors
+2025-05-24 09:24:32.207 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-24 09:24:32.209 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-24 09:24:32.210 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-24 09:24:32.211 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-24 09:24:32.211 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-24 09:24:32.302 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v17): Active=2.414, Reactive=0.102
+2025-05-24 09:24:34.881 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v15): Light=256.8, Temp=20.052 (Floor 1)
+2025-05-24 09:24:35.121 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v17): 0.0 (not stored - no battery table)
+2025-05-24 09:24:41.157 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v16): Light=272.48, Temp=19.919 (Floor 1)
+2025-05-24 09:24:41.168 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v18): Active=3.557, Reactive=0.075
+2025-05-24 09:24:41.169 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v18): 0.0 (not stored - no battery table)
+2025-05-24 09:24:51.176 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v19): Active=3.344, Reactive=0.089
+2025-05-24 09:24:51.178 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v19): 0.0 (not stored - no battery table)
+2025-05-24 09:24:51.199 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v17): Light=275.92, Temp=20.032 (Floor 1)
+2025-05-24 09:25:01.140 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v18): Light=284.12, Temp=20.254 (Floor 1)
+2025-05-24 09:25:01.180 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v20): Active=3.308, Reactive=0.097
+2025-05-24 09:25:01.181 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v20): 0.0 (not stored - no battery table)
+2025-05-24 09:25:11.278 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v19): Light=267.24, Temp=20.537 (Floor 1)
+2025-05-24 09:25:11.308 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v21): Active=3.491, Reactive=0.2
+2025-05-24 09:25:11.310 [Thread-1] INFO  com.pi.DatabaseManager - Battery SOC received (v21): 0.0 (not stored - no battery table)

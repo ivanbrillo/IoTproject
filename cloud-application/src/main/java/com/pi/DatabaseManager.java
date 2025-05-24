@@ -104,7 +104,7 @@ public class DatabaseManager {
         }
     }
     
-    public void storeSensorData(String jsonPayload) {
+    public void storeSensorData(String jsonPayload, int floor) {
         if (!isConnectionValid()) {
             logger.debug("Skipping sensor data storage - connection not available");
             return;
@@ -128,7 +128,7 @@ public class DatabaseManager {
             String lightSql = "INSERT INTO light (value, floor) VALUES (?, ?)";
             try (PreparedStatement pstmt = connection.prepareStatement(lightSql)) {
                 pstmt.setDouble(1, lightValue);
-                pstmt.setInt(2, 1); // Floor 1 as default
+                pstmt.setInt(2, floor); 
                 pstmt.executeUpdate();
             }
             
@@ -136,7 +136,7 @@ public class DatabaseManager {
             String tempSql = "INSERT INTO temperature (value, floor) VALUES (?, ?)";
             try (PreparedStatement pstmt = connection.prepareStatement(tempSql)) {
                 pstmt.setDouble(1, tempValue);
-                pstmt.setInt(2, 1); // Floor 1 as default
+                pstmt.setInt(2, floor);
                 pstmt.executeUpdate();
             }
             
