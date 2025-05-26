@@ -34,11 +34,10 @@ PROCESS_THREAD(er_example_server, ev, data)
   coap_activate_resource(&res_ac_setpoint, "AC/setpoint");
   coap_activate_resource(&res_window_setpoint, "Window/setpoint");
 
-  /* Define application-specific events here. */
-  while (1)
+  while (1)  // wait until a new event
   {
       PROCESS_YIELD();
-  } /* while (1) */
+  } 
 
   PROCESS_END();
 }

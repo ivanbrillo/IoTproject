@@ -11,6 +11,7 @@
 #include "coap-log.h"
 #include "setpoints-calculator.c"
 #include <locale.h>
+#include <math.h>
 
 #define LOG_MODULE "FLOOR_SENSOR"
 #define LOG_LEVEL LOG_LEVEL_APP
@@ -23,6 +24,9 @@
 
 #define INITIAL_WINDOW 50.0f
 #define INITIAL_AC 21.0f
+
+// Helper lambda/function to check >2% change (absolute relative difference)
+#define CHANGE_ABOVE_2_PERCENT(old, new) (fabsf((new) - (old)) / ((old) != 0 ? fabsf(old) : 1.0f) > 0.02f)
 
 PROCESS(er_example_client, "FLOOR SENSOR CLIENT");
 AUTOSTART_PROCESSES(&er_example_client);
@@ -47,7 +51,7 @@ PROCESS_THREAD(er_example_client, ev, data)
 {
   PROCESS_BEGIN();
 
-  static coap_message_t request[1]; /* This way the packet can be treated as pointer as usual. */
+  static coap_message_t request[1];
   setlocale(LC_NUMERIC, "C");
 
   coap_endpoint_parse(SERVER_EP, strlen(SERVER_EP), &server_ep);
@@ -66,43 +70,47 @@ PROCESS_THREAD(er_example_client, ev, data)
 
     if (etimer_expired(&et))
     {
-
-      char query_buffer[64]; // Enough to hold the formatted query string
+      char query_buffer[64];
 
       current_temperature = read_temperature();
       current_light = read_light();
 
-      last_ac_setpoint = update_temp_setpoint(current_temperature, last_ac_setpoint, temperature_required, modality);
-      last_window_setpoint = update_window_setpoint(current_light, last_window_setpoint, light_required);
+      // Calculate new setpoints
+      float new_ac_setpoint = update_temp_setpoint(current_temperature, last_ac_setpoint, temperature_required, modality);
+      float new_window_setpoint = update_window_setpoint(current_light, last_window_setpoint, light_required);
 
-      LOG_INFO("Temp: %.2fC | AC Setpoint: %.2fC | Temp target: %.2f\n",
-               current_temperature, last_ac_setpoint, temperature_required);
-
-      LOG_INFO("Light: %.2f lm | Window Setpoint: %.2f | Light target: %.2f lm\n",
-               current_light, last_window_setpoint, light_required);
+      LOG_INFO("Temp: %.2fC | AC Setpoint (new): %.2fC | Temp target: %.2f\n",
+               current_temperature, new_ac_setpoint, temperature_required);
+      LOG_INFO("Light: %.2f lm | Window Setpoint (new): %.2f | Light target: %.2f lm\n",
+               current_light, new_window_setpoint, light_required);
 
       // --- AC control request ---
-      coap_init_message(request, COAP_TYPE_CON, COAP_POST, 0);
-      coap_set_header_uri_path(request, service_urls[0]);
+      if (CHANGE_ABOVE_2_PERCENT(last_ac_setpoint, new_ac_setpoint))
+      {
+        coap_init_message(request, COAP_TYPE_CON, COAP_POST, 0);
+        coap_set_header_uri_path(request, service_urls[0]);
+        snprintf(query_buffer, sizeof(query_buffer), "on=1&setpoint=%.2f", new_ac_setpoint);
+        coap_set_header_uri_query(request, query_buffer);
+        LOG_INFO_COAP_EP(&server_ep);
+        COAP_BLOCKING_REQUEST(&server_ep, request, client_chunk_handler);
 
-      snprintf(query_buffer, sizeof(query_buffer), "on=1&setpoint=%.2f", last_ac_setpoint);
-      coap_set_header_uri_query(request, query_buffer);
-
-      LOG_INFO_COAP_EP(&server_ep);
-      COAP_BLOCKING_REQUEST(&server_ep, request, client_chunk_handler);
+        last_ac_setpoint = new_ac_setpoint; // update only on send
+      }
 
       // --- Window control request ---
-      coap_init_message(request, COAP_TYPE_CON, COAP_POST, 0);
-      coap_set_header_uri_path(request, service_urls[1]);
+      if (CHANGE_ABOVE_2_PERCENT(last_window_setpoint, new_window_setpoint))
+      {
+        coap_init_message(request, COAP_TYPE_CON, COAP_POST, 0);
+        coap_set_header_uri_path(request, service_urls[1]);
+        snprintf(query_buffer, sizeof(query_buffer), "setpoint=%.2f", new_window_setpoint);
+        coap_set_header_uri_query(request, query_buffer);
+        LOG_INFO_COAP_EP(&server_ep);
+        COAP_BLOCKING_REQUEST(&server_ep, request, client_chunk_handler);
 
-      snprintf(query_buffer, sizeof(query_buffer), "setpoint=%.2f", last_window_setpoint);
-      coap_set_header_uri_query(request, query_buffer);
-
-      LOG_INFO_COAP_EP(&server_ep);
-      COAP_BLOCKING_REQUEST(&server_ep, request, client_chunk_handler);
+        last_window_setpoint = new_window_setpoint; // update only on send
+      }
 
       res_sensors.trigger();
-
       etimer_reset(&et);
     }
   }

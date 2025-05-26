@@ -1,7 +1,7 @@
 #include "contiki.h"
-//#include "net/routing/routing.h"
-//#include "net/netstack.h"
-//#include "net/ipv6/simple-udp.h"
+// #include "net/routing/routing.h"
+// #include "net/netstack.h"
+// #include "net/ipv6/simple-udp.h"
 #include <stdint.h>
 #include "coap-engine.h"
 #include "sys/log.h"
@@ -30,7 +30,8 @@ AUTOSTART_PROCESSES(&udp_server_process);
 /*---------------------------------------------------------------------------*/
 PROCESS_THREAD(udp_server_process, ev, data)
 {
-  static struct etimer minute_timer;
+  static struct etimer power_timer;
+  static struct etimer soc_timer;
   PROCESS_BEGIN();
 
   setlocale(LC_NUMERIC, "C");
@@ -46,8 +47,9 @@ PROCESS_THREAD(udp_server_process, ev, data)
   coap_activate_resource(&res_energy_modality, "energy-modality");
   LOG_INFO("Server initialized\n");
 
-  /* fire first prediction immediately */
-  etimer_set(&minute_timer, CLOCK_SECOND * 10);
+  /* Initialize timers */
+  etimer_set(&power_timer, CLOCK_SECOND * 10); // for power and modality
+  etimer_set(&soc_timer, CLOCK_SECOND * 15);   // for battery soc
   static int reading_counter = 0;
 
   while (1)
@@ -56,30 +58,36 @@ PROCESS_THREAD(udp_server_process, ev, data)
 
     if (ev == button_hal_press_event)
     {
-      if (modality_disabled == 0)
-        modality_disabled = 1;
-      else
-        modality_disabled = 0; // reset
+      modality_disabled = (modality_disabled == 0) ? 1 : 0; // toggle modality_disabled
     }
-    else if (ev == PROCESS_EVENT_TIMER && data == &minute_timer)
+    else if (ev == PROCESS_EVENT_TIMER)
     {
-      float *raw = get_energy_reading();
+      if (data == &power_timer)
+      {
+        float *raw = get_energy_reading();
 
-      current_soc = get_soc_reading();
-      memcpy(last_reading, raw, N_FEATURES * sizeof(float));
+        memcpy(last_reading, raw, N_FEATURES * sizeof(float));
+        last_prediction = predict_power(raw, ++reading_counter);
 
-      last_prediction = predict_power(raw, ++reading_counter);
+        LOG_INFO("pred %.3f\n", last_prediction);
 
-      LOG_INFO("pred %.3f\n", last_prediction);
+        res_power.trigger();
+        res_energy_modality.trigger();
 
-      res_power.trigger();
-      res_battery_soc.trigger();
-      res_energy_modality.trigger();
+        etimer_reset(&power_timer);
+      }
+      else if (data == &soc_timer)
+      {
+        current_soc = get_soc_reading();
 
-      etimer_reset(&minute_timer);
+        res_battery_soc.trigger();
+
+        etimer_reset(&soc_timer);
+      }
     }
   }
 
   PROCESS_END();
 }
+
 /*---------------------------------------------------------------------------*/

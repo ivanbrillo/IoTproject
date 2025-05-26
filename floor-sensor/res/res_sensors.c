@@ -6,6 +6,10 @@
 #include <math.h>
 #include "sys/log.h"
 
+// Helper lambda/function to check >5% change (absolute relative difference)
+#define CHANGE_ABOVE_5_PERCENT(old, new) (fabsf((new) - (old)) / ((old) != 0 ? fabsf(old) : 1.0f) > 0.05f)
+
+
 #define LOG_MODULE "SENSOR_RES"
 #define LOG_LEVEL LOG_LEVEL_APP
 
@@ -40,7 +44,7 @@ static void res_get_handler(coap_message_t *request, coap_message_t *response, u
 static void res_event_handler(void)
 {
   // send only if one of the two changes between the last sended value is above 5%
-  if ((fabsf(last_sended_temperature - current_temperature) / last_sended_temperature) > 0.05f || (fabsf(last_sended_light - current_light) / last_sended_light) > 0.05f)
+  if (CHANGE_ABOVE_5_PERCENT(last_sended_temperature, current_temperature) || CHANGE_ABOVE_5_PERCENT(last_sended_light, current_light))
   {
     LOG_INFO("LIGHT %.3f\n", current_light);
     LOG_INFO("TEMP %.3f\n", current_temperature);
