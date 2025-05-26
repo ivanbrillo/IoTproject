@@ -156,7 +156,7 @@ public class UserInterface {
 
         if (isValidInput(setpoint)) {
             logger.info("User requested Battery command for floor 0: setpoint={}", setpoint);
-            requestManager.sendBatteryCommand(setpoint);
+            requestManager.sendBatteryCommand(setpoint, true);
         } else {
             System.out.println("Invalid input. Please try again.");
             logger.warn("Invalid Battery command input received");

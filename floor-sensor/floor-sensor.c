@@ -79,36 +79,37 @@ PROCESS_THREAD(er_example_client, ev, data)
       float new_ac_setpoint = update_temp_setpoint(current_temperature, last_ac_setpoint, temperature_required, modality);
       float new_window_setpoint = update_window_setpoint(current_light, last_window_setpoint, light_required);
 
-      LOG_INFO("Temp: %.2fC | AC Setpoint (new): %.2fC | Temp target: %.2f\n",
-               current_temperature, new_ac_setpoint, temperature_required);
-      LOG_INFO("Light: %.2f lm | Window Setpoint (new): %.2f | Light target: %.2f lm\n",
-               current_light, new_window_setpoint, light_required);
-
       // --- AC control request ---
       if (CHANGE_ABOVE_2_PERCENT(last_ac_setpoint, new_ac_setpoint))
       {
+        LOG_WARN("new ac setpoint: %.3f", new_ac_setpoint);
+        last_ac_setpoint = new_ac_setpoint; // update only on send
+
         coap_init_message(request, COAP_TYPE_CON, COAP_POST, 0);
         coap_set_header_uri_path(request, service_urls[0]);
         snprintf(query_buffer, sizeof(query_buffer), "on=1&setpoint=%.2f", new_ac_setpoint);
         coap_set_header_uri_query(request, query_buffer);
         LOG_INFO_COAP_EP(&server_ep);
         COAP_BLOCKING_REQUEST(&server_ep, request, client_chunk_handler);
-
-        last_ac_setpoint = new_ac_setpoint; // update only on send
       }
 
       // --- Window control request ---
       if (CHANGE_ABOVE_2_PERCENT(last_window_setpoint, new_window_setpoint))
       {
+        last_window_setpoint = new_window_setpoint; // update only on send
+
         coap_init_message(request, COAP_TYPE_CON, COAP_POST, 0);
         coap_set_header_uri_path(request, service_urls[1]);
         snprintf(query_buffer, sizeof(query_buffer), "setpoint=%.2f", new_window_setpoint);
         coap_set_header_uri_query(request, query_buffer);
         LOG_INFO_COAP_EP(&server_ep);
         COAP_BLOCKING_REQUEST(&server_ep, request, client_chunk_handler);
-
-        last_window_setpoint = new_window_setpoint; // update only on send
       }
+
+      LOG_INFO("Temp: %.2fC | AC Setpoint: %.2fC | Temp target: %.2f\n",
+               current_temperature, last_ac_setpoint, temperature_required);
+      LOG_INFO("Light: %.2f lm | Window Setpoint: %.2f | Light target: %.2f lm\n",
+               current_light, last_window_setpoint, light_required);
 
       res_sensors.trigger();
       etimer_reset(&et);

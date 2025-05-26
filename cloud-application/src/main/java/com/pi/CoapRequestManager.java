@@ -63,7 +63,7 @@ public class CoapRequestManager {
         sendRequest(url, "Light (Floor " + floor + ")");
     }
 
-    public void sendBatteryCommand(String setpoint) {
+    public void sendBatteryCommand(String setpoint, boolean verbose) {
         String ip = FloorManager.getDeviceIP(0, "battery");
         if (ip == null) {
             logger.error("No battery device found for floor 0");
@@ -73,15 +73,21 @@ public class CoapRequestManager {
 
         String url = String.format("coap://[%s]:5683/battery/setpoint?setpoint=%s", ip, setpoint);
         logger.info("Sending Battery command to floor 0: setpoint={}", setpoint);
-        sendRequest(url, "Battery (Floor 0)");
+        sendRequest(url, "Battery (Floor 0)", verbose);
     }
 
     private void sendRequest(String url, String deviceType) {
+        sendRequest(url, deviceType, true);
+    }
+
+    private void sendRequest(String url, String deviceType, boolean verbose) {
         CoapClient client = new CoapClient(url);
 
         try {
             logger.debug("Sending {} command to: {}", deviceType, url);
-            System.out.printf("Sending %s command...%n", deviceType);
+            if (verbose) {
+                System.out.printf("Sending %s command...%n", deviceType);
+            }
 
             CoapResponse response = client.post("", MediaTypeRegistry.TEXT_PLAIN);
 
@@ -89,17 +95,23 @@ public class CoapRequestManager {
                 logger.info("{} Command Response - Code: {}, Text: {}, Success: {}",
                         deviceType, response.getCode(), response.getResponseText(), response.isSuccess());
 
-                System.out.printf("=== %s Command Result ===%n", deviceType);
-                System.out.println("Response Code: " + response.getCode());
-                System.out.println("Response Text: " + response.getResponseText());
-                System.out.println("Success: " + response.isSuccess());
+                if (verbose) {
+                    System.out.printf("=== %s Command Result ===%n", deviceType);
+                    System.out.println("Response Code: " + response.getCode());
+                    System.out.println("Response Text: " + response.getResponseText());
+                    System.out.println("Success: " + response.isSuccess());
+                }
             } else {
                 logger.warn("No response received from {} device", deviceType);
-                System.out.println("No response received from " + deviceType + " device.");
+                if (verbose)
+                    System.out.println("No response received from " + deviceType + " device.");
+
             }
         } catch (Exception e) {
             logger.error("Error sending {} command", deviceType, e);
-            System.err.println("Error sending " + deviceType + " command: " + e.getMessage());
+            if (verbose)
+                System.err.println("Error sending " + deviceType + " command: " + e.getMessage());
+
         } finally {
             client.shutdown();
             logger.debug("{} client shutdown", deviceType);

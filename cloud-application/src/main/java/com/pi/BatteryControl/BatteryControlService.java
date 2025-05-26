@@ -59,7 +59,7 @@ public class BatteryControlService {
 
     private void sendBatterySetpoint(double setpoint) {
         String setpointString = String.format(Locale.US, "%.2f", setpoint);
-        requestManager.sendBatteryCommand(setpointString);
+        requestManager.sendBatteryCommand(setpointString, false);
     }
 
     public void shutdown() {
