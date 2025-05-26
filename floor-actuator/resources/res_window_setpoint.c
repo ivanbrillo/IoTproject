@@ -4,9 +4,8 @@
 #include <string.h>
 #include <stdlib.h> // for strtof
 
-/* Log configuration */
 #include "sys/log.h"
-#define LOG_MODULE "App"
+#define LOG_MODULE "WINDOW_RES"
 #define LOG_LEVEL LOG_LEVEL_APP
 
 static void res_post_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);

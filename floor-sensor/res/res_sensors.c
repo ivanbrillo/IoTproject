@@ -3,27 +3,23 @@
 #include <string.h>
 #include "coap-engine.h"
 #include "coap.h"
-
-/* Log configuration */
+#include <math.h>
 #include "sys/log.h"
 
-#define LOG_MODULE "App"
+#define LOG_MODULE "SENSOR_RES"
 #define LOG_LEVEL LOG_LEVEL_APP
 
 #define INITIAL_LIGHT 200.0f
-float last_light = INITIAL_LIGHT;
+float current_light = INITIAL_LIGHT;
+float last_sended_light = INITIAL_LIGHT;
 
 #define INITIAL_TEMP 22.0f
-float last_temperature = INITIAL_TEMP;
+float current_temperature = INITIAL_TEMP;
+float last_sended_temperature = INITIAL_TEMP;
 
 static void res_get_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
 static void res_event_handler(void);
 
-/*
- * Example for an event resource.
- * Additionally takes a period parameter that defines the interval to call [name]_periodic_handler().
- * A default post_handler takes care of subscriptions and manages a list of subscribers to notify.
- */
 EVENT_RESOURCE(res_sensors,
                "title=\"Sensors\";obs",
                res_get_handler,
@@ -34,29 +30,24 @@ EVENT_RESOURCE(res_sensors,
 
 static int32_t event_counter = 0;
 
-static void
-res_get_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset)
+static void res_get_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset)
 {
   coap_set_header_content_format(response, APPLICATION_JSON);
-  coap_set_payload(response, buffer, snprintf((char *)buffer, preferred_size, "{\"light\": %.3f, \"temp\": %.3f, \"v\":%d}", last_light, last_temperature, event_counter));
+  coap_set_payload(response, buffer, snprintf((char *)buffer, preferred_size, "{\"light\": %.3f, \"temp\": %.3f, \"v\":%d}", current_light, current_temperature, event_counter));
   event_counter++;
-  /* A post_handler that handles subscriptions/observing will be called for periodic resources by the framework. */
 }
-/*
- * Additionally, res_event_handler must be implemented for each EVENT_RESOURCE.
- * It is called through <res_name>.trigger(), usually from the server process.
- */
-static void
-res_event_handler(void)
+
+static void res_event_handler(void)
 {
-
-  /* Usually a condition is defined under with subscribers are notified, e.g., event was above a threshold. */
-  if (1)
+  // send only if one of the two changes between the last sended value is above 5%
+  if ((fabsf(last_sended_temperature - current_temperature) / last_sended_temperature) > 0.05f || (fabsf(last_sended_light - current_light) / last_sended_light) > 0.05f)
   {
-    LOG_INFO("LIGHT %.3f\n", last_light);
-    LOG_INFO("TEMP %.3f\n", last_temperature);
+    LOG_INFO("LIGHT %.3f\n", current_light);
+    LOG_INFO("TEMP %.3f\n", current_temperature);
 
-    /* Notify the registered observers which will trigger the res_get_handler to create the response. */
+    last_sended_light = current_light;
+    last_sended_temperature = current_temperature;
+
     coap_notify_observers(&res_sensors);
   }
 }

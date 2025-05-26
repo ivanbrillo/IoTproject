@@ -20,7 +20,8 @@ extern coap_resource_t res_energy_modality;
 
 extern float last_prediction;
 extern float last_reading[N_FEATURES];
-extern float last_soc;
+extern float current_soc;
+
 extern int8_t modality_disabled;
 
 PROCESS(udp_server_process, "UDP server");
@@ -63,7 +64,8 @@ PROCESS_THREAD(udp_server_process, ev, data)
     else if (ev == PROCESS_EVENT_TIMER && data == &minute_timer)
     {
       float *raw = get_energy_reading();
-      last_soc = get_soc_reading();
+
+      current_soc = get_soc_reading();
       memcpy(last_reading, raw, N_FEATURES * sizeof(float));
 
       last_prediction = predict_power(raw, ++reading_counter);

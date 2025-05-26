@@ -1,6 +1,6 @@
 #include "ml-prediction.h"
 
-extern float last_soc;
+extern float current_soc;
 extern float last_battery_setpoint;
 
 static const float fake_readings_matrix[N_SAMPLES][N_FEATURES] = {
@@ -37,9 +37,9 @@ float *get_energy_reading()
 
 float get_soc_reading()
 {
-    if (last_battery_setpoint > 0.0f && last_soc <= 99.0f)
-        return last_soc + 1;
-    else if (last_battery_setpoint < 0.0f && last_soc >= 1.0f)
-        return last_soc - 1;
-    return last_soc;
+    if (last_battery_setpoint > 0.0f && current_soc <= 99.0f)
+        return current_soc + last_battery_setpoint / 10.0f;
+    else if (last_battery_setpoint < 0.0f && current_soc >= 1.0f)
+        return current_soc + last_battery_setpoint / 10.0f;
+    return current_soc;
 }

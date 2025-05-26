@@ -2,7 +2,7 @@
 #include "coap-blocking-api.h"
 
 #include "sys/log.h"
-#define LOG_MODULE "App"
+#define LOG_MODULE "FLOOR_SENSOR"
 #define LOG_LEVEL LOG_LEVEL_APP
 
 #define NUMBER_OF_URLS 2

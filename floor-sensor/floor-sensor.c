@@ -12,7 +12,7 @@
 #include "setpoints-calculator.c"
 #include <locale.h>
 
-#define LOG_MODULE "App"
+#define LOG_MODULE "FLOOR_SENSOR"
 #define LOG_LEVEL LOG_LEVEL_APP
 
 /* FIXME: This server address is hard-coded for Cooja and link-local for unconnected border router. */
@@ -34,8 +34,8 @@ static coap_endpoint_t server_ep2;
 float last_ac_setpoint = INITIAL_AC;
 float last_window_setpoint = INITIAL_WINDOW;
 
-extern float last_temperature;
-extern float last_light;
+extern float current_temperature;
+extern float current_light;
 
 extern float temperature_required;
 extern float light_required;
@@ -69,17 +69,17 @@ PROCESS_THREAD(er_example_client, ev, data)
 
       char query_buffer[64]; // Enough to hold the formatted query string
 
-      last_temperature = read_temperature();
-      last_light = read_light();
+      current_temperature = read_temperature();
+      current_light = read_light();
 
-      last_ac_setpoint = update_temp_setpoint(last_temperature, last_ac_setpoint, temperature_required, modality);
-      last_window_setpoint = update_window_setpoint(last_light, last_window_setpoint, light_required);
+      last_ac_setpoint = update_temp_setpoint(current_temperature, last_ac_setpoint, temperature_required, modality);
+      last_window_setpoint = update_window_setpoint(current_light, last_window_setpoint, light_required);
 
       LOG_INFO("Temp: %.2fC | AC Setpoint: %.2fC | Temp target: %.2f\n",
-               last_temperature, last_ac_setpoint, temperature_required);
+               current_temperature, last_ac_setpoint, temperature_required);
 
       LOG_INFO("Light: %.2f lm | Window Setpoint: %.2f | Light target: %.2f lm\n",
-               last_light, last_window_setpoint, light_required);
+               current_light, last_window_setpoint, light_required);
 
       // --- AC control request ---
       coap_init_message(request, COAP_TYPE_CON, COAP_POST, 0);

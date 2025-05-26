@@ -74,16 +74,28 @@ public class UserInterface {
 
         System.out.print("Enter AC state (0=off, 1=on): ");
         String onState = scanner.nextLine().trim();
-        System.out.print("Enter setpoint temperature: ");
-        String setpoint = scanner.nextLine().trim();
 
-        if (isValidInput(onState) && isValidInput(setpoint)) {
-            logger.info("User requested AC command for floor {}: on={}, setpoint={}", floor, onState, setpoint);
-            requestManager.sendACCommand(floor, onState, setpoint);
-        } else {
+        if (!isValidInput(onState)) {
             System.out.println("Invalid input. Please try again.");
             logger.warn("Invalid AC command input received");
+            return;
         }
+
+        String setpoint = "20.0";
+
+        if (onState.equals("1")) {
+            System.out.print("Enter setpoint temperature: ");
+            setpoint = scanner.nextLine().trim();
+
+            if (!isValidInput(setpoint)) {
+                System.out.println("Invalid input. Please try again.");
+                logger.warn("Invalid AC command input received");
+                return;
+            }
+        }
+
+        logger.info("User requested AC command for floor {}: on={}, setpoint={}", floor, onState, setpoint);
+        requestManager.sendACCommand(floor, onState, setpoint);
     }
 
     public void handleWindowRequest() {

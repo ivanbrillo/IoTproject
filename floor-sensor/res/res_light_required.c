@@ -3,10 +3,9 @@
 #include "dev/leds.h"
 #include <string.h>
 #include <stdlib.h> // for strtof
-
-/* Log configuration */
 #include "sys/log.h"
-#define LOG_MODULE "App"
+
+#define LOG_MODULE "LIGHT_RES"
 #define LOG_LEVEL LOG_LEVEL_APP
 
 #define INITIAL_LIGHT 250.0f

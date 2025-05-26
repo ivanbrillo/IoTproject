@@ -8,7 +8,7 @@
 #include "sys/log.h"
 #include "ml-prediction.h"
 
-#define LOG_MODULE "App"
+#define LOG_MODULE "ENERGY_MOD_RES"
 #define LOG_LEVEL LOG_LEVEL_INFO
 
 extern float last_prediction;
@@ -21,11 +21,6 @@ int8_t modality_disabled = 0;
 static void res_get_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
 static void res_event_handler(void);
 
-/*
- * Example for an event resource.
- * Additionally takes a period parameter that defines the interval to call [name]_periodic_handler().
- * A default post_handler takes care of subscriptions and manages a list of subscribers to notify.
- */
 EVENT_RESOURCE(res_energy_modality,
                "title=\"EnergyModality\";obs",
                res_get_handler,
@@ -34,11 +29,8 @@ EVENT_RESOURCE(res_energy_modality,
                NULL,
                res_event_handler);
 
-static void
-res_get_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset)
+static void res_get_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset)
 {
-  // coap_set_header_content_format(response, TEXT_PLAIN);
-
   uint8_t modality = 0;
   if (last_modality != -2)
     modality = last_modality;
@@ -46,16 +38,9 @@ res_get_handler(coap_message_t *request, coap_message_t *response, uint8_t *buff
   coap_set_header_content_format(response, APPLICATION_OCTET_STREAM); // binary format
   buffer[0] = modality;
   coap_set_payload(response, buffer, 1); // one byte payload
-  //coap_set_payload(response, buffer, snprintf((char *)buffer, preferred_size, "energy modality: %d", modality));
-
-  /* A post_handler that handles subscriptions/observing will be called for periodic resources by the framework. */
 }
-/*
- * Additionally, res_event_handler must be implemented for each EVENT_RESOURCE.
- * It is called through <res_name>.trigger(), usually from the server process.
- */
-static void
-res_event_handler(void)
+
+static void res_event_handler(void)
 {
   if (modality_disabled == 1)
   {

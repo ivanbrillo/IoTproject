@@ -2,8 +2,8 @@
 
 extern float last_ac_setpoint;     // temperature setpoint in Celsius
 extern float last_window_setpoint; // window cover percentage (0–100)
-extern float last_light;           // in lumen
-extern float last_temperature;     // in Celsius
+extern float current_light;           // in lumen
+extern float current_temperature;     // in Celsius
 
 // Internal previous values to detect trends
 static float previous_ac_setpoint = 22.0f;
@@ -46,7 +46,7 @@ float read_temperature()
     }
 
     float delta = biased_random(bias, 0.8f); // max change ±0.8°C
-    float new_temperature = clamp(last_temperature + delta, -20.0f, 200.0f);
+    float new_temperature = clamp(current_temperature + delta, -20.0f, 200.0f);
 
     previous_ac_setpoint = last_ac_setpoint;
     return new_temperature;
@@ -68,7 +68,7 @@ float read_light()
     }
 
     float delta = biased_random(bias, 40.0f); // max change ±40 lumens
-    float new_light = clamp(last_light + delta, 0.0f, 1000.0f);
+    float new_light = clamp(current_light + delta, 0.0f, 1000.0f);
 
     previous_window_setpoint = last_window_setpoint;
     return new_light;

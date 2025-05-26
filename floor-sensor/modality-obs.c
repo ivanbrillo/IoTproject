@@ -7,7 +7,7 @@
 #include "../led_button_helper.c"
 
 #include "sys/log.h"
-#define LOG_MODULE "App"
+#define LOG_MODULE "MODALITY_OBS"
 #define LOG_LEVEL LOG_LEVEL_INFO
 
 static coap_observee_t *obs;

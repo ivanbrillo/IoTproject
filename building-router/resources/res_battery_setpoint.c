@@ -6,18 +6,17 @@
 #include "sys/log.h"
 #include <stdlib.h> // For strtol
 
-#define LOG_MODULE "App"
+#define LOG_MODULE "BATTERY_RES"
 #define LOG_LEVEL LOG_LEVEL_INFO
 
 #define MIN_KW_BATTERY -10.0f
 #define MAX_KW_BATTERY 10.0f
 
 float last_battery_setpoint = 0.0f;
-extern float last_soc;
+extern float current_soc;
 
 static void res_post_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
 
-/* A simple actuator example, depending on the color query parameter and post variable mode, corresponding led is activated or deactivated */
 RESOURCE(res_battery_setpoint,
          "title=\"BatteryControl: setpoint=FLOAT], POST\";rt=\"battery-control\"",
          NULL,
@@ -37,7 +36,7 @@ res_post_handler(coap_message_t *request, coap_message_t *response,
 
   if ((len = coap_get_query_variable(request, "setpoint", &setpoint_query)))
   {
-    char temp_str[16]; // increase buffer to accommodate decimal values
+    char temp_str[16]; 
     memcpy(temp_str, setpoint_query, len);
     temp_str[len] = '\0';
 
@@ -46,7 +45,7 @@ res_post_handler(coap_message_t *request, coap_message_t *response,
     if (endptr != temp_str && *endptr == '\0' && setpoint >= MIN_KW_BATTERY && setpoint <= MAX_KW_BATTERY) // suppose the battery is inside this functional limit
     {
 
-      if (last_soc <= 0.1f && setpoint < 0.0f)
+      if (current_soc <= 0.1f && setpoint < 0.0f)
       {
         // Battery is empty, cannot set negative setpoint
         snprintf((char *)buffer, preferred_size, "{\"error_code\":\"BATTERY_EMPTY\",\"message\":\"cannot set negative setpoint\"}");
@@ -56,7 +55,7 @@ res_post_handler(coap_message_t *request, coap_message_t *response,
         return;
       }
 
-      if (last_soc >= 99.0f && setpoint > 0.0f)
+      if (current_soc >= 99.0f && setpoint > 0.0f)
       {
         // Battery is full, cannot set positive setpoint
         snprintf((char *)buffer, preferred_size, "{\"error_code\":\"BATTERY_FULL\",\"message\":\"cannot set positive setpoint\"}");
