@@ -138,16 +138,13 @@ public class UserInterface {
     }
 
     public void handleBatteryRequest() {
-        int floor = getFloor();
-        if (floor == -1)
-            return;
 
         System.out.print("Enter battery setpoint: ");
         String setpoint = scanner.nextLine().trim();
 
         if (isValidInput(setpoint)) {
-            logger.info("User requested Battery command for floor {}: setpoint={}", floor, setpoint);
-            requestManager.sendBatteryCommand(floor, setpoint);
+            logger.info("User requested Battery command for floor 0: setpoint={}", setpoint);
+            requestManager.sendBatteryCommand(setpoint);
         } else {
             System.out.println("Invalid input. Please try again.");
             logger.warn("Invalid Battery command input received");

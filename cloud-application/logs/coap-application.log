@@ -532,3 +532,489 @@ java.lang.NullPointerException: null
 2025-05-26 16:47:51.781 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 1) Command Response - Code: 2.04, Text: {"setpoint":1.72}, Success: true
 2025-05-26 16:47:54.346 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v40): Light=283.52, Temp=19.838 (Floor 1)
 2025-05-26 16:47:59.420 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 16:51:51.952 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 16:51:51.957 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:51:51.958 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 16:51:51.959 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 16:51:52.368 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 16:51:52.368 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 16:51:52.376 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 16:51:52.377 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 16:51:52.379 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:51:52.379 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 16:51:52.379 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 16:51:52.379 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 16:51:52.472 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 16:51:52.472 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 16:51:52.482 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 16:51:52.483 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 16:51:52.484 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 1 floors
+2025-05-26 16:51:52.484 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 16:51:52.485 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 16:51:52.485 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 16:51:52.485 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 16:51:52.486 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 16:51:52.486 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 16:51:52.486 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 16:51:52.561 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 16:51:52.564 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=3.33
+2025-05-26 16:52:06.535 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 16:57:31.462 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 16:57:31.466 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:57:31.467 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 16:57:31.469 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 16:57:31.873 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 16:57:31.873 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 16:57:31.874 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 16:57:31.874 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 16:57:31.876 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:57:31.876 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 16:57:31.876 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 16:57:31.876 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 16:57:31.962 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 16:57:31.962 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 16:57:31.962 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 16:57:31.963 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 16:57:31.963 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 1 floors
+2025-05-26 16:57:31.963 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 16:57:31.963 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 16:57:31.964 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 16:57:31.964 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 16:57:31.967 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 16:57:31.967 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 16:57:31.967 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 16:58:01.999 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 16:58:02.002 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=8.00
+2025-05-26 16:58:39.045 [Thread-1] ERROR com.pi.CoapObserverManager - Power observation failed or was canceled
+2025-05-26 16:58:53.169 [Thread-1] ERROR com.pi.CoapObserverManager - Battery SOC observation failed or was canceled
+2025-05-26 16:59:02.047 [Thread-1] ERROR com.pi.CoapObserverManager - Floor 1 sensors observation failed or was canceled
+2025-05-26 16:59:25.244 [pool-1-thread-1] WARN  com.pi.CoapRequestManager - No response received from Battery (Floor 1) device
+2025-05-26 16:59:25.251 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 16:59:25.251 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=-6.00
+2025-05-26 17:00:55.409 [pool-1-thread-1] WARN  com.pi.CoapRequestManager - No response received from Battery (Floor 1) device
+2025-05-26 17:00:55.424 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 17:00:55.424 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=3.32
+2025-05-26 17:01:05.449 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:01:15.668 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:01:15.672 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:01:15.672 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:01:15.673 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:01:16.035 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:01:16.035 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:01:16.036 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:01:16.036 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:01:16.037 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:01:16.038 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:01:16.038 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 17:01:16.039 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 17:01:16.039 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 17:01:16.039 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 17:01:46.088 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 17:01:46.092 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=3.28
+2025-05-26 17:02:02.286 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:05:27.327 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:05:27.331 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:05:27.332 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:05:27.332 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:05:27.787 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:05:27.787 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:05:27.788 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:05:27.789 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:05:27.790 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:05:27.790 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:05:27.790 [main] ERROR com.pi.CoapClientApplication - Network connectivity test failed - cannot reach IoT devices - shutdown
+2025-05-26 17:05:27.792 [main] ERROR com.pi.CoapClientApplication - Application failed to start
+java.lang.RuntimeException: Network connectivity check failed - cannot reach IoT devices
+	at com.pi.CoapClientApplication.checkNetworkConnectivity(CoapClientApplication.java:76)
+	at com.pi.CoapClientApplication.initialize(CoapClientApplication.java:59)
+	at com.pi.CoapClientApplication.run(CoapClientApplication.java:27)
+	at com.pi.CoapClientApplication.main(CoapClientApplication.java:22)
+2025-05-26 17:05:27.792 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 17:05:27.792 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 17:05:27.792 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 17:05:27.792 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 17:05:27.792 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 17:05:27.792 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 17:05:27.792 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:05:27.794 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 17:05:27.794 [main] INFO  com.pi.CoapClientApplication - Stopping battery control service
+2025-05-26 17:05:27.794 [main] INFO  c.p.B.BatteryControlService - Stopped automatic battery control
+2025-05-26 17:05:27.794 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 17:05:27.794 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 17:05:27.795 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:11:07.012 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:11:07.016 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:11:07.016 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:11:07.017 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:11:07.441 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:11:07.441 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:11:07.442 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:11:07.442 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:11:07.444 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:11:07.444 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:11:07.444 [main] INFO  com.pi.CoapClientApplication - Network connectivity check passed
+2025-05-26 17:11:07.444 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 17:11:07.444 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 17:11:07.497 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 17:11:07.497 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 17:11:07.497 [main] WARN  com.pi.CoapObserverManager - No sensor IP found for floor 0
+2025-05-26 17:11:07.497 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 17:11:07.497 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 17:11:07.498 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 2 floors
+2025-05-26 17:11:07.498 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 17:11:07.498 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 17:11:07.498 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 17:11:07.498 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 17:11:07.499 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 17:11:07.499 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 17:11:07.499 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 17:11:22.565 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:12:25.641 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:12:25.644 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:12:25.645 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:12:25.646 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:12:25.981 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:12:25.981 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:12:25.982 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:12:25.982 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:12:25.984 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:12:25.984 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:12:25.984 [main] INFO  com.pi.CoapClientApplication - Network connectivity check passed
+2025-05-26 17:12:25.984 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 17:12:25.984 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 17:12:26.035 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 17:12:26.039 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 17:12:26.040 [main] WARN  com.pi.CoapObserverManager - No sensor IP found for floor 0
+2025-05-26 17:12:26.040 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 17:12:26.041 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 17:12:26.041 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 2 floors
+2025-05-26 17:12:26.041 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 17:12:26.041 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 17:12:26.041 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 17:12:26.041 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 17:12:26.043 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 17:12:26.050 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 17:12:26.052 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 17:12:56.127 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 17:12:56.128 [pool-1-thread-1] ERROR com.pi.CoapRequestManager - No battery device found for floor 0
+2025-05-26 17:13:12.615 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:13:22.174 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:13:22.178 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:13:22.178 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:13:22.179 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:13:22.591 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:13:22.591 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:13:22.592 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:13:22.592 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:13:22.594 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:13:22.594 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:13:22.594 [main] INFO  com.pi.CoapClientApplication - Network connectivity check passed
+2025-05-26 17:13:22.594 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 17:13:22.595 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 17:13:22.659 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 17:13:22.666 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 17:13:22.666 [main] WARN  com.pi.CoapObserverManager - No sensor IP found for floor 0
+2025-05-26 17:13:22.666 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 17:13:22.667 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 17:13:22.669 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 2 floors
+2025-05-26 17:13:22.669 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 17:13:22.673 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 17:13:22.673 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 17:13:22.673 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 17:13:22.675 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 17:13:22.675 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 17:13:22.675 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 17:13:24.608 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:14:03.042 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:14:03.048 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:14:03.048 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:14:03.049 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:14:03.428 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:14:03.429 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:14:03.429 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:14:03.430 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:14:03.431 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:14:03.431 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:14:03.432 [main] INFO  com.pi.CoapClientApplication - Network connectivity check passed
+2025-05-26 17:14:03.432 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 17:14:03.432 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 17:14:03.489 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 17:14:03.489 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 17:14:03.489 [main] WARN  com.pi.CoapObserverManager - No sensor IP found for floor 0
+2025-05-26 17:14:03.489 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 17:14:03.492 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 17:14:03.492 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 2 floors
+2025-05-26 17:14:03.492 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 17:14:03.492 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 17:14:03.492 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 17:14:03.492 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 17:14:03.494 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 17:14:03.498 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 17:14:03.498 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 17:14:04.525 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:15:15.157 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:15:15.162 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:15:15.162 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:15:15.163 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:15:15.553 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:15:15.554 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:15:15.555 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:15:15.555 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:15:15.557 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:15:15.557 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:15:15.557 [main] ERROR com.pi.CoapClientApplication - Network connectivity test failed - cannot reach IoT devices - shutdown
+2025-05-26 17:15:15.559 [main] ERROR com.pi.CoapClientApplication - Application failed to start
+java.lang.RuntimeException: Network connectivity check failed - cannot reach IoT devices
+	at com.pi.CoapClientApplication.checkNetworkConnectivity(CoapClientApplication.java:75)
+	at com.pi.CoapClientApplication.initialize(CoapClientApplication.java:59)
+	at com.pi.CoapClientApplication.run(CoapClientApplication.java:27)
+	at com.pi.CoapClientApplication.main(CoapClientApplication.java:22)
+2025-05-26 17:15:15.559 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 17:15:15.559 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 17:15:15.559 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 17:15:15.559 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 17:15:15.559 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 17:15:15.559 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 17:15:15.559 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:15:15.561 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 17:15:15.561 [main] INFO  com.pi.CoapClientApplication - Stopping battery control service
+2025-05-26 17:15:15.562 [main] INFO  c.p.B.BatteryControlService - Stopped automatic battery control
+2025-05-26 17:15:15.562 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 17:15:15.562 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 17:15:15.563 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:15:51.362 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:15:51.368 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:15:51.368 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:15:51.369 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:15:51.803 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:15:51.804 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:15:51.805 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:15:51.805 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:15:51.808 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:15:51.808 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:15:51.811 [main] ERROR com.pi.CoapClientApplication - Network connectivity test failed - cannot reach IoT devices - shutdown
+2025-05-26 17:15:51.812 [main] ERROR com.pi.CoapClientApplication - Application failed to start
+java.lang.RuntimeException: Network connectivity check failed - cannot reach IoT devices
+	at com.pi.CoapClientApplication.checkNetworkConnectivity(CoapClientApplication.java:75)
+	at com.pi.CoapClientApplication.initialize(CoapClientApplication.java:59)
+	at com.pi.CoapClientApplication.run(CoapClientApplication.java:27)
+	at com.pi.CoapClientApplication.main(CoapClientApplication.java:22)
+2025-05-26 17:15:51.812 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 17:15:51.812 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 17:15:51.812 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 17:15:51.812 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 17:15:51.812 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 17:15:51.812 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 17:15:51.812 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:15:51.814 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 17:15:51.814 [main] INFO  com.pi.CoapClientApplication - Stopping battery control service
+2025-05-26 17:15:51.814 [main] INFO  c.p.B.BatteryControlService - Stopped automatic battery control
+2025-05-26 17:15:51.814 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 17:15:51.815 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 17:15:51.815 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:15:55.535 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:15:55.539 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:15:55.540 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:15:55.541 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:15:55.976 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:15:55.976 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:15:55.977 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:15:55.977 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:15:55.979 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:15:55.979 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:15:55.982 [main] ERROR com.pi.CoapClientApplication - Network connectivity test failed - cannot reach IoT devices - shutdown
+2025-05-26 17:15:55.983 [main] ERROR com.pi.CoapClientApplication - Application failed to start
+java.lang.RuntimeException: Network connectivity check failed - cannot reach IoT devices
+	at com.pi.CoapClientApplication.checkNetworkConnectivity(CoapClientApplication.java:75)
+	at com.pi.CoapClientApplication.initialize(CoapClientApplication.java:59)
+	at com.pi.CoapClientApplication.run(CoapClientApplication.java:27)
+	at com.pi.CoapClientApplication.main(CoapClientApplication.java:22)
+2025-05-26 17:15:55.984 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 17:15:55.984 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 17:15:55.984 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 17:15:55.984 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 17:15:55.984 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 17:15:55.984 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 17:15:55.984 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:15:55.985 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 17:15:55.985 [main] INFO  com.pi.CoapClientApplication - Stopping battery control service
+2025-05-26 17:15:55.986 [main] INFO  c.p.B.BatteryControlService - Stopped automatic battery control
+2025-05-26 17:15:55.986 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 17:15:55.986 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 17:15:55.987 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:16:11.215 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:16:11.219 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:16:11.220 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:16:11.220 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:16:11.642 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:16:11.643 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:16:11.643 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:16:11.644 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:16:11.645 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:16:11.645 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:16:11.648 [main] ERROR com.pi.CoapClientApplication - Network connectivity test failed - cannot reach IoT devices - shutdown
+2025-05-26 17:16:11.649 [main] ERROR com.pi.CoapClientApplication - Application failed to start
+java.lang.RuntimeException: Network connectivity check failed - cannot reach IoT devices
+	at com.pi.CoapClientApplication.checkNetworkConnectivity(CoapClientApplication.java:75)
+	at com.pi.CoapClientApplication.initialize(CoapClientApplication.java:59)
+	at com.pi.CoapClientApplication.run(CoapClientApplication.java:27)
+	at com.pi.CoapClientApplication.main(CoapClientApplication.java:22)
+2025-05-26 17:16:11.649 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 17:16:11.650 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 17:16:11.650 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 17:16:11.650 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 17:16:11.650 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 17:16:11.650 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 17:16:11.650 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:16:11.651 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 17:16:11.652 [main] INFO  com.pi.CoapClientApplication - Stopping battery control service
+2025-05-26 17:16:11.652 [main] INFO  c.p.B.BatteryControlService - Stopped automatic battery control
+2025-05-26 17:16:11.652 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 17:16:11.652 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 17:16:11.653 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:20:11.100 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:20:11.105 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:20:11.105 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:20:11.106 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:20:11.519 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:20:11.519 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:20:11.520 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:20:11.521 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:20:11.523 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:20:11.523 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:20:11.525 [main] ERROR com.pi.CoapClientApplication - Network connectivity test failed - cannot reach IoT devices - shutdown
+2025-05-26 17:20:11.527 [main] ERROR com.pi.CoapClientApplication - Application failed to start
+java.lang.RuntimeException: Network connectivity check failed - cannot reach IoT devices
+	at com.pi.CoapClientApplication.checkNetworkConnectivity(CoapClientApplication.java:78)
+	at com.pi.CoapClientApplication.initialize(CoapClientApplication.java:59)
+	at com.pi.CoapClientApplication.run(CoapClientApplication.java:27)
+	at com.pi.CoapClientApplication.main(CoapClientApplication.java:22)
+2025-05-26 17:20:11.527 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 17:20:11.527 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 17:20:11.527 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 17:20:11.527 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 17:20:11.527 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 17:20:11.528 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 17:20:11.528 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:20:11.529 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 17:20:11.529 [main] INFO  com.pi.CoapClientApplication - Stopping battery control service
+2025-05-26 17:20:11.529 [main] INFO  c.p.B.BatteryControlService - Stopped automatic battery control
+2025-05-26 17:20:11.529 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 17:20:11.529 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 17:20:11.531 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:22:02.764 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:22:02.768 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:22:02.769 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:22:02.770 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:22:03.158 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:22:03.159 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:22:03.159 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:22:03.160 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:22:03.167 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:22:03.168 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:22:03.170 [main] ERROR com.pi.CoapClientApplication - Network connectivity test failed - cannot reach IoT devices - shutdown
+2025-05-26 17:22:03.171 [main] ERROR com.pi.CoapClientApplication - Application failed to start
+java.lang.RuntimeException: Network connectivity check failed - cannot reach IoT devices
+	at com.pi.CoapClientApplication.checkNetworkConnectivity(CoapClientApplication.java:75)
+	at com.pi.CoapClientApplication.initialize(CoapClientApplication.java:59)
+	at com.pi.CoapClientApplication.run(CoapClientApplication.java:27)
+	at com.pi.CoapClientApplication.main(CoapClientApplication.java:22)
+2025-05-26 17:22:03.172 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 17:22:03.172 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 17:22:03.172 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 17:22:03.172 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 17:22:03.172 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 17:22:03.172 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 17:22:03.172 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:22:03.173 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 17:22:03.174 [main] INFO  com.pi.CoapClientApplication - Stopping battery control service
+2025-05-26 17:22:03.174 [main] INFO  c.p.B.BatteryControlService - Stopped automatic battery control
+2025-05-26 17:22:03.174 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 17:22:03.174 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 17:22:03.175 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:24:57.386 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:24:57.390 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:24:57.390 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:24:57.391 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:24:57.787 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:24:57.787 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:24:57.788 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:24:57.788 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:24:57.790 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:24:57.791 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:24:57.795 [main] ERROR com.pi.CoapClientApplication - Network connectivity test failed - cannot reach IoT devices - shutdown
+2025-05-26 17:24:57.798 [main] ERROR com.pi.CoapClientApplication - Application failed to start
+java.lang.RuntimeException: Network connectivity check failed - cannot reach IoT devices
+	at com.pi.CoapClientApplication.checkNetworkConnectivity(CoapClientApplication.java:75)
+	at com.pi.CoapClientApplication.initialize(CoapClientApplication.java:59)
+	at com.pi.CoapClientApplication.run(CoapClientApplication.java:27)
+	at com.pi.CoapClientApplication.main(CoapClientApplication.java:22)
+2025-05-26 17:24:57.798 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 17:24:57.798 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 17:24:57.798 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 17:24:57.798 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 17:24:57.798 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 17:24:57.798 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 17:24:57.798 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:24:57.799 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 17:24:57.800 [main] INFO  com.pi.CoapClientApplication - Stopping battery control service
+2025-05-26 17:24:57.800 [main] INFO  c.p.B.BatteryControlService - Stopped automatic battery control
+2025-05-26 17:24:57.800 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 17:24:57.800 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 17:24:57.801 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:25:09.926 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:25:09.930 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:25:09.931 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:25:09.933 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:25:10.294 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:25:10.295 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:25:10.296 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:25:10.296 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:25:10.298 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:25:10.298 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:25:10.298 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 17:25:10.298 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 17:25:10.344 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 17:25:10.345 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 17:25:10.345 [main] WARN  com.pi.CoapObserverManager - No sensor IP found for floor 0
+2025-05-26 17:25:10.345 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 17:25:10.345 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 17:25:10.345 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 2 floors
+2025-05-26 17:25:10.345 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 17:25:10.346 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 17:25:10.346 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 17:25:10.346 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 17:25:10.348 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 17:25:10.348 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 17:25:10.348 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 17:25:10.491 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v0): SOC=0.0
+2025-05-26 17:25:10.513 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v0): Active=1.788, Reactive=0.12
+2025-05-26 17:25:10.553 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v0): Light=208.56, Temp=20.103 (Floor 1)
+2025-05-26 17:25:10.584 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v1): Active=4.765, Reactive=0.279
+2025-05-26 17:25:10.593 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v1): SOC=0.0
+2025-05-26 17:25:10.639 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v1): Light=227.52, Temp=20.456 (Floor 1)
+2025-05-26 17:25:17.373 [main] INFO  com.pi.UserInterface - User requested Battery command for floor 0: setpoint=12
+2025-05-26 17:25:17.373 [main] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=12
+2025-05-26 17:25:17.379 [main] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 4.00, Text: {"error_code":"INVALID_SETPOINT"}, Success: false
+2025-05-26 17:25:20.598 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v2): Active=2.654, Reactive=0.177
+2025-05-26 17:25:20.611 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v2): SOC=0.0
+2025-05-26 17:25:20.664 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v2): Light=225.0, Temp=20.315 (Floor 1)
+2025-05-26 17:25:21.063 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 17:25:21.063 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 17:25:21.063 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 17:25:21.064 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: sensors_floor_1
+2025-05-26 17:25:21.064 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: battery_soc
+2025-05-26 17:25:21.064 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: power
+2025-05-26 17:25:21.064 [main] INFO  com.pi.CoapObserverManager - Shutdown client: sensors_floor_1
+2025-05-26 17:25:21.064 [main] INFO  com.pi.CoapObserverManager - Shutdown client: battery_soc
+2025-05-26 17:25:21.064 [main] INFO  com.pi.CoapObserverManager - Shutdown client: power
+2025-05-26 17:25:21.064 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 17:25:21.064 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 17:25:21.064 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 17:25:21.064 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=2, power=2, battery=2}
+2025-05-26 17:25:21.067 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 17:25:21.067 [main] INFO  com.pi.CoapClientApplication - Stopping battery control service
+2025-05-26 17:25:21.067 [main] INFO  c.p.B.BatteryControlService - Stopped automatic battery control
+2025-05-26 17:25:21.067 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 17:25:21.068 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 17:25:21.069 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal

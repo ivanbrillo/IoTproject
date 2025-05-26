@@ -64,6 +64,8 @@ public class CoapClientApplication {
         logger.info("Initialization complete!");
     }
 
+
+
     private void startApplication() {
         logger.info("Starting main application loop");
         boolean running = true;
