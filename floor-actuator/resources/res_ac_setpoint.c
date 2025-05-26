@@ -42,8 +42,9 @@ res_post_handler(coap_message_t *request, coap_message_t *response,
       if (ac_on == 0)
       {
         // AC turned OFF — skip setpoint handling
-        snprintf((char *)buffer, preferred_size, "AC turned OFF");
+        snprintf((char *)buffer, preferred_size, "{\"status\":\"AC_OFF\"}");
         coap_set_status_code(response, CHANGED_2_04);
+        coap_set_header_content_format(response, APPLICATION_JSON);
         coap_set_payload(response, buffer, strlen((char *)buffer));
         return;
       }
@@ -60,15 +61,17 @@ res_post_handler(coap_message_t *request, coap_message_t *response,
         if (endptr != temp_str && *endptr == '\0' && setpoint >= 16.0f && setpoint <= 30.0f)
         {
           // Apply setpoint and power ON
-          snprintf((char *)buffer, preferred_size, "AC ON. Setpoint: %.2f°C", setpoint);
+          snprintf((char *)buffer, preferred_size, "{\"status\":\"AC_ON\",\"setpoint\":%.2f}", setpoint);
           coap_set_status_code(response, CHANGED_2_04);
+          coap_set_header_content_format(response, APPLICATION_JSON);
           coap_set_payload(response, buffer, strlen((char *)buffer));
           return;
         }
         else
         {
           coap_set_status_code(response, BAD_REQUEST_4_00);
-          snprintf((char *)buffer, preferred_size, "Invalid setpoint: must be 16.0–30.0");
+          snprintf((char *)buffer, preferred_size, "{\"error_code\":\"INVALID_SETPOINT\"}");
+          coap_set_header_content_format(response, APPLICATION_JSON);
           coap_set_payload(response, buffer, strlen((char *)buffer));
           return;
         }
@@ -76,7 +79,8 @@ res_post_handler(coap_message_t *request, coap_message_t *response,
       else
       {
         coap_set_status_code(response, BAD_REQUEST_4_00);
-        snprintf((char *)buffer, preferred_size, "Missing 'setpoint' parameter");
+        snprintf((char *)buffer, preferred_size, "{\"error_code\":\"MISSING_SETPOINT\"}");
+        coap_set_header_content_format(response, APPLICATION_JSON);
         coap_set_payload(response, buffer, strlen((char *)buffer));
         return;
       }
@@ -84,7 +88,8 @@ res_post_handler(coap_message_t *request, coap_message_t *response,
     else
     {
       coap_set_status_code(response, BAD_REQUEST_4_00);
-      snprintf((char *)buffer, preferred_size, "Invalid 'on' value: must be 0 or 1");
+      snprintf((char *)buffer, preferred_size, "{\"error_code\":\"INVALID_ON_VALUE\"}");
+      coap_set_header_content_format(response, APPLICATION_JSON);
       coap_set_payload(response, buffer, strlen((char *)buffer));
       return;
     }
@@ -92,7 +97,8 @@ res_post_handler(coap_message_t *request, coap_message_t *response,
   else
   {
     coap_set_status_code(response, BAD_REQUEST_4_00);
-    snprintf((char *)buffer, preferred_size, "Missing 'on' parameter");
+    snprintf((char *)buffer, preferred_size, "{\"error_code\":\"MISSING_ON_PARAMETER\"}");
+    coap_set_header_content_format(response, APPLICATION_JSON);
     coap_set_payload(response, buffer, strlen((char *)buffer));
     return;
   }

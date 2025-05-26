@@ -1,9 +1,10 @@
+/home/iot_ubuntu_intel/contiki-ng/examples/project/cloud-application/src/main/java/com/pi/BatteryControl/ElectricityPriceProvider.java
+/home/iot_ubuntu_intel/contiki-ng/examples/project/cloud-application/src/main/java/com/pi/BatteryControl/BatteryControlAlgorithm.java
 /home/iot_ubuntu_intel/contiki-ng/examples/project/cloud-application/src/main/java/com/pi/CoapRequestManager.java
-/home/iot_ubuntu_intel/contiki-ng/examples/project/cloud-application/src/main/java/com/pi/MyServer.java
 /home/iot_ubuntu_intel/contiki-ng/examples/project/cloud-application/src/main/java/com/pi/UserInterface.java
 /home/iot_ubuntu_intel/contiki-ng/examples/project/cloud-application/src/main/java/com/pi/FloorManager.java
 /home/iot_ubuntu_intel/contiki-ng/examples/project/cloud-application/src/main/java/com/pi/CoapClientApplication.java
+/home/iot_ubuntu_intel/contiki-ng/examples/project/cloud-application/src/main/java/com/pi/BatteryControl/BatteryControlService.java
 /home/iot_ubuntu_intel/contiki-ng/examples/project/cloud-application/src/main/java/com/pi/LogViewer.java
 /home/iot_ubuntu_intel/contiki-ng/examples/project/cloud-application/src/main/java/com/pi/DatabaseManager.java
 /home/iot_ubuntu_intel/contiki-ng/examples/project/cloud-application/src/main/java/com/pi/CoapObserverManager.java
-/home/iot_ubuntu_intel/contiki-ng/examples/project/cloud-application/src/main/java/com/pi/CoAPResourceExample.java

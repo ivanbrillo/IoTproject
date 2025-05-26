@@ -6,7 +6,6 @@ import org.eclipse.californium.core.CoapObserveRelation;
 import org.eclipse.californium.core.CoapResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.pi.DatabaseManager;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.Map;

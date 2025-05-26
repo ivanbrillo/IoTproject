@@ -1,7 +1,7 @@
 #include "contiki.h"
-#include "net/routing/routing.h"
-#include "net/netstack.h"
-#include "net/ipv6/simple-udp.h"
+//#include "net/routing/routing.h"
+//#include "net/netstack.h"
+//#include "net/ipv6/simple-udp.h"
 #include <stdint.h>
 #include "coap-engine.h"
 #include "sys/log.h"
@@ -11,7 +11,7 @@
 #include <locale.h>
 
 #define LOG_MODULE "BUILDING_ROUTER"
-#define LOG_LEVEL LOG_LEVEL_WARN
+#define LOG_LEVEL LOG_LEVEL_INFO
 
 extern coap_resource_t res_power;
 extern coap_resource_t res_battery_setpoint;

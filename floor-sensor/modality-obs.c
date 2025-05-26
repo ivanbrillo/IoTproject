@@ -6,6 +6,10 @@
 #include "modality-obs.h"
 #include "../led_button_helper.c"
 
+#include "sys/log.h"
+#define LOG_MODULE "App"
+#define LOG_LEVEL LOG_LEVEL_INFO
+
 static coap_observee_t *obs;
 #define OBS_RESOURCE_URI "energy-modality"
 
@@ -22,8 +26,7 @@ notification_callback(coap_observee_t *obs, void *notification,
   int len = 0;
   const uint8_t *payload = NULL;
 
-  printf("Notification handler\n");
-  printf("Observee URI: %s\n", obs->url);
+  LOG_INFO("Observee URI: %s\n", obs->url);
   if (notification)
   {
     len = coap_get_payload(notification, &payload);
@@ -38,38 +41,38 @@ notification_callback(coap_observee_t *obs, void *notification,
 
       if (mod <= 2)
       {
-        printf("Modality PARSED: %u\n", mod);
+        LOG_INFO("Modality PARSED: %u\n", mod);
         modality = mod;
         set_color_led(modality);
       }
       else
       {
-        printf("Unknown modality value: %u\n", modality);
+        LOG_INFO("Unknown modality value: %u\n", modality);
       }
     }
     else
     {
-      printf("No payload received to parse modality\n");
+      LOG_INFO("No payload received to parse modality\n");
     }
     break;
 
   case OBSERVE_OK:
-    printf("OBSERVE_OK: %*s\n", len, (char *)payload);
+    LOG_INFO("OBSERVE_OK: %*s\n", len, (char *)payload);
     break;
 
   case OBSERVE_NOT_SUPPORTED:
-    printf("OBSERVE_NOT_SUPPORTED: %*s\n", len, (char *)payload);
+    LOG_INFO("OBSERVE_NOT_SUPPORTED: %*s\n", len, (char *)payload);
     obs = NULL;
     break;
 
   case ERROR_RESPONSE_CODE:
-    printf("ERROR_RESPONSE_CODE: %*s\n", len, (char *)payload);
+    LOG_INFO("ERROR_RESPONSE_CODE: %*s\n", len, (char *)payload);
     obs = NULL;
     break;
 
   case NO_REPLY_FROM_SERVER:
-    printf("NO_REPLY_FROM_SERVER: removing observe registration with token %x%x\n",
-           obs->token[0], obs->token[1]);
+    LOG_INFO("NO_REPLY_FROM_SERVER: removing observe registration with token %x%x\n",
+             obs->token[0], obs->token[1]);
     obs = NULL;
     break;
   }
@@ -79,13 +82,13 @@ void toggle_observation(coap_endpoint_t *server_ep)
 {
   if (obs)
   {
-    printf("Stopping observation\n");
+    LOG_INFO("Stopping observation\n");
     coap_obs_remove_observee(obs);
     obs = NULL;
   }
   else
   {
-    printf("Starting observation\n");
+    LOG_INFO("Starting observation\n");
     obs = coap_obs_request_registration(server_ep, OBS_RESOURCE_URI, notification_callback, NULL);
   }
 }

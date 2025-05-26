@@ -75,11 +75,11 @@ PROCESS_THREAD(er_example_client, ev, data)
       last_ac_setpoint = update_temp_setpoint(last_temperature, last_ac_setpoint, temperature_required, modality);
       last_window_setpoint = update_window_setpoint(last_light, last_window_setpoint, light_required);
 
-      printf("Temp: %.2fC | AC Setpoint: %.2fC | Temp target: %.2f\n",
-             last_temperature, last_ac_setpoint, temperature_required);
+      LOG_INFO("Temp: %.2fC | AC Setpoint: %.2fC | Temp target: %.2f\n",
+               last_temperature, last_ac_setpoint, temperature_required);
 
-      printf("Light: %.2f lm | Window Setpoint: %.2f | Light target: %.2f lm\n",
-             last_light, last_window_setpoint, light_required);
+      LOG_INFO("Light: %.2f lm | Window Setpoint: %.2f | Light target: %.2f lm\n",
+               last_light, last_window_setpoint, light_required);
 
       // --- AC control request ---
       coap_init_message(request, COAP_TYPE_CON, COAP_POST, 0);

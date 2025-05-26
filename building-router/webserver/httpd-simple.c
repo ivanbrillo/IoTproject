@@ -60,7 +60,7 @@
 #endif /* WEBSERVER_CONF_CFS_URLCONV */
 
 #define STATE_WAITING 0
-#define STATE_OUTPUT  1
+#define STATE_OUTPUT  0
 
 MEMB(conns, struct httpd_state, CONNS);
 

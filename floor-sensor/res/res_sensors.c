@@ -53,8 +53,8 @@ res_event_handler(void)
   /* Usually a condition is defined under with subscribers are notified, e.g., event was above a threshold. */
   if (1)
   {
-    printf("LIGHT %.3f\n", last_light);
-    printf("TEMP %.3f\n", last_temperature);
+    LOG_INFO("LIGHT %.3f\n", last_light);
+    LOG_INFO("TEMP %.3f\n", last_temperature);
 
     /* Notify the registered observers which will trigger the res_get_handler to create the response. */
     coap_notify_observers(&res_sensors);

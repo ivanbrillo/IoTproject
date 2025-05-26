@@ -9,7 +9,7 @@ PLATFORMS_EXCLUDE = z1
 include $(CONTIKI)/Makefile.dir-variables
 MODULES += $(CONTIKI_NG_SERVICES_DIR)/rpl-border-router
 # Include webserver module
-MODULES_REL += webserver
+# MODULES_REL += webserver
 MODULES_REL += ./resources
 
 MODULES_REL += /home/iot_ubuntu_intel/.local/lib/python3.10/site-packages/emlearn

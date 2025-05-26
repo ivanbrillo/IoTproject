@@ -1,6 +1,9 @@
 #include "coap-engine.h"
 #include "coap-blocking-api.h"
 
+#include "sys/log.h"
+#define LOG_MODULE "App"
+#define LOG_LEVEL LOG_LEVEL_APP
 
 #define NUMBER_OF_URLS 2
 
@@ -18,7 +21,7 @@ void client_chunk_handler(coap_message_t *response)
     return;
   }
   int len = coap_get_payload(response, &chunk);
-  printf("%.*s \n", len, (char *)chunk);
+  LOG_INFO("%.*s \n", len, (char *)chunk);
 }
 
 /*----------------------------------------------------------------------------*/

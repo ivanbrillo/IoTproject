@@ -3,3 +3,4 @@
 /floor-actuator/build/** 
 /floor-sensor/build/** 
 
+/cloud-application/target

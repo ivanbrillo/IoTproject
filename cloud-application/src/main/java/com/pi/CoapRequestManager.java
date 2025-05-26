@@ -108,7 +108,6 @@ public class CoapRequestManager {
     }
     
     public CoapResponse sendCustomRequest(String url, String method) {
-        // ...existing code...
         CoapClient client = new CoapClient(url);
         CoapResponse response = null;
         

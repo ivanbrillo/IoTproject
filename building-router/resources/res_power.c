@@ -9,7 +9,7 @@
 #include "ml-prediction.h"
 
 #define LOG_MODULE "App"
-#define LOG_LEVEL LOG_LEVEL_APP
+#define LOG_LEVEL LOG_LEVEL_INFO
 
 
 float last_prediction = 0.0f;
@@ -56,7 +56,7 @@ res_event_handler(void)
   /* Usually a condition is defined under with subscribers are notified, e.g., event was above a threshold. */
   if (1)
   {
-    printf("PREDICTION %u: %.3f LAST: {%.3f, %.3f}\n", (unsigned)event_counter, last_prediction, last_reading[0], last_reading[1]);
+    LOG_INFO("PREDICTION %u: %.3f LAST: {%.3f, %.3f}\n", (unsigned)event_counter, last_prediction, last_reading[0], last_reading[1]);
 
     /* Notify the registered observers which will trigger the res_get_handler to create the response. */
     coap_notify_observers(&res_power);

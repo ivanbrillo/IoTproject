@@ -37,25 +37,29 @@ res_post_handler(coap_message_t *request, coap_message_t *response,
 
     if (endptr == temp_str || *endptr != '\0') {
       coap_set_status_code(response, BAD_REQUEST_4_00);
-      snprintf((char *)buffer, preferred_size, "Invalid input: not a float");
+      snprintf((char *)buffer, preferred_size, "{\"error_code\":\"INVALID_INPUT\",\"message\":\"setpoint not a float\"}");
+      coap_set_header_content_format(response, APPLICATION_JSON);
       coap_set_payload(response, buffer, strlen((char *)buffer));
       return;
     }
 
     if (value >= 0.0f && value <= 100.0f) {
       // Set global or hardware window opening value here
-      snprintf((char *)buffer, preferred_size, "Window setpoint updated to %.2f%%", value);
+      snprintf((char *)buffer, preferred_size, "{\"status\":\"success\", \"setpoint\":%.2f}", value);
+      coap_set_header_content_format(response, APPLICATION_JSON);
       coap_set_payload(response, buffer, strlen((char *)buffer));
       coap_set_status_code(response, CHANGED_2_04);
     } else {
       coap_set_status_code(response, BAD_REQUEST_4_00);
-      snprintf((char *)buffer, preferred_size, "Invalid value: %.2f (allowed 0–100)", value);
+      snprintf((char *)buffer, preferred_size, "{\"error_code\":\"INVALID_VALUE\"}");
+      coap_set_header_content_format(response, APPLICATION_JSON);
       coap_set_payload(response, buffer, strlen((char *)buffer));
     }
 
   } else {
     coap_set_status_code(response, BAD_REQUEST_4_00);
-    snprintf((char *)buffer, preferred_size, "Missing 'setpoint' parameter");
+    snprintf((char *)buffer, preferred_size, "{\"error_code\":\"MISSING_SETPOINT\"}");
+    coap_set_header_content_format(response, APPLICATION_JSON);
     coap_set_payload(response, buffer, strlen((char *)buffer));
   }
 }

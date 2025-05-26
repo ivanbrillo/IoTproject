@@ -7,7 +7,7 @@
 #include <stdlib.h> // For strtol
 
 #define LOG_MODULE "App"
-#define LOG_LEVEL LOG_LEVEL_RPL
+#define LOG_LEVEL LOG_LEVEL_INFO
 
 #define MIN_KW_BATTERY -10.0f
 #define MAX_KW_BATTERY 10.0f
@@ -49,8 +49,9 @@ res_post_handler(coap_message_t *request, coap_message_t *response,
       if (last_soc <= 0.1f && setpoint < 0.0f)
       {
         // Battery is empty, cannot set negative setpoint
-        snprintf((char *)buffer, preferred_size, "Battery empty, cannot set negative setpoint");
+        snprintf((char *)buffer, preferred_size, "{\"error_code\":\"BATTERY_EMPTY\",\"message\":\"cannot set negative setpoint\"}");
         coap_set_status_code(response, BAD_REQUEST_4_00);
+        coap_set_header_content_format(response, APPLICATION_JSON);
         coap_set_payload(response, buffer, strlen((char *)buffer));
         return;
       }
@@ -58,22 +59,25 @@ res_post_handler(coap_message_t *request, coap_message_t *response,
       if (last_soc >= 99.0f && setpoint > 0.0f)
       {
         // Battery is full, cannot set positive setpoint
-        snprintf((char *)buffer, preferred_size, "Battery full, cannot set positive setpoint");
+        snprintf((char *)buffer, preferred_size, "{\"error_code\":\"BATTERY_FULL\",\"message\":\"cannot set positive setpoint\"}");
         coap_set_status_code(response, BAD_REQUEST_4_00);
+        coap_set_header_content_format(response, APPLICATION_JSON);
         coap_set_payload(response, buffer, strlen((char *)buffer));
         return;
       }
 
       // Apply setpoint and power ON
-      snprintf((char *)buffer, preferred_size, "BATTERY SOC Setpoint: %.2f, last set: %.2f, last soc: %.2f, ", setpoint, last_battery_setpoint, last_soc);
+      snprintf((char *)buffer, preferred_size, "{\"setpoint\":%.2f}", setpoint);
       coap_set_status_code(response, CHANGED_2_04);
+      coap_set_header_content_format(response, APPLICATION_JSON);
       coap_set_payload(response, buffer, strlen((char *)buffer));
       last_battery_setpoint = setpoint; // Update the last setpoint
       return;
     }
 
     coap_set_status_code(response, BAD_REQUEST_4_00);
-    snprintf((char *)buffer, preferred_size, "Invalid SOC setpoint");
+    snprintf((char *)buffer, preferred_size, "{\"error_code\":\"INVALID_SETPOINT\"}");
+    coap_set_header_content_format(response, APPLICATION_JSON);
     coap_set_payload(response, buffer, strlen((char *)buffer));
     return;
   }

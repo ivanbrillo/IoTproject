@@ -9,7 +9,7 @@
 #include "ml-prediction.h"
 
 #define LOG_MODULE "App"
-#define LOG_LEVEL LOG_LEVEL_APP
+#define LOG_LEVEL LOG_LEVEL_INFO
 
 float last_soc = 0.0f;
 
@@ -54,7 +54,7 @@ res_event_handler(void)
   /* Usually a condition is defined under with subscribers are notified, e.g., event was above a threshold. */
   if (1)
   {
-    printf("SOC : %.3f\n", last_soc);
+    LOG_INFO("SOC : %.3f\n", last_soc);
 
     /* Notify the registered observers which will trigger the res_get_handler to create the response. */
     coap_notify_observers(&res_battery_soc);

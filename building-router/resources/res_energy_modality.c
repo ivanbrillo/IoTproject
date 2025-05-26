@@ -9,7 +9,7 @@
 #include "ml-prediction.h"
 
 #define LOG_MODULE "App"
-#define LOG_LEVEL LOG_LEVEL_APP
+#define LOG_LEVEL LOG_LEVEL_INFO
 
 extern float last_prediction;
 int8_t last_modality = -1; // -2: disabled, -1: to be calculated, 0: normal, 1:  light power saving, 2: heavy power saving
@@ -62,7 +62,7 @@ res_event_handler(void)
     if (last_modality != -2)
     {
       // Modality just got disabled
-      printf("Energy Modality disabled\n");
+      LOG_WARN("Energy Modality disabled\n");
       set_color_led(-1); // Turn off LED
 
       if (last_modality != 0)
@@ -81,7 +81,7 @@ res_event_handler(void)
   // Modality just got re-enabled
   if (last_modality == -2)
   {
-    printf("Energy Modality enabled\n");
+    LOG_INFO("Energy Modality enabled\n");
     set_color_led(0); // Temporarily assume 0 until computed below
     // Don't notify yet — wait to compute actual modality
   }
@@ -101,7 +101,7 @@ res_event_handler(void)
   if (last_modality != mod)
   {
     last_modality = mod;
-    printf("Energy Modality changed to %d\n", last_modality);
+    LOG_INFO("Energy Modality changed to %d\n", last_modality);
     set_color_led(mod);
     coap_notify_observers(&res_energy_modality);
   }
