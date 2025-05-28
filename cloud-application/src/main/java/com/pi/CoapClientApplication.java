@@ -64,8 +64,6 @@ public class CoapClientApplication {
         logger.info("Initialization complete!");
     }
 
-
-
     private void startApplication() {
         logger.info("Starting main application loop");
         boolean running = true;
@@ -97,16 +95,19 @@ public class CoapClientApplication {
                         userInterface.handleCustomRequest();
                         break;
                     case 7:
-                        userInterface.handleDataViewing();
+                        userInterface.handleDynamicControlRequest();
                         break;
                     case 8:
+                        userInterface.handleDataViewing();
+                        break;
+                    case 9:
                         userInterface.displaySystemInfo();
                         waitForEnter();
                         break;
-                    case 9:
+                    case 10:
                         userInterface.handleLogViewing();
                         break;
-                    case 10:
+                    case 11:
                         running = false;
                         break;
                     default:

@@ -63,6 +63,26 @@ public class CoapRequestManager {
         sendRequest(url, "Light (Floor " + floor + ")");
     }
 
+    public void sendDynamicControlCommand(int floor, String onState) {
+        String ip = FloorManager.getDeviceIP(floor, "sensor");
+        if (ip == null) {
+            logger.error("No sensor device found for floor {}", floor);
+            System.err.println("No sensor device found for floor " + floor);
+            return;
+        }
+    
+        // Validate onState parameter
+        if (!onState.equals("0") && !onState.equals("1")) {
+            logger.error("Invalid dynamic control state: {}. Must be 0 or 1", onState);
+            System.err.println("Invalid state: " + onState + ". Must be 0 or 1");
+            return;
+        }
+    
+        String url = String.format("coap://[%s]:5683/dynamic-control?on=%s", ip, onState);
+        logger.info("Sending Dynamic Control command to floor {}: on={}", floor, onState);
+        sendRequest(url, "Dynamic Control (Floor " + floor + ")");
+    }
+
     public void sendBatteryCommand(String setpoint, boolean verbose) {
         String ip = FloorManager.getDeviceIP(0, "battery");
         if (ip == null) {

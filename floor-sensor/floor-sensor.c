@@ -45,7 +45,9 @@ extern float temperature_required;
 extern float light_required;
 extern uint8_t modality;
 
-extern coap_resource_t res_light_required, res_temp_required, res_sensors;
+extern coap_resource_t res_light_required, res_temp_required, res_sensors, res_dynamic_control;
+
+extern int dynamic_control;
 
 PROCESS_THREAD(er_example_client, ev, data)
 {
@@ -59,6 +61,7 @@ PROCESS_THREAD(er_example_client, ev, data)
   coap_activate_resource(&res_light_required, "LIGHT/setpoint");
   coap_activate_resource(&res_temp_required, "TEMP/setpoint");
   coap_activate_resource(&res_sensors, "SENSORS/reading");
+  coap_activate_resource(&res_dynamic_control, "dynamic-control");
 
   etimer_set(&et, TOGGLE_INTERVAL * CLOCK_SECOND);
 
@@ -75,35 +78,39 @@ PROCESS_THREAD(er_example_client, ev, data)
       current_temperature = read_temperature();
       current_light = read_light();
 
-      // Calculate new setpoints
-      float new_ac_setpoint = update_temp_setpoint(current_temperature, last_ac_setpoint, temperature_required, modality);
-      float new_window_setpoint = update_window_setpoint(current_light, last_window_setpoint, light_required);
-
-      // --- AC control request ---
-      if (CHANGE_ABOVE_2_PERCENT(last_ac_setpoint, new_ac_setpoint))
+      if (dynamic_control == 1)
       {
-        LOG_WARN("new ac setpoint: %.3f", new_ac_setpoint);
-        last_ac_setpoint = new_ac_setpoint; // update only on send
 
-        coap_init_message(request, COAP_TYPE_CON, COAP_POST, 0);
-        coap_set_header_uri_path(request, service_urls[0]);
-        snprintf(query_buffer, sizeof(query_buffer), "on=1&setpoint=%.2f", new_ac_setpoint);
-        coap_set_header_uri_query(request, query_buffer);
-        LOG_INFO_COAP_EP(&server_ep);
-        COAP_BLOCKING_REQUEST(&server_ep, request, client_chunk_handler);
-      }
+        // Calculate new setpoints
+        float new_ac_setpoint = update_temp_setpoint(current_temperature, last_ac_setpoint, temperature_required, modality);
+        float new_window_setpoint = update_window_setpoint(current_light, last_window_setpoint, light_required);
 
-      // --- Window control request ---
-      if (CHANGE_ABOVE_2_PERCENT(last_window_setpoint, new_window_setpoint))
-      {
-        last_window_setpoint = new_window_setpoint; // update only on send
+        // --- AC control request ---
+        if (CHANGE_ABOVE_2_PERCENT(last_ac_setpoint, new_ac_setpoint))
+        {
+          LOG_WARN("new ac setpoint: %.3f", new_ac_setpoint);
+          last_ac_setpoint = new_ac_setpoint; // update only on send
 
-        coap_init_message(request, COAP_TYPE_CON, COAP_POST, 0);
-        coap_set_header_uri_path(request, service_urls[1]);
-        snprintf(query_buffer, sizeof(query_buffer), "setpoint=%.2f", new_window_setpoint);
-        coap_set_header_uri_query(request, query_buffer);
-        LOG_INFO_COAP_EP(&server_ep);
-        COAP_BLOCKING_REQUEST(&server_ep, request, client_chunk_handler);
+          coap_init_message(request, COAP_TYPE_CON, COAP_POST, 0);
+          coap_set_header_uri_path(request, service_urls[0]);
+          snprintf(query_buffer, sizeof(query_buffer), "on=1&setpoint=%.2f", new_ac_setpoint);
+          coap_set_header_uri_query(request, query_buffer);
+          LOG_INFO_COAP_EP(&server_ep);
+          COAP_BLOCKING_REQUEST(&server_ep, request, client_chunk_handler);
+        }
+
+        // --- Window control request ---
+        if (CHANGE_ABOVE_2_PERCENT(last_window_setpoint, new_window_setpoint))
+        {
+          last_window_setpoint = new_window_setpoint; // update only on send
+
+          coap_init_message(request, COAP_TYPE_CON, COAP_POST, 0);
+          coap_set_header_uri_path(request, service_urls[1]);
+          snprintf(query_buffer, sizeof(query_buffer), "setpoint=%.2f", new_window_setpoint);
+          coap_set_header_uri_query(request, query_buffer);
+          LOG_INFO_COAP_EP(&server_ep);
+          COAP_BLOCKING_REQUEST(&server_ep, request, client_chunk_handler);
+        }
       }
 
       LOG_INFO("Temp: %.2fC | AC Setpoint: %.2fC | Temp target: %.2f\n",

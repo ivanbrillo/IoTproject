@@ -36,11 +36,12 @@ public class UserInterface {
         System.out.println("4. Send Light Command");
         System.out.println("5. Send Battery Command");
         System.out.println("6. Send Custom Request");
-        System.out.println("7. View Stored Data");
-        System.out.println("8. System Information");
-        System.out.println("9. View Logs");
-        System.out.println("10. Exit");
-        System.out.print("Choose an option (1-10): ");
+        System.out.println("7. Send Dynamic Control Command");  
+        System.out.println("8. View Stored Data");
+        System.out.println("9. System Information");
+        System.out.println("10. View Logs");
+        System.out.println("11. Exit");
+        System.out.print("Choose an option (1-11): ");
     }
 
     private int getFloor() {
@@ -160,6 +161,23 @@ public class UserInterface {
         } else {
             System.out.println("Invalid input. Please try again.");
             logger.warn("Invalid Battery command input received");
+        }
+    }
+
+    public void handleDynamicControlRequest() {
+        int floor = getFloor();
+        if (floor == -1)
+            return;
+    
+        System.out.print("Enter dynamic control state (0=disable, 1=enable): ");
+        String onState = scanner.nextLine().trim();
+    
+        if (onState.equals("0") || onState.equals("1")) {
+            logger.info("User requested Dynamic Control command for floor {}: on={}", floor, onState);
+            requestManager.sendDynamicControlCommand(floor, onState);
+        } else {
+            System.out.println("Invalid input. Please enter 0 or 1.");
+            logger.warn("Invalid Dynamic Control command input received: {}", onState);
         }
     }
 

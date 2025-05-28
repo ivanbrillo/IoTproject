@@ -3,15 +3,12 @@
 #include <string.h>
 #include "contiki.h"
 #include "coap-engine.h"
-#include <locale.h>  
-
+#include <locale.h>
 
 /* Log configuration */
 #include "sys/log.h"
 #define LOG_MODULE "FLOOR_ACTUATOR"
 #define LOG_LEVEL LOG_LEVEL_APP
-
-
 
 /*
  * Resources to be activated need to be imported through the extern keyword.
@@ -34,10 +31,10 @@ PROCESS_THREAD(er_example_server, ev, data)
   coap_activate_resource(&res_ac_setpoint, "AC/setpoint");
   coap_activate_resource(&res_window_setpoint, "Window/setpoint");
 
-  while (1)  // wait until a new event
+  while (1) // wait until a new event
   {
-      PROCESS_YIELD();
-  } 
+    PROCESS_YIELD();
+  }
 
   PROCESS_END();
 }

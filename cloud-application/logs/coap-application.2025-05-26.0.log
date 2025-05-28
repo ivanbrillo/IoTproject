@@ -1,0 +1,1533 @@
+2025-05-26 15:47:14.376 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 15:47:14.387 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 15:47:14.389 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 15:47:14.392 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 15:47:15.165 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 15:47:15.165 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 15:47:15.169 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 15:47:15.172 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 15:47:15.174 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 15:47:15.174 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 15:47:15.174 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 15:47:15.174 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 15:47:15.318 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 15:47:15.318 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 15:47:15.319 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 15:47:15.319 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 15:47:15.319 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 1 floors
+2025-05-26 15:47:15.319 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 15:47:15.320 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 15:47:15.320 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 15:47:15.320 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 15:47:15.320 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 15:47:29.004 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 16:30:29.434 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 16:30:29.441 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:30:29.442 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 16:30:29.444 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 16:30:30.044 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 16:30:30.044 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 16:30:30.045 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 16:30:30.046 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 16:30:30.047 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:30:30.047 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 16:30:30.047 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 16:30:30.047 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 16:30:30.127 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 16:30:30.160 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 16:30:30.162 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 16:30:30.169 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 16:30:30.169 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 1 floors
+2025-05-26 16:30:30.169 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 16:30:30.170 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 16:30:30.170 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 16:30:30.170 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 16:30:30.188 [main] ERROR com.pi.CoapClientApplication - Application failed to start
+java.lang.NullPointerException: null
+	at com.pi.CoapClientApplication.initialize(CoapClientApplication.java:61)
+	at com.pi.CoapClientApplication.run(CoapClientApplication.java:27)
+	at com.pi.CoapClientApplication.main(CoapClientApplication.java:22)
+2025-05-26 16:30:30.189 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 16:30:30.189 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 16:30:30.189 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 16:30:30.204 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: sensors_floor_1
+2025-05-26 16:30:30.204 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: battery_soc
+2025-05-26 16:30:30.205 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: power
+2025-05-26 16:30:30.205 [main] INFO  com.pi.CoapObserverManager - Shutdown client: sensors_floor_1
+2025-05-26 16:30:30.205 [main] INFO  com.pi.CoapObserverManager - Shutdown client: battery_soc
+2025-05-26 16:30:30.205 [main] INFO  com.pi.CoapObserverManager - Shutdown client: power
+2025-05-26 16:30:30.205 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 16:30:30.205 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 16:30:30.206 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 16:30:30.206 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=-1, power=-1, battery=-1}
+2025-05-26 16:30:30.209 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 16:30:30.209 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 16:30:30.209 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 16:30:30.210 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 16:31:14.624 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 16:31:14.634 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:31:14.634 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 16:31:14.639 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 16:31:15.419 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 16:31:15.420 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 16:31:15.422 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 16:31:15.423 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 16:31:15.425 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:31:15.426 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 16:31:15.426 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 16:31:15.426 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 16:31:15.625 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 16:31:15.625 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 16:31:15.625 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 16:31:15.626 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 16:31:15.626 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 1 floors
+2025-05-26 16:31:15.626 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 16:31:15.626 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 16:31:15.626 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 16:31:15.626 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 16:31:15.633 [main] ERROR com.pi.CoapClientApplication - Application failed to start
+java.lang.NullPointerException: null
+	at com.pi.CoapClientApplication.initialize(CoapClientApplication.java:61)
+	at com.pi.CoapClientApplication.run(CoapClientApplication.java:27)
+	at com.pi.CoapClientApplication.main(CoapClientApplication.java:22)
+2025-05-26 16:31:15.637 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 16:31:15.642 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 16:31:15.642 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 16:31:15.642 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: sensors_floor_1
+2025-05-26 16:31:15.642 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: battery_soc
+2025-05-26 16:31:15.642 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: power
+2025-05-26 16:31:15.643 [main] INFO  com.pi.CoapObserverManager - Shutdown client: sensors_floor_1
+2025-05-26 16:31:15.643 [main] INFO  com.pi.CoapObserverManager - Shutdown client: battery_soc
+2025-05-26 16:31:15.643 [main] INFO  com.pi.CoapObserverManager - Shutdown client: power
+2025-05-26 16:31:15.643 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 16:31:15.643 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 16:31:15.643 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 16:31:15.643 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=-1, power=-1, battery=-1}
+2025-05-26 16:31:15.650 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 16:31:15.650 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 16:31:15.669 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 16:31:15.679 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 16:31:47.542 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 16:31:47.548 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:31:47.549 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 16:31:47.550 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 16:31:48.194 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 16:31:48.195 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 16:31:48.196 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 16:31:48.196 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 16:31:48.197 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:31:48.197 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 16:31:48.197 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 16:31:48.197 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 16:31:48.293 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 16:31:48.293 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 16:31:48.305 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 16:31:48.307 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 16:31:48.308 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 1 floors
+2025-05-26 16:31:48.309 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 16:31:48.316 [Thread-1] WARN  com.pi.CoapObserverManager - Error message received for battery_soc: TooManyObservers
+2025-05-26 16:31:48.317 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 16:31:48.318 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 16:31:48.318 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 16:31:48.322 [main] ERROR com.pi.CoapClientApplication - Application failed to start
+java.lang.NullPointerException: null
+	at com.pi.CoapClientApplication.initialize(CoapClientApplication.java:61)
+	at com.pi.CoapClientApplication.run(CoapClientApplication.java:27)
+	at com.pi.CoapClientApplication.main(CoapClientApplication.java:22)
+2025-05-26 16:31:48.324 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 16:31:48.324 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 16:31:48.324 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 16:31:48.328 [Thread-1] WARN  com.pi.CoapObserverManager - Error message received for power: TooManyObservers
+2025-05-26 16:31:48.328 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: sensors_floor_1
+2025-05-26 16:31:48.329 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: battery_soc
+2025-05-26 16:31:48.336 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: power
+2025-05-26 16:31:48.363 [main] INFO  com.pi.CoapObserverManager - Shutdown client: sensors_floor_1
+2025-05-26 16:31:48.363 [main] INFO  com.pi.CoapObserverManager - Shutdown client: battery_soc
+2025-05-26 16:31:48.363 [main] INFO  com.pi.CoapObserverManager - Shutdown client: power
+2025-05-26 16:31:48.363 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 16:31:48.363 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 16:31:48.363 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 16:31:48.368 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=-1, power=-1, battery=10}
+2025-05-26 16:31:48.373 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 16:31:48.373 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 16:31:48.374 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 16:31:48.378 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 16:33:52.294 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 16:33:52.299 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:33:52.300 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 16:33:52.302 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 16:33:52.725 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 16:33:52.726 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 16:33:52.727 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 16:33:52.727 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 16:33:52.728 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:33:52.728 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 16:33:52.728 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 16:33:52.728 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 16:33:52.787 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 16:33:52.787 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 16:33:52.788 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 16:33:52.788 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 16:33:52.789 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 1 floors
+2025-05-26 16:33:52.789 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 16:33:52.797 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 16:33:52.798 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 16:33:52.798 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 16:33:52.802 [main] ERROR com.pi.CoapClientApplication - Application failed to start
+java.lang.NullPointerException: null
+	at com.pi.CoapClientApplication.initialize(CoapClientApplication.java:61)
+	at com.pi.CoapClientApplication.run(CoapClientApplication.java:27)
+	at com.pi.CoapClientApplication.main(CoapClientApplication.java:22)
+2025-05-26 16:33:52.804 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 16:33:52.805 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 16:33:52.805 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 16:33:52.805 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: sensors_floor_1
+2025-05-26 16:33:52.805 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: battery_soc
+2025-05-26 16:33:52.806 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: power
+2025-05-26 16:33:52.806 [main] INFO  com.pi.CoapObserverManager - Shutdown client: sensors_floor_1
+2025-05-26 16:33:52.806 [main] INFO  com.pi.CoapObserverManager - Shutdown client: battery_soc
+2025-05-26 16:33:52.806 [main] INFO  com.pi.CoapObserverManager - Shutdown client: power
+2025-05-26 16:33:52.806 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 16:33:52.806 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 16:33:52.806 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 16:33:52.806 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=-1, power=-1, battery=-1}
+2025-05-26 16:33:52.812 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 16:33:52.813 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 16:33:52.813 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 16:33:52.814 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 16:35:16.563 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 16:35:16.568 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:35:16.568 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 16:35:16.570 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 16:35:16.996 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 16:35:16.996 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 16:35:16.997 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 16:35:16.998 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 16:35:16.999 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:35:16.999 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 16:35:16.999 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 16:35:16.999 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 16:35:17.064 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 16:35:17.064 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 16:35:17.065 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 16:35:17.066 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 16:35:17.067 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 1 floors
+2025-05-26 16:35:17.070 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 16:35:17.074 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 16:35:17.074 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 16:35:17.074 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 16:35:17.077 [main] ERROR com.pi.CoapClientApplication - Application failed to start
+java.lang.NullPointerException: null
+	at com.pi.CoapClientApplication.initialize(CoapClientApplication.java:61)
+	at com.pi.CoapClientApplication.run(CoapClientApplication.java:27)
+	at com.pi.CoapClientApplication.main(CoapClientApplication.java:22)
+2025-05-26 16:35:17.077 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 16:35:17.077 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 16:35:17.077 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 16:35:17.078 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: sensors_floor_1
+2025-05-26 16:35:17.081 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: battery_soc
+2025-05-26 16:35:17.082 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: power
+2025-05-26 16:35:17.082 [main] INFO  com.pi.CoapObserverManager - Shutdown client: sensors_floor_1
+2025-05-26 16:35:17.083 [main] INFO  com.pi.CoapObserverManager - Shutdown client: battery_soc
+2025-05-26 16:35:17.083 [main] INFO  com.pi.CoapObserverManager - Shutdown client: power
+2025-05-26 16:35:17.083 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 16:35:17.094 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 16:35:17.096 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 16:35:17.097 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=-1, power=-1, battery=-1}
+2025-05-26 16:35:17.107 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 16:35:17.107 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 16:35:17.109 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 16:35:17.109 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 16:38:16.805 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 16:38:16.808 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:38:16.809 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 16:38:16.809 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 16:38:17.199 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 16:38:17.199 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 16:38:17.200 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 16:38:17.200 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 16:38:17.208 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:38:17.208 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 16:38:17.208 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 16:38:17.208 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 16:38:17.301 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 16:38:17.301 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 16:38:17.302 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 16:38:17.305 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 16:38:17.305 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 1 floors
+2025-05-26 16:38:17.305 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 16:38:17.311 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 16:38:17.311 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 16:38:17.311 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 16:38:17.334 [main] ERROR com.pi.CoapClientApplication - Application failed to start
+java.lang.NullPointerException: null
+	at com.pi.CoapClientApplication.initialize(CoapClientApplication.java:61)
+	at com.pi.CoapClientApplication.run(CoapClientApplication.java:27)
+	at com.pi.CoapClientApplication.main(CoapClientApplication.java:22)
+2025-05-26 16:38:17.337 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 16:38:17.337 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 16:38:17.341 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 16:38:17.351 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: sensors_floor_1
+2025-05-26 16:38:17.351 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: battery_soc
+2025-05-26 16:38:17.352 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: power
+2025-05-26 16:38:17.358 [main] INFO  com.pi.CoapObserverManager - Shutdown client: sensors_floor_1
+2025-05-26 16:38:17.359 [main] INFO  com.pi.CoapObserverManager - Shutdown client: battery_soc
+2025-05-26 16:38:17.359 [main] INFO  com.pi.CoapObserverManager - Shutdown client: power
+2025-05-26 16:38:17.359 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 16:38:17.359 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 16:38:17.359 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 16:38:17.359 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=-1, power=-1, battery=2}
+2025-05-26 16:38:17.361 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 16:38:17.361 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 16:38:17.361 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 16:38:17.364 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 16:39:37.222 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 16:39:37.226 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:39:37.226 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 16:39:37.227 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 16:39:37.602 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 16:39:37.602 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 16:39:37.603 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 16:39:37.603 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 16:39:37.605 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:39:37.605 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 16:39:37.605 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 16:39:37.605 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 16:39:37.665 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 16:39:37.667 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 16:39:37.669 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 16:39:37.670 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 16:39:37.670 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 1 floors
+2025-05-26 16:39:37.670 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 16:39:37.670 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 16:39:37.670 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 16:39:37.670 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 16:39:37.674 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 16:39:37.674 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 16:39:37.674 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 16:39:37.742 [Thread-1] WARN  com.pi.CoapObserverManager - Error message received for power: TooManyObservers
+2025-05-26 16:39:37.805 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 16:39:37.806 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=7,59
+2025-05-26 16:39:37.815 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 1) Command Response - Code: 4.00, Text: {"error_code":"INVALID_SETPOINT"}, Success: false
+2025-05-26 16:39:39.864 [Thread-1] WARN  com.pi.CoapObserverManager - Error message received for battery_soc: TooManyObservers
+2025-05-26 16:39:40.381 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v2): Light=249.92, Temp=19.893 (Floor 1)
+2025-05-26 16:39:49.695 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v3): Light=267.96, Temp=19.91 (Floor 1)
+2025-05-26 16:39:59.837 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v4): Light=253.96, Temp=20.225 (Floor 1)
+2025-05-26 16:40:07.683 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 16:40:07.683 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=8,30
+2025-05-26 16:40:07.729 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 1) Command Response - Code: 4.00, Text: {"error_code":"INVALID_SETPOINT"}, Success: false
+2025-05-26 16:40:09.844 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v5): Light=253.36, Temp=20.552 (Floor 1)
+2025-05-26 16:40:14.928 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 16:40:41.907 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 16:40:41.912 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:40:41.912 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 16:40:41.916 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 16:40:42.266 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 16:40:42.266 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 16:40:42.267 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 16:40:42.268 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 16:40:42.269 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:40:42.269 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 16:40:42.269 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 16:40:42.270 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 16:40:42.360 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 16:40:42.360 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 16:40:42.361 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 16:40:42.361 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 16:40:42.361 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 1 floors
+2025-05-26 16:40:42.361 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 16:40:42.361 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 16:40:42.361 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 16:40:42.361 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 16:40:42.369 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 16:40:42.369 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 16:40:42.369 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 16:40:42.443 [Thread-1] WARN  com.pi.CoapObserverManager - Error message received for power: TooManyObservers
+2025-05-26 16:40:42.446 [Thread-1] WARN  com.pi.CoapObserverManager - Error message received for battery_soc: TooManyObservers
+2025-05-26 16:40:42.451 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 16:40:42.452 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=8,51
+2025-05-26 16:40:42.569 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v9): Light=256.48, Temp=20.578 (Floor 1)
+2025-05-26 16:40:42.571 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 1) Command Response - Code: 4.00, Text: {"error_code":"INVALID_SETPOINT"}, Success: false
+2025-05-26 16:40:49.932 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v11): Light=257.96, Temp=20.229 (Floor 1)
+2025-05-26 16:40:59.899 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v13): Light=240.64, Temp=19.876 (Floor 1)
+2025-05-26 16:41:09.902 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v15): Light=224.08, Temp=19.61 (Floor 1)
+2025-05-26 16:41:12.369 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 16:41:12.370 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=7,08
+2025-05-26 16:41:12.416 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 1) Command Response - Code: 4.00, Text: {"error_code":"INVALID_SETPOINT"}, Success: false
+2025-05-26 16:41:15.994 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 16:41:41.257 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 16:41:41.272 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:41:41.274 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 16:41:41.278 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 16:41:41.848 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 16:41:41.848 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 16:41:41.849 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 16:41:41.850 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 16:41:41.853 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:41:41.853 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 16:41:41.853 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 16:41:41.853 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 16:41:41.976 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 16:41:41.984 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 16:41:41.989 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 16:41:41.995 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 16:41:41.996 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 1 floors
+2025-05-26 16:41:41.996 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 16:41:41.996 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 16:41:41.996 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 16:41:41.996 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 16:41:42.000 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 16:41:42.029 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 16:41:42.034 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 16:41:42.149 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v0): SOC=0.0
+2025-05-26 16:41:42.176 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v0): Active=0.0, Reactive=0.0
+2025-05-26 16:41:42.184 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 16:41:42.185 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=6,82
+2025-05-26 16:41:42.204 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 1) Command Response - Code: 4.00, Text: {"error_code":"INVALID_SETPOINT"}, Success: false
+2025-05-26 16:41:43.476 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v1): Active=2.493, Reactive=0.11
+2025-05-26 16:41:43.520 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v1): SOC=0.0
+2025-05-26 16:41:49.346 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v0): Light=185.36, Temp=21.548 (Floor 1)
+2025-05-26 16:41:53.705 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v2): Active=1.927, Reactive=0.091
+2025-05-26 16:41:53.717 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v2): SOC=0.0
+2025-05-26 16:41:53.738 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v1): Light=195.32, Temp=21.074 (Floor 1)
+2025-05-26 16:42:03.690 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v2): Light=224.2, Temp=20.837 (Floor 1)
+2025-05-26 16:42:03.705 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v3): Active=3.171, Reactive=0.068
+2025-05-26 16:42:03.717 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v3): SOC=0.0
+2025-05-26 16:42:12.006 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 16:42:12.007 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=6,80
+2025-05-26 16:42:12.012 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 1) Command Response - Code: 4.00, Text: {"error_code":"INVALID_SETPOINT"}, Success: false
+2025-05-26 16:42:13.766 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v3): Light=239.64, Temp=20.798 (Floor 1)
+2025-05-26 16:42:13.812 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v4): Active=1.993, Reactive=0.117
+2025-05-26 16:42:13.852 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v4): SOC=0.0
+2025-05-26 16:42:23.773 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v5): Active=1.788, Reactive=0.12
+2025-05-26 16:42:23.792 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v5): SOC=0.0
+2025-05-26 16:42:23.870 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v4): Light=234.48, Temp=20.434 (Floor 1)
+2025-05-26 16:42:33.776 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v6): Active=4.765, Reactive=0.279
+2025-05-26 16:42:33.805 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v6): SOC=0.0
+2025-05-26 16:42:33.864 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v5): Light=249.72, Temp=20.437 (Floor 1)
+2025-05-26 16:42:42.010 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 16:42:42.011 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=8,61
+2025-05-26 16:42:42.016 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 1) Command Response - Code: 4.00, Text: {"error_code":"INVALID_SETPOINT"}, Success: false
+2025-05-26 16:42:43.919 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v6): Light=241.72, Temp=20.59 (Floor 1)
+2025-05-26 16:42:43.988 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v7): Active=2.654, Reactive=0.177
+2025-05-26 16:42:44.038 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v7): SOC=0.0
+2025-05-26 16:42:53.863 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v7): Light=240.72, Temp=20.211 (Floor 1)
+2025-05-26 16:42:53.947 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v8): Active=2.288, Reactive=0.225
+2025-05-26 16:42:54.021 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v8): SOC=0.0
+2025-05-26 16:43:03.930 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v8): Light=247.16, Temp=20.266 (Floor 1)
+2025-05-26 16:43:04.011 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v9): Active=1.969, Reactive=0.22
+2025-05-26 16:43:04.086 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v9): SOC=0.0
+2025-05-26 16:43:12.013 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 16:43:12.025 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=8,79
+2025-05-26 16:43:12.040 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 1) Command Response - Code: 4.00, Text: {"error_code":"INVALID_SETPOINT"}, Success: false
+2025-05-26 16:43:13.936 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v10): Active=1.863, Reactive=0.368
+2025-05-26 16:43:13.987 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v10): SOC=0.0
+2025-05-26 16:43:14.105 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v9): Light=244.44, Temp=20.17 (Floor 1)
+2025-05-26 16:43:16.859 [main] INFO  com.pi.UserInterface - User requested Battery command for floor 1: setpoint=5.23
+2025-05-26 16:43:16.860 [main] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=5.23
+2025-05-26 16:43:16.869 [main] INFO  com.pi.CoapRequestManager - Battery (Floor 1) Command Response - Code: 2.04, Text: {"setpoint":5.23}, Success: true
+2025-05-26 16:43:23.896 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v10): Light=259.52, Temp=20.517 (Floor 1)
+2025-05-26 16:43:23.908 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v11): Active=1.538, Reactive=0.195
+2025-05-26 16:43:23.958 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v11): SOC=1.0
+2025-05-26 16:43:25.033 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 16:43:25.033 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 16:43:25.033 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 16:43:25.034 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: sensors_floor_1
+2025-05-26 16:43:25.034 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: battery_soc
+2025-05-26 16:43:25.034 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: power
+2025-05-26 16:43:25.034 [main] INFO  com.pi.CoapObserverManager - Shutdown client: sensors_floor_1
+2025-05-26 16:43:25.034 [main] INFO  com.pi.CoapObserverManager - Shutdown client: battery_soc
+2025-05-26 16:43:25.034 [main] INFO  com.pi.CoapObserverManager - Shutdown client: power
+2025-05-26 16:43:25.034 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 16:43:25.034 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 16:43:25.034 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 16:43:25.034 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=10, power=11, battery=11}
+2025-05-26 16:43:25.048 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 16:43:25.048 [main] INFO  com.pi.CoapClientApplication - Stopping battery control service
+2025-05-26 16:43:25.049 [main] INFO  c.p.B.BatteryControlService - Stopped automatic battery control
+2025-05-26 16:43:25.049 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 16:43:25.050 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 16:43:25.051 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 16:45:09.005 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 16:45:09.013 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:45:09.013 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 16:45:09.014 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 16:45:09.392 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 16:45:09.393 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 16:45:09.394 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 16:45:09.394 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 16:45:09.396 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:45:09.396 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 16:45:09.396 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 16:45:09.396 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 16:45:09.534 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 16:45:09.535 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 16:45:09.535 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 16:45:09.536 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 16:45:09.539 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 1 floors
+2025-05-26 16:45:09.539 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 16:45:09.545 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 16:45:09.545 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 16:45:09.545 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 16:45:09.555 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 16:45:09.556 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 16:45:09.557 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 16:45:09.599 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v13): SOC=11.0
+2025-05-26 16:45:09.635 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v12): Light=251.64, Temp=20.094 (Floor 1)
+2025-05-26 16:45:09.642 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 16:45:09.645 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=2,41
+2025-05-26 16:45:09.673 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v13): Active=2.493, Reactive=0.11
+2025-05-26 16:45:09.699 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 1) Command Response - Code: 4.00, Text: {"error_code":"INVALID_SETPOINT"}, Success: false
+2025-05-26 16:45:14.064 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v13): Light=240.2, Temp=19.962 (Floor 1)
+2025-05-26 16:45:14.076 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v14): Active=1.927, Reactive=0.091
+2025-05-26 16:45:14.085 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v14): SOC=12.0
+2025-05-26 16:45:20.502 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 16:46:21.282 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 16:46:21.287 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:46:21.288 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 16:46:21.288 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 16:46:21.664 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 16:46:21.665 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 16:46:21.665 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 16:46:21.666 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 16:46:21.667 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:46:21.667 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 16:46:21.667 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 16:46:21.667 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 16:46:21.724 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 16:46:21.726 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 16:46:21.726 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 16:46:21.726 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 16:46:21.726 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 1 floors
+2025-05-26 16:46:21.727 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 16:46:21.729 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 16:46:21.729 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 16:46:21.729 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 16:46:21.736 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 16:46:21.736 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 16:46:21.736 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 16:46:21.761 [Thread-1] WARN  com.pi.CoapObserverManager - Error message received for battery_soc: TooManyObservers
+2025-05-26 16:46:21.826 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 16:46:21.831 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=3.44
+2025-05-26 16:46:21.840 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 1) Command Response - Code: 2.04, Text: {"setpoint":3.44}, Success: true
+2025-05-26 16:46:23.995 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v20): Light=275.6, Temp=19.718 (Floor 1)
+2025-05-26 16:46:24.128 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v22): Light=249.04, Temp=20.008 (Floor 1)
+2025-05-26 16:46:24.152 [Thread-1] WARN  com.pi.CoapObserverManager - Error message received for power: TooManyObservers
+2025-05-26 16:46:34.320 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v24): Light=231.04, Temp=20.338 (Floor 1)
+2025-05-26 16:46:44.321 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v26): Light=216.64, Temp=20.708 (Floor 1)
+2025-05-26 16:46:51.737 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 16:46:51.738 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=1.04
+2025-05-26 16:46:51.788 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 1) Command Response - Code: 2.04, Text: {"setpoint":1.04}, Success: true
+2025-05-26 16:46:54.298 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v28): Light=218.04, Temp=20.18 (Floor 1)
+2025-05-26 16:47:04.277 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v30): Light=228.52, Temp=19.821 (Floor 1)
+2025-05-26 16:47:14.196 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v32): Light=227.56, Temp=19.476 (Floor 1)
+2025-05-26 16:47:21.738 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 16:47:21.739 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=2.39
+2025-05-26 16:47:21.789 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 1) Command Response - Code: 2.04, Text: {"setpoint":2.39}, Success: true
+2025-05-26 16:47:24.330 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v34): Light=256.56, Temp=19.286 (Floor 1)
+2025-05-26 16:47:34.290 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v36): Light=257.28, Temp=19.554 (Floor 1)
+2025-05-26 16:47:44.353 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v38): Light=277.28, Temp=19.951 (Floor 1)
+2025-05-26 16:47:51.736 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 16:47:51.736 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=1.72
+2025-05-26 16:47:51.781 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 1) Command Response - Code: 2.04, Text: {"setpoint":1.72}, Success: true
+2025-05-26 16:47:54.346 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v40): Light=283.52, Temp=19.838 (Floor 1)
+2025-05-26 16:47:59.420 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 16:51:51.952 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 16:51:51.957 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:51:51.958 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 16:51:51.959 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 16:51:52.368 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 16:51:52.368 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 16:51:52.376 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 16:51:52.377 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 16:51:52.379 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:51:52.379 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 16:51:52.379 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 16:51:52.379 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 16:51:52.472 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 16:51:52.472 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 16:51:52.482 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 16:51:52.483 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 16:51:52.484 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 1 floors
+2025-05-26 16:51:52.484 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 16:51:52.485 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 16:51:52.485 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 16:51:52.485 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 16:51:52.486 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 16:51:52.486 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 16:51:52.486 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 16:51:52.561 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 16:51:52.564 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=3.33
+2025-05-26 16:52:06.535 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 16:57:31.462 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 16:57:31.466 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:57:31.467 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 16:57:31.469 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 16:57:31.873 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 16:57:31.873 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 16:57:31.874 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 16:57:31.874 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 16:57:31.876 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 16:57:31.876 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 16:57:31.876 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 16:57:31.876 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 16:57:31.962 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 16:57:31.962 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 16:57:31.962 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 16:57:31.963 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 16:57:31.963 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 1 floors
+2025-05-26 16:57:31.963 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 16:57:31.963 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 16:57:31.964 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 16:57:31.964 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 16:57:31.967 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 16:57:31.967 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 16:57:31.967 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 16:58:01.999 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 16:58:02.002 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=8.00
+2025-05-26 16:58:39.045 [Thread-1] ERROR com.pi.CoapObserverManager - Power observation failed or was canceled
+2025-05-26 16:58:53.169 [Thread-1] ERROR com.pi.CoapObserverManager - Battery SOC observation failed or was canceled
+2025-05-26 16:59:02.047 [Thread-1] ERROR com.pi.CoapObserverManager - Floor 1 sensors observation failed or was canceled
+2025-05-26 16:59:25.244 [pool-1-thread-1] WARN  com.pi.CoapRequestManager - No response received from Battery (Floor 1) device
+2025-05-26 16:59:25.251 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 16:59:25.251 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=-6.00
+2025-05-26 17:00:55.409 [pool-1-thread-1] WARN  com.pi.CoapRequestManager - No response received from Battery (Floor 1) device
+2025-05-26 17:00:55.424 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 17:00:55.424 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=3.32
+2025-05-26 17:01:05.449 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:01:15.668 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:01:15.672 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:01:15.672 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:01:15.673 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:01:16.035 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:01:16.035 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:01:16.036 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:01:16.036 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:01:16.037 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:01:16.038 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:01:16.038 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 17:01:16.039 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 17:01:16.039 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 17:01:16.039 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 17:01:46.088 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 17:01:46.092 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 1: setpoint=3.28
+2025-05-26 17:02:02.286 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:05:27.327 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:05:27.331 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:05:27.332 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:05:27.332 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:05:27.787 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:05:27.787 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:05:27.788 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:05:27.789 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:05:27.790 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:05:27.790 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:05:27.790 [main] ERROR com.pi.CoapClientApplication - Network connectivity test failed - cannot reach IoT devices - shutdown
+2025-05-26 17:05:27.792 [main] ERROR com.pi.CoapClientApplication - Application failed to start
+java.lang.RuntimeException: Network connectivity check failed - cannot reach IoT devices
+	at com.pi.CoapClientApplication.checkNetworkConnectivity(CoapClientApplication.java:76)
+	at com.pi.CoapClientApplication.initialize(CoapClientApplication.java:59)
+	at com.pi.CoapClientApplication.run(CoapClientApplication.java:27)
+	at com.pi.CoapClientApplication.main(CoapClientApplication.java:22)
+2025-05-26 17:05:27.792 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 17:05:27.792 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 17:05:27.792 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 17:05:27.792 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 17:05:27.792 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 17:05:27.792 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 17:05:27.792 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:05:27.794 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 17:05:27.794 [main] INFO  com.pi.CoapClientApplication - Stopping battery control service
+2025-05-26 17:05:27.794 [main] INFO  c.p.B.BatteryControlService - Stopped automatic battery control
+2025-05-26 17:05:27.794 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 17:05:27.794 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 17:05:27.795 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:11:07.012 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:11:07.016 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:11:07.016 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:11:07.017 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:11:07.441 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:11:07.441 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:11:07.442 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:11:07.442 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:11:07.444 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:11:07.444 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:11:07.444 [main] INFO  com.pi.CoapClientApplication - Network connectivity check passed
+2025-05-26 17:11:07.444 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 17:11:07.444 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 17:11:07.497 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 17:11:07.497 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 17:11:07.497 [main] WARN  com.pi.CoapObserverManager - No sensor IP found for floor 0
+2025-05-26 17:11:07.497 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 17:11:07.497 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 17:11:07.498 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 2 floors
+2025-05-26 17:11:07.498 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 17:11:07.498 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 17:11:07.498 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 17:11:07.498 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 17:11:07.499 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 17:11:07.499 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 17:11:07.499 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 17:11:22.565 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:12:25.641 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:12:25.644 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:12:25.645 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:12:25.646 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:12:25.981 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:12:25.981 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:12:25.982 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:12:25.982 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:12:25.984 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:12:25.984 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:12:25.984 [main] INFO  com.pi.CoapClientApplication - Network connectivity check passed
+2025-05-26 17:12:25.984 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 17:12:25.984 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 17:12:26.035 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 17:12:26.039 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 17:12:26.040 [main] WARN  com.pi.CoapObserverManager - No sensor IP found for floor 0
+2025-05-26 17:12:26.040 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 17:12:26.041 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 17:12:26.041 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 2 floors
+2025-05-26 17:12:26.041 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 17:12:26.041 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 17:12:26.041 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 17:12:26.041 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 17:12:26.043 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 17:12:26.050 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 17:12:26.052 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 17:12:56.127 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 17:12:56.128 [pool-1-thread-1] ERROR com.pi.CoapRequestManager - No battery device found for floor 0
+2025-05-26 17:13:12.615 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:13:22.174 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:13:22.178 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:13:22.178 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:13:22.179 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:13:22.591 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:13:22.591 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:13:22.592 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:13:22.592 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:13:22.594 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:13:22.594 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:13:22.594 [main] INFO  com.pi.CoapClientApplication - Network connectivity check passed
+2025-05-26 17:13:22.594 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 17:13:22.595 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 17:13:22.659 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 17:13:22.666 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 17:13:22.666 [main] WARN  com.pi.CoapObserverManager - No sensor IP found for floor 0
+2025-05-26 17:13:22.666 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 17:13:22.667 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 17:13:22.669 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 2 floors
+2025-05-26 17:13:22.669 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 17:13:22.673 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 17:13:22.673 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 17:13:22.673 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 17:13:22.675 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 17:13:22.675 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 17:13:22.675 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 17:13:24.608 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:14:03.042 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:14:03.048 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:14:03.048 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:14:03.049 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:14:03.428 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:14:03.429 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:14:03.429 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:14:03.430 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:14:03.431 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:14:03.431 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:14:03.432 [main] INFO  com.pi.CoapClientApplication - Network connectivity check passed
+2025-05-26 17:14:03.432 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 17:14:03.432 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 17:14:03.489 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 17:14:03.489 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 17:14:03.489 [main] WARN  com.pi.CoapObserverManager - No sensor IP found for floor 0
+2025-05-26 17:14:03.489 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 17:14:03.492 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 17:14:03.492 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 2 floors
+2025-05-26 17:14:03.492 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 17:14:03.492 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 17:14:03.492 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 17:14:03.492 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 17:14:03.494 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 17:14:03.498 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 17:14:03.498 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 17:14:04.525 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:15:15.157 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:15:15.162 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:15:15.162 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:15:15.163 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:15:15.553 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:15:15.554 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:15:15.555 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:15:15.555 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:15:15.557 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:15:15.557 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:15:15.557 [main] ERROR com.pi.CoapClientApplication - Network connectivity test failed - cannot reach IoT devices - shutdown
+2025-05-26 17:15:15.559 [main] ERROR com.pi.CoapClientApplication - Application failed to start
+java.lang.RuntimeException: Network connectivity check failed - cannot reach IoT devices
+	at com.pi.CoapClientApplication.checkNetworkConnectivity(CoapClientApplication.java:75)
+	at com.pi.CoapClientApplication.initialize(CoapClientApplication.java:59)
+	at com.pi.CoapClientApplication.run(CoapClientApplication.java:27)
+	at com.pi.CoapClientApplication.main(CoapClientApplication.java:22)
+2025-05-26 17:15:15.559 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 17:15:15.559 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 17:15:15.559 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 17:15:15.559 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 17:15:15.559 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 17:15:15.559 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 17:15:15.559 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:15:15.561 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 17:15:15.561 [main] INFO  com.pi.CoapClientApplication - Stopping battery control service
+2025-05-26 17:15:15.562 [main] INFO  c.p.B.BatteryControlService - Stopped automatic battery control
+2025-05-26 17:15:15.562 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 17:15:15.562 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 17:15:15.563 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:15:51.362 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:15:51.368 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:15:51.368 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:15:51.369 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:15:51.803 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:15:51.804 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:15:51.805 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:15:51.805 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:15:51.808 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:15:51.808 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:15:51.811 [main] ERROR com.pi.CoapClientApplication - Network connectivity test failed - cannot reach IoT devices - shutdown
+2025-05-26 17:15:51.812 [main] ERROR com.pi.CoapClientApplication - Application failed to start
+java.lang.RuntimeException: Network connectivity check failed - cannot reach IoT devices
+	at com.pi.CoapClientApplication.checkNetworkConnectivity(CoapClientApplication.java:75)
+	at com.pi.CoapClientApplication.initialize(CoapClientApplication.java:59)
+	at com.pi.CoapClientApplication.run(CoapClientApplication.java:27)
+	at com.pi.CoapClientApplication.main(CoapClientApplication.java:22)
+2025-05-26 17:15:51.812 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 17:15:51.812 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 17:15:51.812 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 17:15:51.812 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 17:15:51.812 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 17:15:51.812 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 17:15:51.812 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:15:51.814 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 17:15:51.814 [main] INFO  com.pi.CoapClientApplication - Stopping battery control service
+2025-05-26 17:15:51.814 [main] INFO  c.p.B.BatteryControlService - Stopped automatic battery control
+2025-05-26 17:15:51.814 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 17:15:51.815 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 17:15:51.815 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:15:55.535 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:15:55.539 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:15:55.540 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:15:55.541 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:15:55.976 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:15:55.976 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:15:55.977 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:15:55.977 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:15:55.979 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:15:55.979 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:15:55.982 [main] ERROR com.pi.CoapClientApplication - Network connectivity test failed - cannot reach IoT devices - shutdown
+2025-05-26 17:15:55.983 [main] ERROR com.pi.CoapClientApplication - Application failed to start
+java.lang.RuntimeException: Network connectivity check failed - cannot reach IoT devices
+	at com.pi.CoapClientApplication.checkNetworkConnectivity(CoapClientApplication.java:75)
+	at com.pi.CoapClientApplication.initialize(CoapClientApplication.java:59)
+	at com.pi.CoapClientApplication.run(CoapClientApplication.java:27)
+	at com.pi.CoapClientApplication.main(CoapClientApplication.java:22)
+2025-05-26 17:15:55.984 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 17:15:55.984 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 17:15:55.984 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 17:15:55.984 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 17:15:55.984 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 17:15:55.984 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 17:15:55.984 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:15:55.985 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 17:15:55.985 [main] INFO  com.pi.CoapClientApplication - Stopping battery control service
+2025-05-26 17:15:55.986 [main] INFO  c.p.B.BatteryControlService - Stopped automatic battery control
+2025-05-26 17:15:55.986 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 17:15:55.986 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 17:15:55.987 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:16:11.215 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:16:11.219 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:16:11.220 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:16:11.220 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:16:11.642 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:16:11.643 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:16:11.643 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:16:11.644 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:16:11.645 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:16:11.645 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:16:11.648 [main] ERROR com.pi.CoapClientApplication - Network connectivity test failed - cannot reach IoT devices - shutdown
+2025-05-26 17:16:11.649 [main] ERROR com.pi.CoapClientApplication - Application failed to start
+java.lang.RuntimeException: Network connectivity check failed - cannot reach IoT devices
+	at com.pi.CoapClientApplication.checkNetworkConnectivity(CoapClientApplication.java:75)
+	at com.pi.CoapClientApplication.initialize(CoapClientApplication.java:59)
+	at com.pi.CoapClientApplication.run(CoapClientApplication.java:27)
+	at com.pi.CoapClientApplication.main(CoapClientApplication.java:22)
+2025-05-26 17:16:11.649 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 17:16:11.650 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 17:16:11.650 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 17:16:11.650 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 17:16:11.650 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 17:16:11.650 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 17:16:11.650 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:16:11.651 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 17:16:11.652 [main] INFO  com.pi.CoapClientApplication - Stopping battery control service
+2025-05-26 17:16:11.652 [main] INFO  c.p.B.BatteryControlService - Stopped automatic battery control
+2025-05-26 17:16:11.652 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 17:16:11.652 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 17:16:11.653 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:20:11.100 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:20:11.105 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:20:11.105 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:20:11.106 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:20:11.519 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:20:11.519 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:20:11.520 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:20:11.521 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:20:11.523 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:20:11.523 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:20:11.525 [main] ERROR com.pi.CoapClientApplication - Network connectivity test failed - cannot reach IoT devices - shutdown
+2025-05-26 17:20:11.527 [main] ERROR com.pi.CoapClientApplication - Application failed to start
+java.lang.RuntimeException: Network connectivity check failed - cannot reach IoT devices
+	at com.pi.CoapClientApplication.checkNetworkConnectivity(CoapClientApplication.java:78)
+	at com.pi.CoapClientApplication.initialize(CoapClientApplication.java:59)
+	at com.pi.CoapClientApplication.run(CoapClientApplication.java:27)
+	at com.pi.CoapClientApplication.main(CoapClientApplication.java:22)
+2025-05-26 17:20:11.527 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 17:20:11.527 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 17:20:11.527 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 17:20:11.527 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 17:20:11.527 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 17:20:11.528 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 17:20:11.528 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:20:11.529 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 17:20:11.529 [main] INFO  com.pi.CoapClientApplication - Stopping battery control service
+2025-05-26 17:20:11.529 [main] INFO  c.p.B.BatteryControlService - Stopped automatic battery control
+2025-05-26 17:20:11.529 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 17:20:11.529 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 17:20:11.531 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:22:02.764 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:22:02.768 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:22:02.769 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:22:02.770 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:22:03.158 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:22:03.159 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:22:03.159 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:22:03.160 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:22:03.167 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:22:03.168 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:22:03.170 [main] ERROR com.pi.CoapClientApplication - Network connectivity test failed - cannot reach IoT devices - shutdown
+2025-05-26 17:22:03.171 [main] ERROR com.pi.CoapClientApplication - Application failed to start
+java.lang.RuntimeException: Network connectivity check failed - cannot reach IoT devices
+	at com.pi.CoapClientApplication.checkNetworkConnectivity(CoapClientApplication.java:75)
+	at com.pi.CoapClientApplication.initialize(CoapClientApplication.java:59)
+	at com.pi.CoapClientApplication.run(CoapClientApplication.java:27)
+	at com.pi.CoapClientApplication.main(CoapClientApplication.java:22)
+2025-05-26 17:22:03.172 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 17:22:03.172 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 17:22:03.172 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 17:22:03.172 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 17:22:03.172 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 17:22:03.172 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 17:22:03.172 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:22:03.173 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 17:22:03.174 [main] INFO  com.pi.CoapClientApplication - Stopping battery control service
+2025-05-26 17:22:03.174 [main] INFO  c.p.B.BatteryControlService - Stopped automatic battery control
+2025-05-26 17:22:03.174 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 17:22:03.174 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 17:22:03.175 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:24:57.386 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:24:57.390 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:24:57.390 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:24:57.391 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:24:57.787 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:24:57.787 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:24:57.788 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:24:57.788 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:24:57.790 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:24:57.791 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:24:57.795 [main] ERROR com.pi.CoapClientApplication - Network connectivity test failed - cannot reach IoT devices - shutdown
+2025-05-26 17:24:57.798 [main] ERROR com.pi.CoapClientApplication - Application failed to start
+java.lang.RuntimeException: Network connectivity check failed - cannot reach IoT devices
+	at com.pi.CoapClientApplication.checkNetworkConnectivity(CoapClientApplication.java:75)
+	at com.pi.CoapClientApplication.initialize(CoapClientApplication.java:59)
+	at com.pi.CoapClientApplication.run(CoapClientApplication.java:27)
+	at com.pi.CoapClientApplication.main(CoapClientApplication.java:22)
+2025-05-26 17:24:57.798 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 17:24:57.798 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 17:24:57.798 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 17:24:57.798 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 17:24:57.798 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 17:24:57.798 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 17:24:57.798 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:24:57.799 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 17:24:57.800 [main] INFO  com.pi.CoapClientApplication - Stopping battery control service
+2025-05-26 17:24:57.800 [main] INFO  c.p.B.BatteryControlService - Stopped automatic battery control
+2025-05-26 17:24:57.800 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 17:24:57.800 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 17:24:57.801 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:25:09.926 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:25:09.930 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:25:09.931 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:25:09.933 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:25:10.294 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:25:10.295 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:25:10.296 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:25:10.296 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:25:10.298 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:25:10.298 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:25:10.298 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 17:25:10.298 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 17:25:10.344 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 17:25:10.345 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 17:25:10.345 [main] WARN  com.pi.CoapObserverManager - No sensor IP found for floor 0
+2025-05-26 17:25:10.345 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 17:25:10.345 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 17:25:10.345 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 2 floors
+2025-05-26 17:25:10.345 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 17:25:10.346 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 17:25:10.346 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 17:25:10.346 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 17:25:10.348 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 17:25:10.348 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 17:25:10.348 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 17:25:10.491 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v0): SOC=0.0
+2025-05-26 17:25:10.513 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v0): Active=1.788, Reactive=0.12
+2025-05-26 17:25:10.553 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v0): Light=208.56, Temp=20.103 (Floor 1)
+2025-05-26 17:25:10.584 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v1): Active=4.765, Reactive=0.279
+2025-05-26 17:25:10.593 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v1): SOC=0.0
+2025-05-26 17:25:10.639 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v1): Light=227.52, Temp=20.456 (Floor 1)
+2025-05-26 17:25:17.373 [main] INFO  com.pi.UserInterface - User requested Battery command for floor 0: setpoint=12
+2025-05-26 17:25:17.373 [main] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=12
+2025-05-26 17:25:17.379 [main] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 4.00, Text: {"error_code":"INVALID_SETPOINT"}, Success: false
+2025-05-26 17:25:20.598 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v2): Active=2.654, Reactive=0.177
+2025-05-26 17:25:20.611 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v2): SOC=0.0
+2025-05-26 17:25:20.664 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v2): Light=225.0, Temp=20.315 (Floor 1)
+2025-05-26 17:25:21.063 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-26 17:25:21.063 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-26 17:25:21.063 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-26 17:25:21.064 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: sensors_floor_1
+2025-05-26 17:25:21.064 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: battery_soc
+2025-05-26 17:25:21.064 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: power
+2025-05-26 17:25:21.064 [main] INFO  com.pi.CoapObserverManager - Shutdown client: sensors_floor_1
+2025-05-26 17:25:21.064 [main] INFO  com.pi.CoapObserverManager - Shutdown client: battery_soc
+2025-05-26 17:25:21.064 [main] INFO  com.pi.CoapObserverManager - Shutdown client: power
+2025-05-26 17:25:21.064 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-26 17:25:21.064 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-26 17:25:21.064 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-26 17:25:21.064 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=2, power=2, battery=2}
+2025-05-26 17:25:21.067 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-26 17:25:21.067 [main] INFO  com.pi.CoapClientApplication - Stopping battery control service
+2025-05-26 17:25:21.067 [main] INFO  c.p.B.BatteryControlService - Stopped automatic battery control
+2025-05-26 17:25:21.067 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-26 17:25:21.068 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-26 17:25:21.069 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:39:50.041 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:39:50.045 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:39:50.046 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:39:50.048 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:39:50.409 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:39:50.410 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:39:50.410 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:39:50.411 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:39:50.413 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:39:50.413 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:39:50.413 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 17:39:50.413 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 17:39:50.506 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 17:39:50.508 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 17:39:50.509 [main] WARN  com.pi.CoapObserverManager - No sensor IP found for floor 0
+2025-05-26 17:39:50.537 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 17:39:50.539 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 17:39:50.539 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 2 floors
+2025-05-26 17:39:50.539 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 17:39:50.539 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 17:39:50.539 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 17:39:50.539 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 17:39:50.543 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 17:39:50.543 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 17:39:50.543 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 17:39:50.641 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v4): SOC=0.0
+2025-05-26 17:39:50.719 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v4): Active=2.064, Reactive=0.256
+2025-05-26 17:39:50.782 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v4): Light=180.12, Temp=19.798 (Floor 1)
+2025-05-26 17:39:57.794 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v5): Light=197.04, Temp=19.432 (Floor 1)
+2025-05-26 17:39:57.804 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v5): Active=2.121, Reactive=0.259
+2025-05-26 17:39:57.813 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v5): SOC=0.0
+2025-05-26 17:40:03.975 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 17:44:30.957 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 17:44:30.968 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:44:30.968 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 17:44:30.969 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 17:44:31.370 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 17:44:31.370 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 17:44:31.371 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 17:44:31.372 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 17:44:31.373 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 17:44:31.374 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 17:44:31.374 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 17:44:31.374 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 17:44:31.441 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 17:44:31.444 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 17:44:31.449 [main] WARN  com.pi.CoapObserverManager - No sensor IP found for floor 0
+2025-05-26 17:44:31.449 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 17:44:31.450 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 17:44:31.450 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 2 floors
+2025-05-26 17:44:31.450 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 17:44:31.450 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 17:44:31.450 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 17:44:31.450 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 17:44:31.458 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 17:44:31.458 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 17:44:31.458 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 17:44:31.560 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v33): SOC=0.0
+2025-05-26 17:44:31.562 [Thread-1] WARN  com.pi.CoapObserverManager - Error message received for power: TooManyObservers
+2025-05-26 17:44:31.588 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v32): Light=162.76, Temp=20.391 (Floor 1)
+2025-05-26 17:44:37.020 [main] INFO  com.pi.UserInterface - User requested AC command for floor 1: on=0, setpoint=20.0
+2025-05-26 17:44:37.020 [main] INFO  com.pi.CoapRequestManager - Sending AC command to floor 1: on=0, setpoint=20.0
+2025-05-26 17:44:37.080 [main] INFO  com.pi.CoapRequestManager - AC (Floor 1) Command Response - Code: 2.04, Text: {"status":"AC_OFF"}, Success: true
+2025-05-26 17:44:38.312 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v34): SOC=0.0
+2025-05-26 17:44:38.384 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v33): Light=156.0, Temp=20.181 (Floor 1)
+2025-05-26 17:44:44.108 [main] INFO  com.pi.UserInterface - User requested AC command for floor 1: on=1, setpoint=24
+2025-05-26 17:44:44.109 [main] INFO  com.pi.CoapRequestManager - Sending AC command to floor 1: on=1, setpoint=24
+2025-05-26 17:44:44.176 [main] INFO  com.pi.CoapRequestManager - AC (Floor 1) Command Response - Code: 2.04, Text: {"status":"AC_ON","setpoint":24.00}, Success: true
+2025-05-26 17:44:46.293 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 18:09:43.001 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 18:09:43.005 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 18:09:43.005 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 18:09:43.007 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 18:09:43.402 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 18:09:43.402 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 18:09:43.403 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 18:09:43.404 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 18:09:43.406 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 18:09:43.406 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 18:09:43.406 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 18:09:43.406 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 18:09:43.454 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 18:09:43.454 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 18:09:43.454 [main] WARN  com.pi.CoapObserverManager - No sensor IP found for floor 0
+2025-05-26 18:09:43.454 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 18:09:43.455 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 18:09:43.465 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 2 floors
+2025-05-26 18:09:43.465 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 18:09:43.466 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 18:09:43.466 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 18:09:43.466 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 18:09:43.485 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 18:09:43.486 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 18:09:43.486 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 18:09:43.571 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v0): Active=2.493, Reactive=0.11
+2025-05-26 18:09:49.503 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v0): SOC=0.0
+2025-05-26 18:09:52.232 [main] INFO  com.pi.UserInterface - User requested Battery command for floor 0: setpoint=6
+2025-05-26 18:09:52.232 [main] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=6
+2025-05-26 18:09:52.235 [main] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":6.00}, Success: true
+2025-05-26 18:09:52.475 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v1): Active=1.927, Reactive=0.091
+2025-05-26 18:09:58.967 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v0): Light=210.96, Temp=21.431 (Floor 1)
+2025-05-26 18:10:02.533 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v1): Light=225.2, Temp=21.127 (Floor 1)
+2025-05-26 18:10:02.557 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v2): Active=3.171, Reactive=0.068
+2025-05-26 18:10:02.594 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v1): SOC=0.6
+2025-05-26 18:10:12.519 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v3): Active=1.993, Reactive=0.117
+2025-05-26 18:10:12.609 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v2): Light=251.96, Temp=21.246 (Floor 1)
+2025-05-26 18:10:13.500 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:10:13.503 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=10.00
+2025-05-26 18:10:13.506 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":10.00}, Success: true
+2025-05-26 18:10:17.500 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v2): SOC=1.6
+2025-05-26 18:10:22.588 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v4): Active=1.788, Reactive=0.12
+2025-05-26 18:10:32.568 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v5): Active=4.765, Reactive=0.279
+2025-05-26 18:10:32.583 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v3): SOC=2.6
+2025-05-26 18:10:42.675 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v3): Light=232.44, Temp=21.253 (Floor 1)
+2025-05-26 18:10:42.690 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v6): Active=2.654, Reactive=0.177
+2025-05-26 18:10:43.478 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:10:43.479 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=6.96
+2025-05-26 18:10:43.484 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":6.96}, Success: true
+2025-05-26 18:10:47.700 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v4): SOC=3.296
+2025-05-26 18:10:52.652 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v4): Light=220.12, Temp=21.287 (Floor 1)
+2025-05-26 18:10:52.684 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v7): Active=2.288, Reactive=0.225
+2025-05-26 18:11:02.730 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v8): Active=1.969, Reactive=0.22
+2025-05-26 18:11:02.753 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v5): SOC=3.992
+2025-05-26 18:11:13.484 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:11:13.485 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=10.00
+2025-05-26 18:11:13.490 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":10.00}, Success: true
+2025-05-26 18:11:14.003 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v9): Active=1.863, Reactive=0.368
+2025-05-26 18:11:14.059 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v5): Light=232.0, Temp=20.728 (Floor 1)
+2025-05-26 18:11:18.962 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v6): SOC=4.992
+2025-05-26 18:11:24.023 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v6): Light=248.6, Temp=20.235 (Floor 1)
+2025-05-26 18:11:24.040 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v10): Active=1.538, Reactive=0.195
+2025-05-26 18:11:34.013 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v11): Active=1.783, Reactive=0.148
+2025-05-26 18:11:34.021 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v7): SOC=5.992
+2025-05-26 18:11:43.496 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:11:43.497 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-1.00
+2025-05-26 18:11:43.507 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-1.00}, Success: true
+2025-05-26 18:11:44.031 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v12): Active=2.064, Reactive=0.256
+2025-05-26 18:11:44.057 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v7): Light=234.6, Temp=19.848 (Floor 1)
+2025-05-26 18:11:54.035 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v13): Active=2.121, Reactive=0.259
+2025-05-26 18:12:04.018 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v8): Light=214.16, Temp=19.922 (Floor 1)
+2025-05-26 18:12:04.032 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v14): Active=2.414, Reactive=0.102
+2025-05-26 18:12:13.493 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:12:13.494 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-1.00
+2025-05-26 18:12:13.497 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-1.00}, Success: true
+2025-05-26 18:12:14.075 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v15): Active=3.557, Reactive=0.075
+2025-05-26 18:12:24.072 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v16): Active=3.344, Reactive=0.089
+2025-05-26 18:12:24.092 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v9): Light=245.4, Temp=19.582 (Floor 1)
+2025-05-26 18:12:34.113 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v10): Light=233.08, Temp=19.821 (Floor 1)
+2025-05-26 18:12:34.132 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v17): Active=3.308, Reactive=0.097
+2025-05-26 18:12:36.058 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v8): SOC=5.592
+2025-05-26 18:12:43.480 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:12:43.481 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.13
+2025-05-26 18:12:43.486 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.13}, Success: true
+2025-05-26 18:12:44.074 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v11): Light=217.52, Temp=20.024 (Floor 1)
+2025-05-26 18:12:44.102 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v18): Active=3.491, Reactive=0.2
+2025-05-26 18:12:54.130 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v19): Active=3.322, Reactive=0.133
+2025-05-26 18:12:54.162 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v12): Light=243.72, Temp=19.946 (Floor 1)
+2025-05-26 18:13:04.136 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v20): Active=2.493, Reactive=0.11
+2025-05-26 18:13:04.156 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v9): SOC=7.218
+2025-05-26 18:13:13.478 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:13:13.478 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=7.64
+2025-05-26 18:13:13.524 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":7.64}, Success: true
+2025-05-26 18:13:14.065 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v13): Light=225.56, Temp=19.867 (Floor 1)
+2025-05-26 18:13:14.120 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v21): Active=1.927, Reactive=0.091
+2025-05-26 18:13:19.141 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v10): SOC=7.982
+2025-05-26 18:13:24.104 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v14): Light=254.64, Temp=20.194 (Floor 1)
+2025-05-26 18:13:24.128 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v22): Active=3.171, Reactive=0.068
+2025-05-26 18:13:34.163 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v15): Light=237.2, Temp=20.371 (Floor 1)
+2025-05-26 18:13:34.190 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v23): Active=1.993, Reactive=0.117
+2025-05-26 18:13:34.207 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v11): SOC=8.746
+2025-05-26 18:13:43.484 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:13:43.485 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=6.01
+2025-05-26 18:13:43.491 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":6.01}, Success: true
+2025-05-26 18:13:44.166 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v24): Active=1.788, Reactive=0.12
+2025-05-26 18:13:49.159 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v12): SOC=9.347
+2025-05-26 18:13:55.280 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v25): Active=4.765, Reactive=0.279
+2025-05-26 18:14:05.280 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v26): Active=2.654, Reactive=0.177
+2025-05-26 18:14:05.288 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v13): SOC=9.948
+2025-05-26 18:14:13.472 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:14:13.472 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=10.00
+2025-05-26 18:14:13.479 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":10.00}, Success: true
+2025-05-26 18:14:15.294 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v27): Active=2.288, Reactive=0.225
+2025-05-26 18:14:20.296 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v14): SOC=10.948
+2025-05-26 18:14:25.295 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v16): Light=217.28, Temp=20.507 (Floor 1)
+2025-05-26 18:14:25.307 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v28): Active=1.969, Reactive=0.22
+2025-05-26 18:14:35.339 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v29): Active=1.863, Reactive=0.368
+2025-05-26 18:14:35.350 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v15): SOC=11.948
+2025-05-26 18:14:44.237 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:14:44.238 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=2.67
+2025-05-26 18:14:45.216 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":2.67}, Success: true
+2025-05-26 18:14:46.318 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v17): Light=238.12, Temp=20.144 (Floor 1)
+2025-05-26 18:14:46.341 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v30): Active=1.538, Reactive=0.195
+2025-05-26 18:14:56.484 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v31): Active=1.783, Reactive=0.148
+2025-05-26 18:15:06.533 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v18): Light=259.56, Temp=20.112 (Floor 1)
+2025-05-26 18:15:06.547 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v32): Active=2.064, Reactive=0.256
+2025-05-26 18:15:06.562 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v16): SOC=12.482
+2025-05-26 18:15:13.493 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:15:13.494 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:15:13.500 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-26 18:15:16.521 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v33): Active=2.121, Reactive=0.259
+2025-05-26 18:15:16.616 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v19): Light=278.32, Temp=19.949 (Floor 1)
+2025-05-26 18:15:43.478 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:15:43.479 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:17:04.711 [pool-1-thread-1] WARN  com.pi.CoapRequestManager - No response received from Battery (Floor 0) device
+2025-05-26 18:17:04.716 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:17:04.716 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:17:11.398 [Thread-1] ERROR com.pi.CoapObserverManager - Battery SOC observation failed or was canceled
+2025-05-26 18:17:25.687 [Thread-1] ERROR com.pi.CoapObserverManager - Floor 1 sensors observation failed or was canceled
+2025-05-26 18:17:49.544 [Thread-1] ERROR com.pi.CoapObserverManager - Power observation failed or was canceled
+2025-05-26 18:18:21.422 [pool-1-thread-1] WARN  com.pi.CoapRequestManager - No response received from Battery (Floor 0) device
+2025-05-26 18:18:21.428 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:18:21.428 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:18:21.433 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-26 18:18:21.446 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:18:21.447 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:18:21.508 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-26 18:18:21.523 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:18:21.524 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=1.97
+2025-05-26 18:18:21.571 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":1.97}, Success: true
+2025-05-26 18:18:21.578 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:18:21.579 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:18:21.655 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-26 18:18:43.485 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:18:43.486 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-26 18:18:43.496 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-26 18:19:13.474 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:19:13.474 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=2.20
+2025-05-26 18:19:13.477 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":2.20}, Success: true
+2025-05-26 18:19:43.472 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:19:43.472 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-26 18:19:43.475 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-26 18:20:13.472 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:20:13.472 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-26 18:20:13.476 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-26 18:20:43.471 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:20:43.472 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-26 18:20:43.474 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-26 18:21:13.472 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:21:13.473 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-26 18:21:13.476 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-26 18:21:43.486 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:21:43.487 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:21:43.493 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-26 18:22:13.482 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:22:13.483 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=3.28
+2025-05-26 18:22:13.488 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":3.28}, Success: true
+2025-05-26 18:22:43.479 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:22:43.479 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-26 18:22:46.249 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 4.00, Text: {"error_code":"BATTERY_EMPTY","message":"cannot set negative se, Success: false
+2025-05-26 18:23:13.472 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:23:13.473 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=3.20
+2025-05-26 18:23:13.476 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":3.20}, Success: true
+2025-05-26 18:23:43.478 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:23:43.479 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-26 18:23:43.484 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-26 18:24:13.478 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:24:13.479 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=2.34
+2025-05-26 18:24:13.482 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":2.34}, Success: true
+2025-05-26 18:24:43.479 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:24:43.479 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:24:43.482 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-26 18:25:13.473 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:25:13.474 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-26 18:25:13.478 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-26 18:25:43.484 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:25:43.484 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:25:43.490 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-26 18:26:13.472 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:26:13.473 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:26:13.478 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-26 18:26:43.475 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:26:43.475 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-26 18:26:43.477 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-26 18:27:13.473 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:27:13.474 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:27:13.477 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-26 18:27:43.479 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:27:43.479 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=2.09
+2025-05-26 18:27:43.489 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":2.09}, Success: true
+2025-05-26 18:28:13.477 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:28:13.478 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:28:13.481 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-26 18:28:43.472 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:28:43.473 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-26 18:28:43.475 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-26 18:29:13.476 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:29:13.477 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=2.08
+2025-05-26 18:29:13.484 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":2.08}, Success: true
+2025-05-26 18:29:43.471 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:29:43.471 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-26 18:29:43.475 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-26 18:30:13.473 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:30:13.474 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=1.41
+2025-05-26 18:30:13.479 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":1.41}, Success: true
+2025-05-26 18:30:43.473 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:30:43.473 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:30:43.479 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-26 18:31:13.472 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:31:13.472 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=3.11
+2025-05-26 18:31:13.475 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":3.11}, Success: true
+2025-05-26 18:31:32.778 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-26 18:32:01.349 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-26 18:32:01.353 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 18:32:01.353 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-26 18:32:01.354 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-26 18:32:01.754 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-26 18:32:01.754 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-26 18:32:01.755 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-26 18:32:01.755 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-26 18:32:01.757 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-26 18:32:01.757 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-26 18:32:01.757 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-26 18:32:01.757 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-26 18:32:01.862 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-26 18:32:01.862 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-26 18:32:01.865 [main] WARN  com.pi.CoapObserverManager - No sensor IP found for floor 0
+2025-05-26 18:32:01.866 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-26 18:32:01.867 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-26 18:32:01.867 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 2 floors
+2025-05-26 18:32:01.867 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-26 18:32:01.876 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-26 18:32:01.876 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-26 18:32:01.876 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-26 18:32:01.877 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-26 18:32:01.877 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-26 18:32:01.877 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-26 18:32:01.962 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v0): SOC=4.849
+2025-05-26 18:32:01.979 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v0): Active=2.414, Reactive=0.102
+2025-05-26 18:32:02.028 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v0): Light=261.12, Temp=22.481 (Floor 1)
+2025-05-26 18:32:09.553 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v1): Active=3.557, Reactive=0.075
+2025-05-26 18:32:09.604 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v1): SOC=5.16
+2025-05-26 18:32:19.551 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v2): Active=3.344, Reactive=0.089
+2025-05-26 18:32:29.536 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v3): Active=3.308, Reactive=0.097
+2025-05-26 18:32:31.900 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:32:31.902 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-1.00
+2025-05-26 18:32:31.924 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-1.00}, Success: true
+2025-05-26 18:32:39.539 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v1): Light=283.16, Temp=23.194 (Floor 1)
+2025-05-26 18:32:39.571 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v4): Active=3.491, Reactive=0.2
+2025-05-26 18:32:49.559 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v5): Active=3.322, Reactive=0.133
+2025-05-26 18:32:59.587 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v6): Active=2.493, Reactive=0.11
+2025-05-26 18:33:01.885 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:33:01.885 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-1.00
+2025-05-26 18:33:01.890 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-1.00}, Success: true
+2025-05-26 18:33:09.512 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v2): Light=265.76, Temp=22.89 (Floor 1)
+2025-05-26 18:33:09.561 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v7): Active=1.927, Reactive=0.091
+2025-05-26 18:33:11.592 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v2): SOC=5.171
+2025-05-26 18:33:19.560 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v3): Light=285.12, Temp=22.786 (Floor 1)
+2025-05-26 18:33:19.581 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v8): Active=3.171, Reactive=0.068
+2025-05-26 18:33:29.585 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v9): Active=1.993, Reactive=0.117
+2025-05-26 18:33:31.884 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:33:31.884 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=7.06
+2025-05-26 18:33:31.888 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":7.06}, Success: true
+2025-05-26 18:33:39.604 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v10): Active=1.788, Reactive=0.12
+2025-05-26 18:33:39.625 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v3): SOC=5.777
+2025-05-26 18:33:49.609 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v11): Active=4.765, Reactive=0.279
+2025-05-26 18:33:54.613 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v4): SOC=6.483
+2025-05-26 18:33:59.594 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v12): Active=2.654, Reactive=0.177
+2025-05-26 18:34:01.883 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:34:01.884 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=10.00
+2025-05-26 18:34:01.888 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":10.00}, Success: true
+2025-05-26 18:34:09.624 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v13): Active=2.288, Reactive=0.225
+2025-05-26 18:34:09.634 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v5): SOC=7.483
+2025-05-26 18:34:19.631 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v14): Active=1.969, Reactive=0.22
+2025-05-26 18:34:21.617 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v4): Light=284.32, Temp=23.596 (Floor 1)
+2025-05-26 18:34:24.672 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v6): SOC=8.483
+2025-05-26 18:34:29.549 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v5): Light=269.76, Temp=23.794 (Floor 1)
+2025-05-26 18:34:29.620 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v15): Active=1.863, Reactive=0.368
+2025-05-26 18:34:31.884 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:34:31.884 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-1.00
+2025-05-26 18:34:31.887 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-1.00}, Success: true
+2025-05-26 18:34:39.536 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v6): Light=253.2, Temp=24.084 (Floor 1)
+2025-05-26 18:34:39.641 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v16): Active=1.538, Reactive=0.195
+2025-05-26 18:34:49.652 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v17): Active=1.783, Reactive=0.148
+2025-05-26 18:34:59.650 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v7): Light=237.04, Temp=24.492 (Floor 1)
+2025-05-26 18:34:59.667 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v18): Active=2.064, Reactive=0.256
+2025-05-26 18:35:01.882 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:35:01.883 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=10.00
+2025-05-26 18:35:01.885 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":10.00}, Success: true
+2025-05-26 18:35:09.665 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v19): Active=2.121, Reactive=0.259
+2025-05-26 18:35:09.681 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v7): SOC=9.283
+2025-05-26 18:35:19.705 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v20): Active=2.414, Reactive=0.102
+2025-05-26 18:35:24.722 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v8): SOC=10.283
+2025-05-26 18:35:29.635 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v8): Light=263.96, Temp=24.284 (Floor 1)
+2025-05-26 18:35:29.677 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v21): Active=3.557, Reactive=0.075
+2025-05-26 18:35:31.885 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:35:31.886 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-26 18:35:31.889 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-26 18:35:39.713 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v9): SOC=9.683
+2025-05-26 18:35:39.742 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v22): Active=3.344, Reactive=0.089
+2025-05-26 18:35:49.715 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v23): Active=3.308, Reactive=0.097
+2025-05-26 18:35:54.720 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v10): SOC=9.083
+2025-05-26 18:35:59.726 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v24): Active=3.491, Reactive=0.2
+2025-05-26 18:36:01.886 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:36:01.886 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-1.00
+2025-05-26 18:36:01.891 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-1.00}, Success: true
+2025-05-26 18:36:09.731 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v25): Active=3.322, Reactive=0.133
+2025-05-26 18:36:19.746 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v26): Active=2.493, Reactive=0.11
+2025-05-26 18:36:29.760 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v27): Active=1.927, Reactive=0.091
+2025-05-26 18:36:31.716 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v9): Light=255.88, Temp=24.122 (Floor 1)
+2025-05-26 18:36:31.884 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:36:31.885 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=10.00
+2025-05-26 18:36:31.889 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":10.00}, Success: true
+2025-05-26 18:36:39.756 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v28): Active=3.171, Reactive=0.068
+2025-05-26 18:36:39.771 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v11): SOC=9.883
+2025-05-26 18:36:49.739 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v10): Light=236.84, Temp=23.946 (Floor 1)
+2025-05-26 18:36:49.774 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v29): Active=1.993, Reactive=0.117
+2025-05-26 18:36:54.803 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v12): SOC=10.883
+2025-05-26 18:36:59.824 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v30): Active=1.788, Reactive=0.12
+2025-05-26 18:37:01.883 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:37:01.884 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-26 18:37:01.887 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-26 18:37:09.852 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v31): Active=4.765, Reactive=0.279
+2025-05-26 18:37:09.882 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v13): SOC=10.283
+2025-05-26 18:37:19.842 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v11): Light=265.68, Temp=23.532 (Floor 1)
+2025-05-26 18:37:19.864 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v32): Active=2.654, Reactive=0.177
+2025-05-26 18:37:24.869 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v14): SOC=9.683
+2025-05-26 18:37:29.838 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v33): Active=2.288, Reactive=0.225
+2025-05-26 18:37:31.889 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:37:31.889 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=10.00
+2025-05-26 18:37:31.894 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":10.00}, Success: true
+2025-05-26 18:37:39.867 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v12): Light=249.52, Temp=23.966 (Floor 1)
+2025-05-26 18:37:39.909 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v34): Active=1.969, Reactive=0.22
+2025-05-26 18:37:39.953 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v15): SOC=10.683
+2025-05-26 18:37:49.961 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v13): Light=232.84, Temp=24.07 (Floor 1)
+2025-05-26 18:37:49.981 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v35): Active=1.863, Reactive=0.368
+2025-05-26 18:37:55.584 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v16): SOC=11.683
+2025-05-26 18:38:00.641 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v36): Active=1.538, Reactive=0.195
+2025-05-26 18:38:01.885 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:38:01.885 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-26 18:38:01.889 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-26 18:38:10.642 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v37): Active=1.783, Reactive=0.148
+2025-05-26 18:38:10.649 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v17): SOC=11.083
+2025-05-26 18:38:31.884 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:38:31.884 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:38:31.938 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-26 18:39:01.885 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:39:01.885 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:39:01.889 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-26 18:39:31.896 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:39:31.896 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=3.02
+2025-05-26 18:39:31.898 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":3.02}, Success: true
+2025-05-26 18:40:01.887 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:40:01.887 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=3.67
+2025-05-26 18:40:01.892 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":3.67}, Success: true
+2025-05-26 18:40:31.883 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:40:31.884 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:40:34.540 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-26 18:41:01.887 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:41:01.888 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:41:01.890 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-26 18:41:31.887 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:41:31.888 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:41:31.899 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-26 18:42:01.892 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:42:01.892 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=3.52
+2025-05-26 18:42:01.900 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":3.52}, Success: true
+2025-05-26 18:42:31.885 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:42:31.885 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=1.78
+2025-05-26 18:42:31.888 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":1.78}, Success: true
+2025-05-26 18:43:01.886 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:43:01.887 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-26 18:43:01.893 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-26 18:43:31.889 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:43:31.890 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:43:31.893 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-26 18:44:01.890 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:44:01.892 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:44:01.896 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-26 18:44:31.888 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:44:31.888 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-26 18:44:31.894 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-26 18:45:01.885 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:45:01.885 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=2.25
+2025-05-26 18:45:01.888 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":2.25}, Success: true
+2025-05-26 18:45:31.885 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:45:31.885 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:45:31.888 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-26 18:46:01.886 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:46:01.886 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=1.39
+2025-05-26 18:46:01.889 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":1.39}, Success: true
+2025-05-26 18:46:31.883 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:46:31.884 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=2.41
+2025-05-26 18:46:31.888 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":2.41}, Success: true
+2025-05-26 18:47:01.883 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:47:01.884 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:47:01.889 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-26 18:47:31.882 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:47:31.883 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=3.13
+2025-05-26 18:47:31.885 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":3.13}, Success: true
+2025-05-26 18:48:01.883 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:48:01.883 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:48:01.886 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-26 18:48:31.884 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:48:31.885 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-26 18:48:31.889 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-26 18:49:01.889 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:49:01.890 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-26 18:49:01.900 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-26 18:49:31.894 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:49:31.894 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=2.90
+2025-05-26 18:50:39.700 [pool-1-thread-1] WARN  com.pi.CoapRequestManager - No response received from Battery (Floor 0) device
+2025-05-26 18:50:39.705 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:50:39.706 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:51:11.628 [Thread-1] ERROR com.pi.CoapObserverManager - Battery SOC observation failed or was canceled
+2025-05-26 18:51:40.683 [Thread-1] ERROR com.pi.CoapObserverManager - Floor 1 sensors observation failed or was canceled
+2025-05-26 18:51:44.727 [pool-1-thread-1] WARN  com.pi.CoapRequestManager - No response received from Battery (Floor 0) device
+2025-05-26 18:51:44.732 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:51:44.733 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=1.87
+2025-05-26 18:51:50.829 [Thread-1] ERROR com.pi.CoapObserverManager - Power observation failed or was canceled
+2025-05-26 18:52:52.202 [pool-1-thread-1] WARN  com.pi.CoapRequestManager - No response received from Battery (Floor 0) device
+2025-05-26 18:52:52.208 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-26 18:52:52.208 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-26 18:53:24.071 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
