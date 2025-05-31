@@ -43,7 +43,7 @@ extern float current_light;
 
 extern float temperature_required;
 extern float light_required;
-extern uint8_t modality;
+extern int8_t modality;
 
 extern coap_resource_t res_light_required, res_temp_required, res_sensors, res_dynamic_control;
 

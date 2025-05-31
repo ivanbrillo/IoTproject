@@ -1,6 +1,6 @@
 #include <stdint.h>
 
-float update_temp_setpoint(float current_temp, float setpoint, float temp_required, uint8_t modality)
+float update_temp_setpoint(float current_temp, float setpoint, float temp_required, int8_t modality)
 {
     float difference = temp_required - current_temp;
     float scaling_factor = (modality == 0) ? 4.0f : (modality == 1 ? 5.0f : 8.0f);

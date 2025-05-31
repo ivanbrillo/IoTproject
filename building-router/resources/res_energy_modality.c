@@ -15,6 +15,15 @@ extern float last_prediction;
 int8_t last_modality = -1; // -2: disabled, -1: to be calculated, 0: normal, 1:  light power saving, 2: heavy power saving
 int8_t modality_disabled = 0;
 
+// Response structure
+typedef struct
+{
+  int32_t version;
+  int8_t modality;
+} energy_modality_response_t;
+
+int32_t version = 0;
+
 #define MAX_TH 3
 #define LOW_TH 2
 
@@ -31,13 +40,22 @@ EVENT_RESOURCE(res_energy_modality,
 
 static void res_get_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset)
 {
-  uint8_t modality = 0;
-  if (last_modality != -2)
-    modality = last_modality;
+  energy_modality_response_t *resp = (energy_modality_response_t *)buffer;
+
+  // Ensure we have enough buffer space
+  if (preferred_size < sizeof(energy_modality_response_t))
+  {
+    coap_set_status_code(response, INTERNAL_SERVER_ERROR_5_00);
+    LOG_ERR("Buffer Allocation Insufficient");
+    return;
+  }
+
+  // Fill response structure
+  resp->version = version++;
+  resp->modality = (last_modality != -2) ? last_modality : 0;
 
   coap_set_header_content_format(response, APPLICATION_OCTET_STREAM); // binary format
-  buffer[0] = modality;
-  coap_set_payload(response, buffer, 1); // one byte payload
+  coap_set_payload(response, buffer, sizeof(energy_modality_response_t));
 }
 
 static void res_event_handler(void)
@@ -75,13 +93,9 @@ static void res_event_handler(void)
   uint8_t mod = 0;
 
   if (last_prediction > MAX_TH)
-  {
     mod = 2; // heavy power saving
-  }
   else if (last_prediction > LOW_TH)
-  {
     mod = 1; // light power saving
-  }
 
   if (last_modality != mod)
   {

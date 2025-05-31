@@ -6,7 +6,7 @@
 
 /* URI of the observed resource */
 #define OBS_RESOURCE_URI "energy-modality"
-extern uint8_t modality;
+extern int8_t modality;
 
 void toggle_observation(coap_endpoint_t* server_ep);
 

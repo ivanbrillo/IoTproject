@@ -1,19 +1,30 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "coap-log.h"
 #include "modality-obs.h"
 #include "../led_button_helper.c"
-
 #include "sys/log.h"
+
 #define LOG_MODULE "MODALITY_OBS"
 #define LOG_LEVEL LOG_LEVEL_INFO
 
 static coap_observee_t *obs;
 #define OBS_RESOURCE_URI "energy-modality"
 
-uint8_t modality = 0;
+// Safe version comparison macro for signed int32_t that handles overflow
+#define VERSION_IS_NEWER(new_ver, old_ver) \
+  ((int32_t)((new_ver) - (old_ver)) > 0)
+
+// Response structure matching the server
+typedef struct
+{
+  int32_t version;
+  int8_t modality;
+} energy_modality_response_t;
+
+int8_t modality = 0;
+static int32_t stored_version = -1; // Track the last known version
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -35,24 +46,45 @@ notification_callback(coap_observee_t *obs, void *notification,
   switch (flag)
   {
   case NOTIFICATION_OK:
-    if (payload != NULL && len >= 1)
+    if (payload != NULL && len == sizeof(energy_modality_response_t))
     {
-      uint8_t mod = payload[0];
+      energy_modality_response_t *response = (energy_modality_response_t *)payload;
 
-      if (mod <= 2)
+      LOG_INFO("Received version: %d, stored version: %d\n",
+               response->version, stored_version);
+
+      // Only accept if version is higher than stored version
+      if (VERSION_IS_NEWER(response->version, stored_version))
       {
-        LOG_INFO("Modality PARSED: %u\n", mod);
-        modality = mod;
-        set_color_led(modality);
+        if (response->modality <= 2)
+        {
+          LOG_INFO("Modality PARSED: %d (version %d -> %d)\n",
+                   response->modality, stored_version, response->version);
+
+          modality = response->modality;
+          stored_version = response->version; // Update stored version
+          set_color_led(modality);
+        }
+        else
+        {
+          LOG_WARN("Unknown modality value: %d (version %d)\n",
+                   response->modality, response->version);
+        }
+      }
+      else if (response->version == stored_version)
+      {
+        LOG_INFO("Same version (%d), ignoring duplicate\n", response->version);
       }
       else
       {
-        LOG_INFO("Unknown modality value: %u\n", modality);
+        LOG_WARN("Received older version %d (current: %d), ignoring\n",
+                 response->version, stored_version);
       }
     }
     else
     {
-      LOG_INFO("No payload received to parse modality\n");
+      LOG_WARN("Invalid payload size: %d bytes (expected %zu)\n",
+               len, sizeof(energy_modality_response_t));
     }
     break;
 
