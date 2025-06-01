@@ -50,7 +50,7 @@
 #define UIP_CONF_TCP 1
 #endif
 
-#define LOG_LEVEL_APP LOG_LEVEL_INFO
+#define LOG_LEVEL_APP LOG_LEVEL_NONE
 
 
 #endif /* PROJECT_CONF_H_ */

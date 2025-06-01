@@ -56,7 +56,8 @@ public class DatabaseManager {
 
     private boolean shouldStoreData(String observableType, int newVersion) {
         int currentVersion = versionCounters.get(observableType);
-        if (newVersion > currentVersion) {
+
+        if (isVersionNewer(newVersion, currentVersion)) {
             versionCounters.put(observableType, newVersion);
             logger.debug("Version updated for {}: {} -> {}", observableType, currentVersion, newVersion);
             return true;
@@ -65,6 +66,11 @@ public class DatabaseManager {
                     observableType, newVersion, currentVersion);
             return false;
         }
+    }
+
+    private boolean isVersionNewer(int newVersion, int currentVersion) {
+        // Safe comparison that handles int overflow
+        return (newVersion - currentVersion) > 0;
     }
 
     public void storePowerData(String jsonPayload) {

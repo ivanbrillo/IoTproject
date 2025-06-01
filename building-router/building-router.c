@@ -1,7 +1,4 @@
 #include "contiki.h"
-// #include "net/routing/routing.h"
-// #include "net/netstack.h"
-// #include "net/ipv6/simple-udp.h"
 #include <stdint.h>
 #include "coap-engine.h"
 #include "sys/log.h"
@@ -38,7 +35,7 @@ PROCESS_THREAD(udp_server_process, ev, data)
 
 #if BORDER_ROUTER_CONF_WEBSERVER
   PROCESS_NAME(webserver_nogui_process);
-  process_start(&webserver_nogui_process, NULL);
+  rocess_start(&webserver_nogui_process, NULL);
 #endif /* BORDER_ROUTER_CONF_WEBSERVER */
 
   coap_activate_resource(&res_power, "power");

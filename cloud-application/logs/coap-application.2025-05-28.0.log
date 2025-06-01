@@ -1,0 +1,1196 @@
+2025-05-28 22:14:16.858 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-28 22:14:16.876 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-28 22:14:16.877 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-28 22:14:16.878 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-28 22:14:18.034 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-28 22:14:18.035 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-28 22:14:18.037 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-28 22:14:18.050 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-28 22:14:18.053 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-28 22:14:18.053 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-28 22:14:18.053 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-28 22:14:18.053 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-28 22:14:18.253 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-28 22:14:18.253 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-28 22:14:18.254 [main] WARN  com.pi.CoapObserverManager - No sensor IP found for floor 0
+2025-05-28 22:14:18.254 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-28 22:14:18.260 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-28 22:14:18.261 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 2 floors
+2025-05-28 22:14:18.261 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-28 22:14:18.267 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-28 22:14:18.268 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-28 22:14:18.285 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-28 22:14:18.288 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-28 22:14:18.288 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-28 22:14:18.288 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-28 22:14:18.494 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v0): SOC=0.0
+2025-05-28 22:14:18.569 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v0): Active=1.993, Reactive=0.117
+2025-05-28 22:14:18.700 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v0): Light=226.36, Temp=21.388 (Floor 1)
+2025-05-28 22:14:21.007 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v1): Light=237.64, Temp=21.302 (Floor 1)
+2025-05-28 22:14:21.118 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v1): Active=1.788, Reactive=0.12
+2025-05-28 22:14:30.984 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v2): Light=224.88, Temp=21.218 (Floor 1)
+2025-05-28 22:14:31.099 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v2): Active=4.765, Reactive=0.279
+2025-05-28 22:14:41.004 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v3): Light=243.28, Temp=21.285 (Floor 1)
+2025-05-28 22:14:41.124 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v3): Active=2.654, Reactive=0.177
+2025-05-28 22:14:48.366 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:14:48.368 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=7.29
+2025-05-28 22:14:48.378 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":7.29}, Success: true
+2025-05-28 22:14:51.135 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v4): Light=227.2, Temp=21.599 (Floor 1)
+2025-05-28 22:14:51.154 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v4): Active=2.288, Reactive=0.225
+2025-05-28 22:15:01.088 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v5): Light=212.28, Temp=21.353 (Floor 1)
+2025-05-28 22:15:01.452 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v5): Active=1.969, Reactive=0.22
+2025-05-28 22:15:01.476 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v1): SOC=0.729
+2025-05-28 22:15:01.637 [main] INFO  com.pi.UserInterface - User viewing temperature data
+2025-05-28 22:15:01.637 [main] INFO  com.pi.DatabaseManager - Viewing temperature data
+2025-05-28 22:15:11.162 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v6): Light=193.32, Temp=21.406 (Floor 1)
+2025-05-28 22:15:11.234 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v6): Active=1.863, Reactive=0.368
+2025-05-28 22:15:16.178 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v2): SOC=1.458
+2025-05-28 22:15:18.305 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:15:18.307 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=7.28
+2025-05-28 22:15:18.316 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":7.28}, Success: true
+2025-05-28 22:15:21.089 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v7): Light=180.56, Temp=21.484 (Floor 1)
+2025-05-28 22:15:21.204 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v7): Active=1.538, Reactive=0.195
+2025-05-28 22:15:31.244 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v8): Active=1.783, Reactive=0.148
+2025-05-28 22:15:31.296 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v3): SOC=2.186
+2025-05-28 22:15:41.272 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v9): Active=2.064, Reactive=0.256
+2025-05-28 22:15:46.265 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v4): SOC=2.914
+2025-05-28 22:15:48.295 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:15:48.295 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=10.00
+2025-05-28 22:15:48.301 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":10.00}, Success: true
+2025-05-28 22:15:51.190 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v8): Light=200.0, Temp=21.003 (Floor 1)
+2025-05-28 22:15:51.312 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v10): Active=2.121, Reactive=0.259
+2025-05-28 22:16:01.351 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v11): Active=2.414, Reactive=0.102
+2025-05-28 22:16:01.381 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v5): SOC=3.914
+2025-05-28 22:16:11.253 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v9): Light=187.72, Temp=21.106 (Floor 1)
+2025-05-28 22:16:11.365 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v12): Active=3.557, Reactive=0.075
+2025-05-28 22:16:16.364 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v6): SOC=4.914
+2025-05-28 22:16:18.300 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:16:18.301 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=10.00
+2025-05-28 22:16:18.308 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":10.00}, Success: true
+2025-05-28 22:16:21.368 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v13): Active=3.344, Reactive=0.089
+2025-05-28 22:16:31.412 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v14): Active=3.308, Reactive=0.097
+2025-05-28 22:16:31.426 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v7): SOC=5.914
+2025-05-28 22:16:41.302 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v10): Light=168.48, Temp=21.378 (Floor 1)
+2025-05-28 22:16:41.404 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v15): Active=3.491, Reactive=0.2
+2025-05-28 22:16:46.410 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v8): SOC=6.914
+2025-05-28 22:16:48.295 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:16:48.296 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-1.00
+2025-05-28 22:16:48.301 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-1.00}, Success: true
+2025-05-28 22:16:51.418 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v16): Active=3.322, Reactive=0.133
+2025-05-28 22:17:01.448 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v17): Active=2.493, Reactive=0.11
+2025-05-28 22:17:11.338 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v11): Light=184.48, Temp=21.295 (Floor 1)
+2025-05-28 22:17:11.446 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v18): Active=1.927, Reactive=0.091
+2025-05-28 22:17:18.309 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:17:18.309 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=7.98
+2025-05-28 22:17:18.323 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":7.98}, Success: true
+2025-05-28 22:17:21.348 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v12): Light=169.2, Temp=21.082 (Floor 1)
+2025-05-28 22:17:21.453 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v19): Active=3.171, Reactive=0.068
+2025-05-28 22:17:31.390 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v13): Light=152.0, Temp=21.019 (Floor 1)
+2025-05-28 22:17:31.485 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v20): Active=1.993, Reactive=0.117
+2025-05-28 22:17:31.498 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v9): SOC=7.512
+2025-05-28 22:17:41.515 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v21): Active=1.788, Reactive=0.12
+2025-05-28 22:17:46.508 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v10): SOC=8.31
+2025-05-28 22:17:48.297 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:17:48.297 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.43
+2025-05-28 22:17:48.301 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.43}, Success: true
+2025-05-28 22:17:51.458 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v14): Light=170.0, Temp=20.267 (Floor 1)
+2025-05-28 22:17:51.535 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v22): Active=4.765, Reactive=0.279
+2025-05-28 22:18:01.432 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v15): Light=158.64, Temp=20.276 (Floor 1)
+2025-05-28 22:18:01.532 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v23): Active=2.654, Reactive=0.177
+2025-05-28 22:18:01.546 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v11): SOC=9.153
+2025-05-28 22:18:11.429 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v16): Light=144.4, Temp=20.02 (Floor 1)
+2025-05-28 22:18:11.536 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v24): Active=2.288, Reactive=0.225
+2025-05-28 22:18:16.553 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v12): SOC=9.996
+2025-05-28 22:18:18.296 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:18:18.296 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=10.00
+2025-05-28 22:18:18.301 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":10.00}, Success: true
+2025-05-28 22:18:21.590 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v25): Active=1.969, Reactive=0.22
+2025-05-28 22:18:31.496 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v17): Light=157.24, Temp=19.938 (Floor 1)
+2025-05-28 22:18:31.613 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v13): SOC=10.996
+2025-05-28 22:18:31.629 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v26): Active=1.863, Reactive=0.368
+2025-05-28 22:18:41.493 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v18): Light=146.08, Temp=20.259 (Floor 1)
+2025-05-28 22:18:41.625 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v27): Active=1.538, Reactive=0.195
+2025-05-28 22:18:46.614 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v14): SOC=11.996
+2025-05-28 22:18:48.303 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:18:48.305 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=1.47
+2025-05-28 22:18:48.310 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":1.47}, Success: true
+2025-05-28 22:18:51.564 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v19): Light=162.96, Temp=20.013 (Floor 1)
+2025-05-28 22:18:51.631 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v28): Active=1.783, Reactive=0.148
+2025-05-28 22:19:01.666 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v29): Active=2.064, Reactive=0.256
+2025-05-28 22:19:11.705 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v30): Active=2.121, Reactive=0.259
+2025-05-28 22:19:18.295 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:19:18.296 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=1.03
+2025-05-28 22:19:18.300 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":1.03}, Success: true
+2025-05-28 22:19:21.619 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v20): Light=175.48, Temp=19.167 (Floor 1)
+2025-05-28 22:19:21.776 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v31): Active=2.414, Reactive=0.102
+2025-05-28 22:19:31.624 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v21): Light=188.04, Temp=19.41 (Floor 1)
+2025-05-28 22:19:31.749 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v32): Active=3.557, Reactive=0.075
+2025-05-28 22:19:41.748 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v33): Active=3.344, Reactive=0.089
+2025-05-28 22:19:48.295 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:19:48.295 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 22:19:48.302 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 22:19:48.626 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v15): SOC=12.496
+2025-05-28 22:19:51.756 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v34): Active=3.308, Reactive=0.097
+2025-05-28 22:20:01.765 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v35): Active=3.491, Reactive=0.2
+2025-05-28 22:20:11.702 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v22): Light=210.08, Temp=19.574 (Floor 1)
+2025-05-28 22:20:11.797 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v36): Active=3.322, Reactive=0.133
+2025-05-28 22:20:16.821 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v16): SOC=11.296
+2025-05-28 22:20:18.294 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:20:18.294 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 22:20:18.298 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 22:20:21.705 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v23): Light=222.08, Temp=19.886 (Floor 1)
+2025-05-28 22:20:21.848 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v37): Active=2.493, Reactive=0.11
+2025-05-28 22:20:31.897 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v38): Active=1.927, Reactive=0.091
+2025-05-28 22:20:31.911 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v17): SOC=10.696
+2025-05-28 22:20:41.918 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v24): Light=202.64, Temp=19.776 (Floor 1)
+2025-05-28 22:20:41.933 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v39): Active=3.171, Reactive=0.068
+2025-05-28 22:20:46.954 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v18): SOC=10.096
+2025-05-28 22:20:48.295 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:20:48.295 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=1.56
+2025-05-28 22:20:48.310 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":1.56}, Success: true
+2025-05-28 22:20:51.960 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v40): Active=1.993, Reactive=0.117
+2025-05-28 22:21:02.012 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v41): Active=1.788, Reactive=0.12
+2025-05-28 22:21:11.892 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v25): Light=188.44, Temp=20.599 (Floor 1)
+2025-05-28 22:21:11.980 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v42): Active=4.765, Reactive=0.279
+2025-05-28 22:21:18.300 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:21:18.301 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=1.23
+2025-05-28 22:21:18.306 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":1.23}, Success: true
+2025-05-28 22:21:21.942 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v26): Light=172.04, Temp=20.783 (Floor 1)
+2025-05-28 22:21:22.000 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v43): Active=2.654, Reactive=0.177
+2025-05-28 22:21:32.061 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v44): Active=2.288, Reactive=0.225
+2025-05-28 22:21:41.977 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v27): Light=150.6, Temp=21.344 (Floor 1)
+2025-05-28 22:21:42.067 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v45): Active=1.969, Reactive=0.22
+2025-05-28 22:21:47.060 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v19): SOC=10.654
+2025-05-28 22:21:48.296 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:21:48.297 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 22:21:48.301 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 22:21:51.957 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v28): Light=141.28, Temp=21.202 (Floor 1)
+2025-05-28 22:21:52.070 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v46): Active=1.863, Reactive=0.368
+2025-05-28 22:22:01.974 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v29): Light=125.2, Temp=21.504 (Floor 1)
+2025-05-28 22:22:02.102 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v47): Active=1.538, Reactive=0.195
+2025-05-28 22:22:02.116 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v20): SOC=10.054
+2025-05-28 22:22:12.049 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v30): Light=115.24, Temp=21.451 (Floor 1)
+2025-05-28 22:22:12.081 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v48): Active=1.783, Reactive=0.148
+2025-05-28 22:22:17.126 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v21): SOC=9.454
+2025-05-28 22:22:18.298 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:22:18.299 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-1.00
+2025-05-28 22:22:18.305 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-1.00}, Success: true
+2025-05-28 22:22:22.003 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v31): Light=123.4, Temp=21.057 (Floor 1)
+2025-05-28 22:22:22.167 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v49): Active=2.064, Reactive=0.256
+2025-05-28 22:22:32.025 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v32): Light=130.08, Temp=20.753 (Floor 1)
+2025-05-28 22:22:32.117 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v50): Active=2.121, Reactive=0.259
+2025-05-28 22:22:42.172 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v51): Active=2.414, Reactive=0.102
+2025-05-28 22:22:48.296 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:22:48.296 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=6.56
+2025-05-28 22:22:48.299 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":6.56}, Success: true
+2025-05-28 22:22:52.162 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v52): Active=3.557, Reactive=0.075
+2025-05-28 22:23:02.191 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v53): Active=3.344, Reactive=0.089
+2025-05-28 22:23:12.110 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v33): Light=137.8, Temp=21.026 (Floor 1)
+2025-05-28 22:23:12.202 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v54): Active=3.308, Reactive=0.097
+2025-05-28 22:23:17.199 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v22): SOC=10.566
+2025-05-28 22:23:18.304 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:23:18.305 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=2.34
+2025-05-28 22:23:18.308 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":2.34}, Success: true
+2025-05-28 22:23:22.130 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v34): Light=145.0, Temp=20.746 (Floor 1)
+2025-05-28 22:23:22.235 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v55): Active=3.491, Reactive=0.2
+2025-05-28 22:23:32.159 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v35): Light=157.16, Temp=20.654 (Floor 1)
+2025-05-28 22:23:32.274 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v56): Active=3.322, Reactive=0.133
+2025-05-28 22:23:42.186 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v36): Light=147.72, Temp=20.903 (Floor 1)
+2025-05-28 22:23:42.330 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v57): Active=2.493, Reactive=0.11
+2025-05-28 22:23:48.294 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:23:48.294 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=2.60
+2025-05-28 22:23:48.299 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":2.60}, Success: true
+2025-05-28 22:23:52.219 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v37): Light=133.76, Temp=21.079 (Floor 1)
+2025-05-28 22:23:52.318 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v58): Active=1.927, Reactive=0.091
+2025-05-28 22:24:02.253 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v38): Light=140.84, Temp=21.318 (Floor 1)
+2025-05-28 22:24:02.313 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v59): Active=3.171, Reactive=0.068
+2025-05-28 22:24:02.325 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v23): SOC=11.294
+2025-05-28 22:24:12.298 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v39): Light=153.76, Temp=21.308 (Floor 1)
+2025-05-28 22:24:12.363 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v60): Active=1.993, Reactive=0.117
+2025-05-28 22:24:18.306 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:24:18.310 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:24:18.326 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:24:22.286 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v40): Light=137.2, Temp=21.598 (Floor 1)
+2025-05-28 22:24:22.401 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v61): Active=1.788, Reactive=0.12
+2025-05-28 22:24:32.377 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v62): Active=4.765, Reactive=0.279
+2025-05-28 22:24:32.391 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v24): SOC=12.354
+2025-05-28 22:24:42.410 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v63): Active=2.654, Reactive=0.177
+2025-05-28 22:24:47.399 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v25): SOC=13.154
+2025-05-28 22:24:48.308 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:24:48.309 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=3.27
+2025-05-28 22:24:48.312 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":3.27}, Success: true
+2025-05-28 22:24:52.297 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v41): Light=154.56, Temp=20.733 (Floor 1)
+2025-05-28 22:24:52.399 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v64): Active=2.288, Reactive=0.225
+2025-05-28 22:25:02.449 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v65): Active=1.969, Reactive=0.22
+2025-05-28 22:25:12.332 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v42): Light=145.2, Temp=21.143 (Floor 1)
+2025-05-28 22:25:12.451 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v66): Active=1.863, Reactive=0.368
+2025-05-28 22:25:17.439 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v26): SOC=13.808
+2025-05-28 22:25:18.310 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:25:18.310 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=2.77
+2025-05-28 22:25:18.318 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":2.77}, Success: true
+2025-05-28 22:25:22.340 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v43): Light=134.72, Temp=21.166 (Floor 1)
+2025-05-28 22:25:22.448 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v67): Active=1.538, Reactive=0.195
+2025-05-28 22:25:32.411 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v44): Light=117.4, Temp=20.814 (Floor 1)
+2025-05-28 22:25:32.440 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v68): Active=1.783, Reactive=0.148
+2025-05-28 22:25:42.436 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v45): Light=123.64, Temp=20.718 (Floor 1)
+2025-05-28 22:25:42.464 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v69): Active=2.064, Reactive=0.256
+2025-05-28 22:25:47.514 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v27): SOC=14.362
+2025-05-28 22:25:48.295 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:25:48.295 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=3.20
+2025-05-28 22:25:48.299 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":3.20}, Success: true
+2025-05-28 22:25:52.432 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v46): Light=134.04, Temp=20.884 (Floor 1)
+2025-05-28 22:25:52.520 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v70): Active=2.121, Reactive=0.259
+2025-05-28 22:26:02.562 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v71): Active=2.414, Reactive=0.102
+2025-05-28 22:26:12.461 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v47): Light=116.84, Temp=20.697 (Floor 1)
+2025-05-28 22:26:12.571 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v72): Active=3.557, Reactive=0.075
+2025-05-28 22:26:17.564 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v28): SOC=15.002
+2025-05-28 22:26:18.293 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:26:18.294 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:26:18.296 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:26:22.444 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v48): Light=100.44, Temp=20.396 (Floor 1)
+2025-05-28 22:26:22.544 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v73): Active=3.344, Reactive=0.089
+2025-05-28 22:26:32.577 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v49): Light=111.36, Temp=20.223 (Floor 1)
+2025-05-28 22:26:32.594 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v74): Active=3.308, Reactive=0.097
+2025-05-28 22:26:32.615 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v29): SOC=15.802
+2025-05-28 22:26:42.584 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v75): Active=3.491, Reactive=0.2
+2025-05-28 22:26:47.652 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v30): SOC=16.602
+2025-05-28 22:26:48.296 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:26:48.297 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:26:48.304 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:26:52.601 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v76): Active=3.322, Reactive=0.133
+2025-05-28 22:27:02.539 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v50): Light=97.0, Temp=20.603 (Floor 1)
+2025-05-28 22:27:02.610 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v77): Active=2.493, Reactive=0.11
+2025-05-28 22:27:02.626 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v31): SOC=17.402
+2025-05-28 22:27:12.573 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v51): Light=81.56, Temp=20.726 (Floor 1)
+2025-05-28 22:27:12.648 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v78): Active=1.927, Reactive=0.091
+2025-05-28 22:27:17.655 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v32): SOC=18.202
+2025-05-28 22:27:18.304 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:27:18.304 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 22:27:18.313 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 22:27:22.553 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v52): Light=66.28, Temp=20.735 (Floor 1)
+2025-05-28 22:27:22.656 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v79): Active=3.171, Reactive=0.068
+2025-05-28 22:27:32.619 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v53): Light=53.0, Temp=20.569 (Floor 1)
+2025-05-28 22:27:32.704 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v33): SOC=17.602
+2025-05-28 22:27:32.720 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v80): Active=1.993, Reactive=0.117
+2025-05-28 22:27:42.716 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v81): Active=1.788, Reactive=0.12
+2025-05-28 22:27:47.714 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v34): SOC=17.002
+2025-05-28 22:27:48.295 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:27:48.296 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=1.43
+2025-05-28 22:27:48.302 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":1.43}, Success: true
+2025-05-28 22:27:52.633 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v54): Light=59.4, Temp=20.266 (Floor 1)
+2025-05-28 22:27:52.750 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v82): Active=4.765, Reactive=0.279
+2025-05-28 22:28:02.608 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v55): Light=39.88, Temp=20.362 (Floor 1)
+2025-05-28 22:28:02.731 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v83): Active=2.654, Reactive=0.177
+2025-05-28 22:28:12.626 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v56): Light=48.52, Temp=20.506 (Floor 1)
+2025-05-28 22:28:12.748 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v84): Active=2.288, Reactive=0.225
+2025-05-28 22:28:18.297 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:28:18.298 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=3.06
+2025-05-28 22:28:18.301 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":3.06}, Success: true
+2025-05-28 22:28:22.705 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v57): Light=57.64, Temp=20.19 (Floor 1)
+2025-05-28 22:28:22.756 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v85): Active=1.969, Reactive=0.22
+2025-05-28 22:28:32.684 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v58): Light=51.92, Temp=20.411 (Floor 1)
+2025-05-28 22:28:32.770 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v86): Active=1.863, Reactive=0.368
+2025-05-28 22:28:32.784 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v35): SOC=17.594
+2025-05-28 22:28:42.782 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v87): Active=1.538, Reactive=0.195
+2025-05-28 22:28:48.291 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:28:48.291 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 22:28:48.297 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 22:28:52.653 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v59): Light=48.44, Temp=20.282 (Floor 1)
+2025-05-28 22:28:52.787 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v88): Active=1.783, Reactive=0.148
+2025-05-28 22:29:02.823 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v89): Active=2.064, Reactive=0.256
+2025-05-28 22:29:12.714 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v60): Light=67.28, Temp=20.63 (Floor 1)
+2025-05-28 22:29:12.850 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v90): Active=2.121, Reactive=0.259
+2025-05-28 22:29:17.828 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v36): SOC=16.7
+2025-05-28 22:29:18.293 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:29:18.293 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:29:18.300 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:29:22.737 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v61): Light=52.28, Temp=20.913 (Floor 1)
+2025-05-28 22:29:22.938 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v91): Active=2.414, Reactive=0.102
+2025-05-28 22:29:32.762 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v62): Light=57.48, Temp=20.711 (Floor 1)
+2025-05-28 22:29:32.829 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v92): Active=3.557, Reactive=0.075
+2025-05-28 22:29:32.841 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v37): SOC=17.5
+2025-05-28 22:29:42.769 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v63): Light=49.12, Temp=21.036 (Floor 1)
+2025-05-28 22:29:42.842 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v93): Active=3.344, Reactive=0.089
+2025-05-28 22:29:47.880 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v38): SOC=18.3
+2025-05-28 22:29:48.292 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:29:48.293 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=1.91
+2025-05-28 22:29:48.311 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":1.91}, Success: true
+2025-05-28 22:29:52.797 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v64): Light=35.24, Temp=21.17 (Floor 1)
+2025-05-28 22:29:52.909 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v94): Active=3.308, Reactive=0.097
+2025-05-28 22:30:02.750 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v65): Light=20.32, Temp=21.539 (Floor 1)
+2025-05-28 22:30:02.867 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v95): Active=3.491, Reactive=0.2
+2025-05-28 22:30:12.798 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v66): Light=4.36, Temp=21.399 (Floor 1)
+2025-05-28 22:30:12.896 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v96): Active=3.322, Reactive=0.133
+2025-05-28 22:30:18.296 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:30:18.297 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=2.12
+2025-05-28 22:30:18.301 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":2.12}, Success: true
+2025-05-28 22:30:22.839 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v67): Light=0.0, Temp=21.678 (Floor 1)
+2025-05-28 22:30:22.926 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v97): Active=2.493, Reactive=0.11
+2025-05-28 22:30:32.935 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v98): Active=1.927, Reactive=0.091
+2025-05-28 22:30:32.952 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v39): SOC=18.894
+2025-05-28 22:30:42.952 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v99): Active=3.171, Reactive=0.068
+2025-05-28 22:30:48.298 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:30:48.298 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:30:48.307 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:30:52.855 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v68): Light=9.24, Temp=21.368 (Floor 1)
+2025-05-28 22:30:52.969 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v100): Active=1.993, Reactive=0.117
+2025-05-28 22:31:03.024 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v69): Light=22.76, Temp=21.557 (Floor 1)
+2025-05-28 22:31:03.046 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v101): Active=1.788, Reactive=0.12
+2025-05-28 22:31:03.068 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v40): SOC=19.906
+2025-05-28 22:31:12.915 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v70): Light=16.52, Temp=21.206 (Floor 1)
+2025-05-28 22:31:13.007 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v102): Active=4.765, Reactive=0.279
+2025-05-28 22:31:18.010 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v41): SOC=20.706
+2025-05-28 22:31:18.297 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:31:18.298 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:31:18.305 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:31:22.945 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v71): Light=34.0, Temp=20.834 (Floor 1)
+2025-05-28 22:31:23.032 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v103): Active=2.654, Reactive=0.177
+2025-05-28 22:31:32.900 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v72): Light=49.96, Temp=20.894 (Floor 1)
+2025-05-28 22:31:33.033 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v104): Active=2.288, Reactive=0.225
+2025-05-28 22:31:33.054 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v42): SOC=21.506
+2025-05-28 22:31:42.959 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v73): Light=31.68, Temp=20.862 (Floor 1)
+2025-05-28 22:31:43.037 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v105): Active=1.969, Reactive=0.22
+2025-05-28 22:31:48.059 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v43): SOC=22.306
+2025-05-28 22:31:48.295 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:31:48.297 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:31:48.301 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:31:53.011 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v74): Light=44.64, Temp=20.837 (Floor 1)
+2025-05-28 22:31:53.051 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v106): Active=1.863, Reactive=0.368
+2025-05-28 22:32:02.940 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v75): Light=27.76, Temp=20.671 (Floor 1)
+2025-05-28 22:32:03.073 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v107): Active=1.538, Reactive=0.195
+2025-05-28 22:32:03.092 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v44): SOC=23.106
+2025-05-28 22:32:13.096 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v108): Active=1.783, Reactive=0.148
+2025-05-28 22:32:18.139 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v45): SOC=23.906
+2025-05-28 22:32:18.294 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:32:18.294 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:32:18.298 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:32:23.014 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v76): Light=17.92, Temp=20.459 (Floor 1)
+2025-05-28 22:32:23.159 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v109): Active=2.064, Reactive=0.256
+2025-05-28 22:32:33.007 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v77): Light=7.72, Temp=20.276 (Floor 1)
+2025-05-28 22:32:33.138 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v110): Active=2.121, Reactive=0.259
+2025-05-28 22:32:33.168 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v46): SOC=24.706
+2025-05-28 22:32:43.025 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v78): Light=26.6, Temp=20.583 (Floor 1)
+2025-05-28 22:32:43.137 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v111): Active=2.414, Reactive=0.102
+2025-05-28 22:32:48.104 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v47): SOC=25.506
+2025-05-28 22:32:48.293 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:32:48.294 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 22:32:48.297 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 22:32:53.043 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v79): Light=45.76, Temp=20.885 (Floor 1)
+2025-05-28 22:32:53.140 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v112): Active=3.557, Reactive=0.075
+2025-05-28 22:33:03.091 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v80): Light=64.36, Temp=20.973 (Floor 1)
+2025-05-28 22:33:03.205 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v113): Active=3.344, Reactive=0.089
+2025-05-28 22:33:03.226 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v48): SOC=24.906
+2025-05-28 22:33:13.090 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v81): Light=79.6, Temp=21.102 (Floor 1)
+2025-05-28 22:33:13.221 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v114): Active=3.308, Reactive=0.097
+2025-05-28 22:33:18.206 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v49): SOC=24.306
+2025-05-28 22:33:18.294 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:33:18.294 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 22:33:18.302 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 22:33:23.118 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v82): Light=85.6, Temp=21.465 (Floor 1)
+2025-05-28 22:33:23.218 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v115): Active=3.491, Reactive=0.2
+2025-05-28 22:33:33.119 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v83): Light=100.48, Temp=21.652 (Floor 1)
+2025-05-28 22:33:33.218 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v116): Active=3.322, Reactive=0.133
+2025-05-28 22:33:33.235 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v50): SOC=23.706
+2025-05-28 22:33:43.249 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v117): Active=2.493, Reactive=0.11
+2025-05-28 22:33:48.286 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v51): SOC=23.106
+2025-05-28 22:33:48.294 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:33:48.294 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 22:33:48.297 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 22:33:53.240 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v84): Light=112.04, Temp=21.83 (Floor 1)
+2025-05-28 22:33:53.282 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v118): Active=1.927, Reactive=0.091
+2025-05-28 22:34:03.201 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v85): Light=128.04, Temp=21.259 (Floor 1)
+2025-05-28 22:34:03.330 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v119): Active=3.171, Reactive=0.068
+2025-05-28 22:34:03.350 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v52): SOC=22.506
+2025-05-28 22:34:13.233 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v86): Light=109.28, Temp=21.192 (Floor 1)
+2025-05-28 22:34:13.337 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v120): Active=1.993, Reactive=0.117
+2025-05-28 22:34:18.293 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:34:18.293 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=1.37
+2025-05-28 22:34:18.345 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":1.37}, Success: true
+2025-05-28 22:34:23.352 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v121): Active=1.788, Reactive=0.12
+2025-05-28 22:34:33.254 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v87): Light=98.2, Temp=20.685 (Floor 1)
+2025-05-28 22:34:33.375 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v122): Active=4.765, Reactive=0.279
+2025-05-28 22:34:43.305 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v88): Light=109.96, Temp=20.855 (Floor 1)
+2025-05-28 22:34:43.388 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v123): Active=2.654, Reactive=0.177
+2025-05-28 22:34:48.294 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:34:48.294 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 22:34:48.298 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 22:34:53.289 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v89): Light=119.24, Temp=20.639 (Floor 1)
+2025-05-28 22:34:53.411 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v124): Active=2.288, Reactive=0.225
+2025-05-28 22:35:03.367 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v90): Light=130.56, Temp=20.431 (Floor 1)
+2025-05-28 22:35:03.449 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v125): Active=1.969, Reactive=0.22
+2025-05-28 22:35:03.478 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v53): SOC=21.58
+2025-05-28 22:35:13.385 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v91): Light=121.28, Temp=20.594 (Floor 1)
+2025-05-28 22:35:13.485 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v126): Active=1.863, Reactive=0.368
+2025-05-28 22:35:18.301 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:35:18.302 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:35:18.306 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:35:18.504 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v54): SOC=22.38
+2025-05-28 22:35:23.392 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v92): Light=132.16, Temp=20.677 (Floor 1)
+2025-05-28 22:35:23.528 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v127): Active=1.538, Reactive=0.195
+2025-05-28 22:35:33.426 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v93): Light=147.32, Temp=20.981 (Floor 1)
+2025-05-28 22:35:33.522 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v128): Active=1.783, Reactive=0.148
+2025-05-28 22:35:33.545 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v55): SOC=23.18
+2025-05-28 22:35:43.423 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v94): Light=137.96, Temp=21.041 (Floor 1)
+2025-05-28 22:35:43.528 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v129): Active=2.064, Reactive=0.256
+2025-05-28 22:35:48.297 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:35:48.297 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:35:48.306 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:35:48.549 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v56): SOC=23.98
+2025-05-28 22:35:53.552 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v130): Active=2.121, Reactive=0.259
+2025-05-28 22:36:03.440 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v95): Light=124.8, Temp=21.342 (Floor 1)
+2025-05-28 22:36:03.563 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v131): Active=2.414, Reactive=0.102
+2025-05-28 22:36:03.578 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v57): SOC=24.78
+2025-05-28 22:36:13.493 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v96): Light=116.08, Temp=21.175 (Floor 1)
+2025-05-28 22:36:13.556 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v132): Active=3.557, Reactive=0.075
+2025-05-28 22:36:18.297 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:36:18.298 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=3.13
+2025-05-28 22:36:18.318 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":3.13}, Success: true
+2025-05-28 22:36:23.513 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v97): Light=104.6, Temp=21.341 (Floor 1)
+2025-05-28 22:36:23.604 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v133): Active=3.344, Reactive=0.089
+2025-05-28 22:36:33.622 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v134): Active=3.308, Reactive=0.097
+2025-05-28 22:36:33.641 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v58): SOC=25.406
+2025-05-28 22:36:43.566 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v98): Light=118.72, Temp=21.339 (Floor 1)
+2025-05-28 22:36:43.668 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v135): Active=3.491, Reactive=0.2
+2025-05-28 22:36:48.295 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:36:48.296 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:36:48.300 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:36:48.664 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v59): SOC=26.206
+2025-05-28 22:36:53.567 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v99): Light=106.84, Temp=21.014 (Floor 1)
+2025-05-28 22:36:53.674 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v136): Active=3.322, Reactive=0.133
+2025-05-28 22:37:03.573 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v100): Light=119.96, Temp=21.123 (Floor 1)
+2025-05-28 22:37:03.714 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v137): Active=2.493, Reactive=0.11
+2025-05-28 22:37:03.734 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v60): SOC=27.006
+2025-05-28 22:37:13.609 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v101): Light=105.4, Temp=21.114 (Floor 1)
+2025-05-28 22:37:13.687 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v138): Active=1.927, Reactive=0.091
+2025-05-28 22:37:18.296 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:37:18.297 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:37:18.302 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:37:18.694 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v61): SOC=27.806
+2025-05-28 22:37:23.608 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v102): Light=93.96, Temp=20.801 (Floor 1)
+2025-05-28 22:37:23.688 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v139): Active=3.171, Reactive=0.068
+2025-05-28 22:37:33.633 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v103): Light=74.32, Temp=20.678 (Floor 1)
+2025-05-28 22:37:33.717 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v140): Active=1.993, Reactive=0.117
+2025-05-28 22:37:33.740 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v62): SOC=28.606
+2025-05-28 22:37:43.645 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v104): Light=82.24, Temp=20.732 (Floor 1)
+2025-05-28 22:37:43.744 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v141): Active=1.788, Reactive=0.12
+2025-05-28 22:37:48.297 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:37:48.298 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:37:48.303 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:37:48.732 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v63): SOC=29.406
+2025-05-28 22:37:53.731 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v142): Active=4.765, Reactive=0.279
+2025-05-28 22:38:03.618 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v105): Light=96.44, Temp=20.318 (Floor 1)
+2025-05-28 22:38:03.723 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v143): Active=2.654, Reactive=0.177
+2025-05-28 22:38:03.739 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v64): SOC=30.206
+2025-05-28 22:38:13.652 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v106): Light=114.52, Temp=20.352 (Floor 1)
+2025-05-28 22:38:13.744 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v144): Active=2.288, Reactive=0.225
+2025-05-28 22:38:18.292 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:38:18.292 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=1.96
+2025-05-28 22:38:18.294 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":1.96}, Success: true
+2025-05-28 22:38:23.662 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v107): Light=122.44, Temp=20.314 (Floor 1)
+2025-05-28 22:38:23.758 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v145): Active=1.969, Reactive=0.22
+2025-05-28 22:38:33.670 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v108): Light=139.88, Temp=20.56 (Floor 1)
+2025-05-28 22:38:33.797 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v146): Active=1.863, Reactive=0.368
+2025-05-28 22:38:43.706 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v109): Light=126.12, Temp=20.938 (Floor 1)
+2025-05-28 22:38:43.782 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v147): Active=1.538, Reactive=0.195
+2025-05-28 22:38:48.293 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:38:48.293 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:38:48.297 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:38:48.797 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v65): SOC=31.398
+2025-05-28 22:38:53.820 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v148): Active=1.783, Reactive=0.148
+2025-05-28 22:39:04.372 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v149): Active=2.064, Reactive=0.256
+2025-05-28 22:39:04.389 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v66): SOC=32.198
+2025-05-28 22:39:14.278 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v110): Light=114.36, Temp=20.422 (Floor 1)
+2025-05-28 22:39:14.389 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v150): Active=2.121, Reactive=0.259
+2025-05-28 22:39:18.296 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:39:18.297 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=2.03
+2025-05-28 22:39:18.301 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":2.03}, Success: true
+2025-05-28 22:39:24.332 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v111): Light=125.76, Temp=20.14 (Floor 1)
+2025-05-28 22:39:24.391 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v151): Active=2.414, Reactive=0.102
+2025-05-28 22:39:34.428 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v152): Active=3.557, Reactive=0.075
+2025-05-28 22:39:44.428 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v153): Active=3.344, Reactive=0.089
+2025-05-28 22:39:48.297 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:39:48.298 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:39:48.305 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:39:49.436 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v67): SOC=33.404
+2025-05-28 22:39:54.450 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v154): Active=3.308, Reactive=0.097
+2025-05-28 22:40:04.345 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v112): Light=142.68, Temp=20.229 (Floor 1)
+2025-05-28 22:40:04.471 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v155): Active=3.491, Reactive=0.2
+2025-05-28 22:40:04.488 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v68): SOC=34.204
+2025-05-28 22:40:14.481 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v156): Active=3.322, Reactive=0.133
+2025-05-28 22:40:18.297 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:40:18.298 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 22:40:18.303 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 22:40:19.489 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v69): SOC=33.604
+2025-05-28 22:40:24.413 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v113): Light=154.24, Temp=19.858 (Floor 1)
+2025-05-28 22:40:24.501 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v157): Active=2.493, Reactive=0.11
+2025-05-28 22:40:34.405 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v114): Light=168.92, Temp=19.601 (Floor 1)
+2025-05-28 22:40:34.501 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v158): Active=1.927, Reactive=0.091
+2025-05-28 22:40:34.513 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v70): SOC=33.004
+2025-05-28 22:40:44.424 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v115): Light=182.08, Temp=19.546 (Floor 1)
+2025-05-28 22:40:44.497 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v159): Active=3.171, Reactive=0.068
+2025-05-28 22:40:48.293 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:40:48.294 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:40:48.297 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:40:49.551 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v71): SOC=33.804
+2025-05-28 22:40:54.496 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v116): Light=198.64, Temp=19.637 (Floor 1)
+2025-05-28 22:40:54.543 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v160): Active=1.993, Reactive=0.117
+2025-05-28 22:41:04.619 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v161): Active=1.788, Reactive=0.12
+2025-05-28 22:41:04.646 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v72): SOC=34.604
+2025-05-28 22:41:14.600 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v162): Active=4.765, Reactive=0.279
+2025-05-28 22:41:18.295 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:41:18.296 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 22:41:18.303 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 22:41:19.602 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v73): SOC=34.004
+2025-05-28 22:41:24.500 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v117): Light=184.76, Temp=20.19 (Floor 1)
+2025-05-28 22:41:24.638 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v163): Active=2.654, Reactive=0.177
+2025-05-28 22:41:34.517 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v118): Light=202.32, Temp=19.79 (Floor 1)
+2025-05-28 22:41:34.615 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v164): Active=2.288, Reactive=0.225
+2025-05-28 22:41:34.630 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v74): SOC=33.404
+2025-05-28 22:41:44.557 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v119): Light=213.8, Temp=19.884 (Floor 1)
+2025-05-28 22:41:44.665 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v165): Active=1.969, Reactive=0.22
+2025-05-28 22:41:48.298 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:41:48.299 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 22:41:48.321 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 22:41:49.680 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v75): SOC=32.804
+2025-05-28 22:41:54.659 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v166): Active=1.863, Reactive=0.368
+2025-05-28 22:42:04.616 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v120): Light=241.16, Temp=19.938 (Floor 1)
+2025-05-28 22:42:04.713 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v167): Active=1.538, Reactive=0.195
+2025-05-28 22:42:04.727 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v76): SOC=32.204
+2025-05-28 22:42:14.579 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v121): Light=221.44, Temp=19.713 (Floor 1)
+2025-05-28 22:42:14.704 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v168): Active=1.783, Reactive=0.148
+2025-05-28 22:42:18.295 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:42:18.295 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:42:18.298 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:42:19.725 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v77): SOC=33.004
+2025-05-28 22:42:24.637 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v122): Light=208.76, Temp=19.844 (Floor 1)
+2025-05-28 22:42:24.733 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v169): Active=2.064, Reactive=0.256
+2025-05-28 22:42:34.663 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v123): Light=192.36, Temp=20.236 (Floor 1)
+2025-05-28 22:42:34.754 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v170): Active=2.121, Reactive=0.259
+2025-05-28 22:42:34.763 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v78): SOC=33.804
+2025-05-28 22:42:44.788 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v171): Active=2.414, Reactive=0.102
+2025-05-28 22:42:48.292 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:42:48.293 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 22:42:48.297 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 22:42:49.798 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v79): SOC=33.204
+2025-05-28 22:42:54.832 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v172): Active=3.557, Reactive=0.075
+2025-05-28 22:43:04.761 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v124): Light=218.72, Temp=20.473 (Floor 1)
+2025-05-28 22:43:04.858 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v173): Active=3.344, Reactive=0.089
+2025-05-28 22:43:04.874 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v80): SOC=32.604
+2025-05-28 22:43:14.867 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v174): Active=3.308, Reactive=0.097
+2025-05-28 22:43:18.293 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:43:18.294 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=1.22
+2025-05-28 22:43:18.301 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":1.22}, Success: true
+2025-05-28 22:43:24.858 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v175): Active=3.491, Reactive=0.2
+2025-05-28 22:43:34.769 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v125): Light=235.92, Temp=19.999 (Floor 1)
+2025-05-28 22:43:34.892 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v176): Active=3.322, Reactive=0.133
+2025-05-28 22:43:44.904 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v177): Active=2.493, Reactive=0.11
+2025-05-28 22:43:48.294 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:43:48.295 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=1.33
+2025-05-28 22:43:48.300 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":1.33}, Success: true
+2025-05-28 22:43:54.913 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v178): Active=1.927, Reactive=0.091
+2025-05-28 22:44:04.953 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v179): Active=3.171, Reactive=0.068
+2025-05-28 22:44:04.965 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v81): SOC=33.114
+2025-05-28 22:44:14.942 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v126): Light=255.84, Temp=20.301 (Floor 1)
+2025-05-28 22:44:14.985 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v180): Active=1.993, Reactive=0.117
+2025-05-28 22:44:18.319 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:44:18.319 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:44:18.372 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:44:19.967 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v82): SOC=33.914
+2025-05-28 22:44:24.974 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v181): Active=1.788, Reactive=0.12
+2025-05-28 22:44:34.983 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v182): Active=4.765, Reactive=0.279
+2025-05-28 22:44:34.997 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v83): SOC=34.714
+2025-05-28 22:44:44.989 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v183): Active=2.654, Reactive=0.177
+2025-05-28 22:44:48.300 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:44:48.300 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=2.37
+2025-05-28 22:44:48.304 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":2.37}, Success: true
+2025-05-28 22:44:55.008 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v184): Active=2.288, Reactive=0.225
+2025-05-28 22:45:05.034 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v185): Active=1.969, Reactive=0.22
+2025-05-28 22:45:14.987 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v127): Light=274.2, Temp=20.51 (Floor 1)
+2025-05-28 22:45:15.032 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v186): Active=1.863, Reactive=0.368
+2025-05-28 22:45:18.293 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:45:18.294 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=1.78
+2025-05-28 22:45:18.301 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":1.78}, Success: true
+2025-05-28 22:45:20.065 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v84): SOC=35.366
+2025-05-28 22:45:25.071 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v187): Active=1.538, Reactive=0.195
+2025-05-28 22:45:35.086 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v188): Active=1.783, Reactive=0.148
+2025-05-28 22:45:45.095 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v189): Active=2.064, Reactive=0.256
+2025-05-28 22:45:48.296 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:45:48.296 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:45:48.301 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:45:50.102 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v85): SOC=36.344
+2025-05-28 22:45:55.071 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v128): Light=259.8, Temp=20.97 (Floor 1)
+2025-05-28 22:45:55.085 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v190): Active=2.121, Reactive=0.259
+2025-05-28 22:46:05.137 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v191): Active=2.414, Reactive=0.102
+2025-05-28 22:46:05.151 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v86): SOC=37.144
+2025-05-28 22:46:15.164 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v129): Light=282.0, Temp=21.327 (Floor 1)
+2025-05-28 22:46:15.211 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v192): Active=3.557, Reactive=0.075
+2025-05-28 22:46:18.294 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:46:18.295 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 22:46:18.299 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 22:46:20.174 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v87): SOC=36.544
+2025-05-28 22:46:25.161 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v193): Active=3.344, Reactive=0.089
+2025-05-28 22:46:35.169 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v130): Light=297.2, Temp=21.937 (Floor 1)
+2025-05-28 22:46:35.179 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v194): Active=3.308, Reactive=0.097
+2025-05-28 22:46:35.227 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v88): SOC=35.944
+2025-05-28 22:46:45.160 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v195): Active=3.491, Reactive=0.2
+2025-05-28 22:46:48.294 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:46:48.295 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=3.62
+2025-05-28 22:46:48.299 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":3.62}, Success: true
+2025-05-28 22:46:55.233 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v196): Active=3.322, Reactive=0.133
+2025-05-28 22:46:55.268 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v131): Light=282.08, Temp=21.715 (Floor 1)
+2025-05-28 22:47:05.334 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v197): Active=2.493, Reactive=0.11
+2025-05-28 22:47:05.360 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v89): SOC=36.668
+2025-05-28 22:47:15.282 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v132): Light=257.6, Temp=21.24 (Floor 1)
+2025-05-28 22:47:15.331 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v198): Active=1.927, Reactive=0.091
+2025-05-28 22:47:18.296 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:47:18.297 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:47:18.304 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:47:20.353 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v90): SOC=37.468
+2025-05-28 22:47:25.377 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v199): Active=3.171, Reactive=0.068
+2025-05-28 22:47:35.332 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v133): Light=281.28, Temp=21.261 (Floor 1)
+2025-05-28 22:47:35.372 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v200): Active=1.993, Reactive=0.117
+2025-05-28 22:47:35.413 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v91): SOC=38.268
+2025-05-28 22:47:45.474 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v201): Active=1.788, Reactive=0.12
+2025-05-28 22:47:48.294 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:47:48.294 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:47:48.298 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:47:50.403 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v92): SOC=39.068
+2025-05-28 22:47:55.416 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v202): Active=4.765, Reactive=0.279
+2025-05-28 22:48:05.408 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v203): Active=2.654, Reactive=0.177
+2025-05-28 22:48:05.421 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v93): SOC=39.868
+2025-05-28 22:48:15.485 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v204): Active=2.288, Reactive=0.225
+2025-05-28 22:48:18.297 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:48:18.298 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 22:48:18.310 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 22:48:20.460 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v94): SOC=39.268
+2025-05-28 22:48:25.395 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v134): Light=295.4, Temp=20.821 (Floor 1)
+2025-05-28 22:48:25.467 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v205): Active=1.969, Reactive=0.22
+2025-05-28 22:48:35.469 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v135): Light=279.48, Temp=20.679 (Floor 1)
+2025-05-28 22:48:35.530 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v206): Active=1.863, Reactive=0.368
+2025-05-28 22:48:35.544 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v95): SOC=38.668
+2025-05-28 22:48:45.540 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v207): Active=1.538, Reactive=0.195
+2025-05-28 22:48:48.294 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:48:48.295 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:48:48.300 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:48:50.536 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v96): SOC=39.468
+2025-05-28 22:48:55.520 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v208): Active=1.783, Reactive=0.148
+2025-05-28 22:49:05.440 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v136): Light=264.48, Temp=20.638 (Floor 1)
+2025-05-28 22:49:05.525 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v209): Active=2.064, Reactive=0.256
+2025-05-28 22:49:05.536 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v97): SOC=40.268
+2025-05-28 22:49:15.494 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v137): Light=282.68, Temp=20.35 (Floor 1)
+2025-05-28 22:49:15.548 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v210): Active=2.121, Reactive=0.259
+2025-05-28 22:49:18.297 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:49:18.298 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 22:49:18.302 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 22:49:20.657 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v98): SOC=39.668
+2025-05-28 22:49:25.660 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v211): Active=2.414, Reactive=0.102
+2025-05-28 22:49:35.680 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v212): Active=3.557, Reactive=0.075
+2025-05-28 22:49:35.691 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v99): SOC=39.068
+2025-05-28 22:49:45.673 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v213): Active=3.344, Reactive=0.089
+2025-05-28 22:49:48.294 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:49:48.294 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:49:48.297 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:49:50.674 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v100): SOC=39.868
+2025-05-28 22:49:55.648 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v138): Light=265.0, Temp=20.739 (Floor 1)
+2025-05-28 22:49:55.685 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v214): Active=3.308, Reactive=0.097
+2025-05-28 22:50:05.686 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v215): Active=3.491, Reactive=0.2
+2025-05-28 22:50:05.694 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v101): SOC=40.668
+2025-05-28 22:50:15.717 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v216): Active=3.322, Reactive=0.133
+2025-05-28 22:50:18.292 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:50:18.293 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 22:50:18.298 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 22:50:20.717 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v102): SOC=40.068
+2025-05-28 22:50:25.724 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v217): Active=2.493, Reactive=0.11
+2025-05-28 22:50:35.734 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v218): Active=1.927, Reactive=0.091
+2025-05-28 22:50:35.745 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v103): SOC=39.468
+2025-05-28 22:50:45.789 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v219): Active=3.171, Reactive=0.068
+2025-05-28 22:50:48.291 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:50:48.292 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 22:50:48.294 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 22:50:50.779 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v104): SOC=38.868
+2025-05-28 22:50:55.788 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v220): Active=1.993, Reactive=0.117
+2025-05-28 22:50:57.749 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v139): Light=270.04, Temp=20.695 (Floor 1)
+2025-05-28 22:51:05.818 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v140): Light=279.8, Temp=20.734 (Floor 1)
+2025-05-28 22:51:05.924 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v221): Active=1.788, Reactive=0.12
+2025-05-28 22:51:05.939 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v105): SOC=38.268
+2025-05-28 22:51:15.810 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v141): Light=259.68, Temp=20.82 (Floor 1)
+2025-05-28 22:51:15.892 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v222): Active=4.765, Reactive=0.279
+2025-05-28 22:51:18.298 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:51:18.298 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=2.18
+2025-05-28 22:51:18.304 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":2.18}, Success: true
+2025-05-28 22:51:25.840 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v142): Light=274.2, Temp=21.191 (Floor 1)
+2025-05-28 22:51:25.908 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v223): Active=2.654, Reactive=0.177
+2025-05-28 22:51:35.953 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v224): Active=2.288, Reactive=0.225
+2025-05-28 22:51:45.970 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v225): Active=1.969, Reactive=0.22
+2025-05-28 22:51:48.291 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:51:48.291 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=2.16
+2025-05-28 22:51:48.294 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":2.16}, Success: true
+2025-05-28 22:51:50.971 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v106): SOC=38.92
+2025-05-28 22:51:55.986 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v143): Light=296.92, Temp=21.598 (Floor 1)
+2025-05-28 22:51:55.997 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v226): Active=1.863, Reactive=0.368
+2025-05-28 22:52:06.034 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v227): Active=1.538, Reactive=0.195
+2025-05-28 22:52:16.009 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v228): Active=1.783, Reactive=0.148
+2025-05-28 22:52:18.302 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:52:18.302 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 22:52:18.305 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 22:52:25.957 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v144): Light=279.56, Temp=21.365 (Floor 1)
+2025-05-28 22:52:26.008 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v229): Active=2.064, Reactive=0.256
+2025-05-28 22:52:36.026 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v230): Active=2.121, Reactive=0.259
+2025-05-28 22:52:36.037 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v107): SOC=37.936
+2025-05-28 22:52:46.135 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v231): Active=2.414, Reactive=0.102
+2025-05-28 22:52:48.293 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:52:48.293 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:52:48.296 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:52:51.056 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v108): SOC=38.736
+2025-05-28 22:52:56.067 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v232): Active=3.557, Reactive=0.075
+2025-05-28 22:53:05.990 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v145): Light=262.88, Temp=21.225 (Floor 1)
+2025-05-28 22:53:06.049 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v233): Active=3.344, Reactive=0.089
+2025-05-28 22:53:06.059 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v109): SOC=39.536
+2025-05-28 22:53:07.435 [main] INFO  com.pi.UserInterface - User viewing battery SOC data
+2025-05-28 22:53:07.436 [main] INFO  com.pi.DatabaseManager - Viewing battery data
+2025-05-28 22:53:15.958 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v146): Light=249.12, Temp=21.186 (Floor 1)
+2025-05-28 22:53:16.073 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v234): Active=3.308, Reactive=0.097
+2025-05-28 22:53:18.292 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:53:18.292 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=3.69
+2025-05-28 22:53:18.295 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":3.69}, Success: true
+2025-05-28 22:53:26.109 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v235): Active=3.491, Reactive=0.2
+2025-05-28 22:53:36.145 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v236): Active=3.322, Reactive=0.133
+2025-05-28 22:53:36.168 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v110): SOC=40.274
+2025-05-28 22:53:46.117 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v147): Light=271.16, Temp=21.065 (Floor 1)
+2025-05-28 22:53:46.144 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v237): Active=2.493, Reactive=0.11
+2025-05-28 22:53:48.297 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:53:48.297 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:53:48.304 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:53:51.141 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v111): SOC=41.074
+2025-05-28 22:53:56.168 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v148): Light=247.36, Temp=21.214 (Floor 1)
+2025-05-28 22:53:56.192 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v238): Active=1.927, Reactive=0.091
+2025-05-28 22:54:06.191 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v239): Active=3.171, Reactive=0.068
+2025-05-28 22:54:06.220 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v112): SOC=41.874
+2025-05-28 22:54:16.135 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v149): Light=226.8, Temp=20.725 (Floor 1)
+2025-05-28 22:54:16.198 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v240): Active=1.993, Reactive=0.117
+2025-05-28 22:54:18.293 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:54:18.293 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 22:54:18.341 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 22:54:21.216 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v113): SOC=41.274
+2025-05-28 22:54:26.151 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v150): Light=247.6, Temp=20.376 (Floor 1)
+2025-05-28 22:54:26.196 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v241): Active=1.788, Reactive=0.12
+2025-05-28 22:54:36.193 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v242): Active=4.765, Reactive=0.279
+2025-05-28 22:54:36.201 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v114): SOC=40.674
+2025-05-28 22:54:46.240 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v243): Active=2.654, Reactive=0.177
+2025-05-28 22:54:48.292 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:54:48.292 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 22:54:48.297 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 22:54:51.227 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v115): SOC=41.474
+2025-05-28 22:54:56.232 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v151): Light=263.56, Temp=20.709 (Floor 1)
+2025-05-28 22:54:56.248 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v244): Active=2.288, Reactive=0.225
+2025-05-28 22:55:06.143 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v152): Light=247.84, Temp=20.416 (Floor 1)
+2025-05-28 22:55:06.227 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v245): Active=1.969, Reactive=0.22
+2025-05-28 22:55:06.256 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v116): SOC=42.274
+2025-05-28 22:55:16.189 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v153): Light=262.36, Temp=20.491 (Floor 1)
+2025-05-28 22:55:16.232 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v246): Active=1.863, Reactive=0.368
+2025-05-28 22:55:18.293 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:55:18.293 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 22:55:18.298 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 22:55:21.233 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v117): SOC=41.674
+2025-05-28 22:55:26.270 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v247): Active=1.538, Reactive=0.195
+2025-05-28 22:55:36.263 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v154): Light=237.8, Temp=20.76 (Floor 1)
+2025-05-28 22:55:36.274 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v248): Active=1.783, Reactive=0.148
+2025-05-28 22:55:36.282 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v118): SOC=41.074
+2025-05-28 22:55:46.286 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v249): Active=2.064, Reactive=0.256
+2025-05-28 22:55:48.296 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:55:48.296 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 22:55:48.305 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 22:55:51.279 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v119): SOC=40.474
+2025-05-28 22:55:56.239 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v155): Light=252.24, Temp=21.39 (Floor 1)
+2025-05-28 22:55:56.281 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v250): Active=2.121, Reactive=0.259
+2025-05-28 22:56:06.308 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v251): Active=2.414, Reactive=0.102
+2025-05-28 22:56:06.342 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v120): SOC=39.874
+2025-05-28 22:56:16.271 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v156): Light=235.88, Temp=21.195 (Floor 1)
+2025-05-28 22:56:16.303 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v252): Active=3.557, Reactive=0.075
+2025-05-28 22:56:18.292 [pool-2-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 22:56:18.292 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=2.14
+2025-05-28 22:56:18.295 [pool-2-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":2.14}, Success: true
+2025-05-28 22:56:24.740 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-28 22:56:24.741 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-28 22:56:24.741 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-28 22:56:24.741 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: sensors_floor_1
+2025-05-28 22:56:24.741 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: battery_soc
+2025-05-28 22:56:24.741 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: power
+2025-05-28 22:56:24.741 [main] INFO  com.pi.CoapObserverManager - Shutdown client: sensors_floor_1
+2025-05-28 22:56:24.741 [main] INFO  com.pi.CoapObserverManager - Shutdown client: battery_soc
+2025-05-28 22:56:24.741 [main] INFO  com.pi.CoapObserverManager - Shutdown client: power
+2025-05-28 22:56:24.741 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-28 22:56:24.741 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-28 22:56:24.741 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-28 22:56:24.741 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=156, power=252, battery=120}
+2025-05-28 22:56:24.747 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-28 22:56:24.747 [main] INFO  com.pi.CoapClientApplication - Stopping battery control service
+2025-05-28 22:56:24.747 [main] INFO  c.p.B.BatteryControlService - Stopped automatic battery control
+2025-05-28 22:56:24.748 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-28 22:56:24.748 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-28 22:56:24.749 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-28 23:26:39.314 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-28 23:26:39.322 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-28 23:26:39.322 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-28 23:26:39.324 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-28 23:26:39.749 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-28 23:26:39.749 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-28 23:26:39.750 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-28 23:26:39.750 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-28 23:26:39.752 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-28 23:26:39.752 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-28 23:26:39.752 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-28 23:26:39.752 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-28 23:26:39.810 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-28 23:26:39.810 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-28 23:26:39.811 [main] WARN  com.pi.CoapObserverManager - No sensor IP found for floor 0
+2025-05-28 23:26:39.813 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-28 23:26:39.815 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-28 23:26:39.816 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 2 floors
+2025-05-28 23:26:39.816 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-28 23:26:39.816 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-28 23:26:39.816 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-28 23:26:39.816 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-28 23:26:39.823 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-28 23:26:39.825 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-28 23:26:39.833 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-28 23:26:39.929 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v0): SOC=0.0
+2025-05-28 23:26:39.939 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v0): Active=1.863, Reactive=0.368
+2025-05-28 23:26:39.964 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v0): Light=243.16, Temp=20.423 (Floor 1)
+2025-05-28 23:26:46.279 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v1): Active=1.538, Reactive=0.195
+2025-05-28 23:26:51.045 [main] INFO  com.pi.UserInterface - User requested Dynamic Control command for floor 1: on=0
+2025-05-28 23:26:51.045 [main] INFO  com.pi.CoapRequestManager - Sending Dynamic Control command to floor 1: on=0
+2025-05-28 23:26:51.125 [main] INFO  com.pi.CoapRequestManager - Dynamic Control (Floor 1) Command Response - Code: 4.00, Text: {"error":"Invalid 'on' parameter"}, Success: false
+2025-05-28 23:26:56.296 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v2): Active=1.783, Reactive=0.148
+2025-05-28 23:27:06.287 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v3): Active=2.064, Reactive=0.256
+2025-05-28 23:27:09.849 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:27:09.850 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-1.00
+2025-05-28 23:27:09.857 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 4.00, Text: {"error_code":"BATTERY_EMPTY","message":"cannot set negative se, Success: false
+2025-05-28 23:27:16.195 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v1): Light=262.36, Temp=20.117 (Floor 1)
+2025-05-28 23:27:16.299 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v4): Active=2.121, Reactive=0.259
+2025-05-28 23:27:26.274 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v2): Light=247.68, Temp=20.499 (Floor 1)
+2025-05-28 23:27:26.323 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v5): Active=2.414, Reactive=0.102
+2025-05-28 23:27:36.267 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v3): Light=261.64, Temp=20.106 (Floor 1)
+2025-05-28 23:27:36.345 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v6): Active=3.557, Reactive=0.075
+2025-05-28 23:27:39.830 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:27:39.830 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=7.02
+2025-05-28 23:27:39.834 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":7.02}, Success: true
+2025-05-28 23:27:41.870 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v1): SOC=0.0
+2025-05-28 23:27:46.356 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v7): Active=3.344, Reactive=0.089
+2025-05-28 23:27:51.403 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v2): SOC=0.702
+2025-05-28 23:27:56.261 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v4): Light=243.08, Temp=19.409 (Floor 1)
+2025-05-28 23:27:56.370 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v8): Active=3.308, Reactive=0.097
+2025-05-28 23:28:06.281 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v5): Light=228.84, Temp=19.153 (Floor 1)
+2025-05-28 23:28:06.375 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v9): Active=3.491, Reactive=0.2
+2025-05-28 23:28:06.385 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v3): SOC=1.404
+2025-05-28 23:28:09.829 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:28:09.830 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=7.38
+2025-05-28 23:28:09.832 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":7.38}, Success: true
+2025-05-28 23:28:16.292 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v6): Light=211.24, Temp=19.512 (Floor 1)
+2025-05-28 23:28:16.382 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v10): Active=3.322, Reactive=0.133
+2025-05-28 23:28:21.405 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v4): SOC=2.142
+2025-05-28 23:28:26.346 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v7): Light=193.0, Temp=19.165 (Floor 1)
+2025-05-28 23:28:26.403 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v11): Active=2.493, Reactive=0.11
+2025-05-28 23:28:36.334 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v8): Light=207.16, Temp=19.11 (Floor 1)
+2025-05-28 23:28:36.423 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v12): Active=1.927, Reactive=0.091
+2025-05-28 23:28:36.436 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v5): SOC=2.88
+2025-05-28 23:28:39.832 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:28:39.832 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=7.79
+2025-05-28 23:28:39.835 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":7.79}, Success: true
+2025-05-28 23:28:46.360 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v9): Light=194.84, Temp=19.149 (Floor 1)
+2025-05-28 23:28:46.436 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v13): Active=3.171, Reactive=0.068
+2025-05-28 23:28:46.916 [main] INFO  com.pi.UserInterface - User requested Dynamic Control command for floor 1: on=1
+2025-05-28 23:28:46.916 [main] INFO  com.pi.CoapRequestManager - Sending Dynamic Control command to floor 1: on=1
+2025-05-28 23:28:46.954 [main] INFO  com.pi.CoapRequestManager - Dynamic Control (Floor 1) Command Response - Code: 4.00, Text: {"error":"Invalid 'on' parameter"}, Success: false
+2025-05-28 23:28:51.459 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v6): SOC=3.659
+2025-05-28 23:28:56.338 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v10): Light=210.64, Temp=19.168 (Floor 1)
+2025-05-28 23:28:56.443 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v14): Active=1.993, Reactive=0.117
+2025-05-28 23:29:06.405 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v11): Light=230.4, Temp=19.256 (Floor 1)
+2025-05-28 23:29:06.495 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v15): Active=1.788, Reactive=0.12
+2025-05-28 23:29:06.520 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v7): SOC=4.438
+2025-05-28 23:29:07.275 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-28 23:31:17.611 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-28 23:31:17.615 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-28 23:31:17.615 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-28 23:31:17.616 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-28 23:31:18.000 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-28 23:31:18.000 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-28 23:31:18.001 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-28 23:31:18.001 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-28 23:31:18.003 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-28 23:31:18.003 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-28 23:31:18.003 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-28 23:31:18.003 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-28 23:31:18.065 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-28 23:31:18.068 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-28 23:31:18.068 [main] WARN  com.pi.CoapObserverManager - No sensor IP found for floor 0
+2025-05-28 23:31:18.068 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-28 23:31:18.069 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-28 23:31:18.069 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 2 floors
+2025-05-28 23:31:18.069 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-28 23:31:18.070 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-28 23:31:18.071 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-28 23:31:18.072 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-28 23:31:18.073 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-28 23:31:18.073 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-28 23:31:18.073 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-28 23:31:18.130 [Thread-1] WARN  com.pi.CoapObserverManager - Error message received for power: TooManyObservers
+2025-05-28 23:31:18.148 [Thread-1] WARN  com.pi.CoapObserverManager - Error message received for battery_soc: TooManyObservers
+2025-05-28 23:31:18.306 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v18): Light=224.24, Temp=19.233 (Floor 1)
+2025-05-28 23:31:24.772 [main] INFO  com.pi.UserInterface - User requested Dynamic Control command for floor 1: on=1
+2025-05-28 23:31:24.773 [main] INFO  com.pi.CoapRequestManager - Sending Dynamic Control command to floor 1: on=coap://[fd00::202:2:2:2]:5683/dynamic-control?on=1
+2025-05-28 23:31:24.901 [main] INFO  com.pi.CoapRequestManager - Dynamic Control (Floor 1) Command Response - Code: 4.00, Text: {"error":"Invalid 'on' parameter"}, Success: false
+2025-05-28 23:31:36.689 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v20): Light=242.12, Temp=18.93 (Floor 1)
+2025-05-28 23:31:48.094 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:31:48.095 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.60
+2025-05-28 23:31:48.140 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.60}, Success: true
+2025-05-28 23:32:18.087 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:32:18.088 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-1.00
+2025-05-28 23:32:18.091 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-1.00}, Success: true
+2025-05-28 23:32:37.706 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v22): Light=259.08, Temp=18.642 (Floor 1)
+2025-05-28 23:32:48.090 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:32:48.091 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=10.00
+2025-05-28 23:32:48.098 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":10.00}, Success: true
+2025-05-28 23:33:03.261 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-28 23:33:03.264 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-28 23:33:03.265 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-28 23:33:03.266 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: sensors_floor_1
+2025-05-28 23:33:03.266 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: battery_soc
+2025-05-28 23:33:03.267 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: power
+2025-05-28 23:33:03.267 [main] INFO  com.pi.CoapObserverManager - Shutdown client: sensors_floor_1
+2025-05-28 23:33:03.271 [main] INFO  com.pi.CoapObserverManager - Shutdown client: battery_soc
+2025-05-28 23:33:03.271 [main] INFO  com.pi.CoapObserverManager - Shutdown client: power
+2025-05-28 23:33:03.271 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-28 23:33:03.271 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-28 23:33:03.271 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-28 23:33:03.271 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=22, power=-1, battery=22}
+2025-05-28 23:33:03.287 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v22): SOC=14.748
+2025-05-28 23:33:03.291 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-28 23:33:03.291 [main] INFO  com.pi.CoapClientApplication - Stopping battery control service
+2025-05-28 23:33:03.292 [main] INFO  c.p.B.BatteryControlService - Stopped automatic battery control
+2025-05-28 23:33:03.292 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-28 23:33:03.292 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-28 23:33:03.293 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
+2025-05-28 23:33:44.593 [main] INFO  com.pi.CoapClientApplication - Starting CoAP Client Application initialization
+2025-05-28 23:33:44.597 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-28 23:33:44.597 [main] INFO  com.pi.CoapClientApplication - Connecting to database...
+2025-05-28 23:33:44.598 [main] INFO  com.pi.DatabaseManager - Initializing database connection
+2025-05-28 23:33:45.058 [main] INFO  com.pi.DatabaseManager - Database connection established successfully
+2025-05-28 23:33:45.058 [main] INFO  com.pi.DatabaseManager - Version counters initialized: {sensors=-1, power=-1, battery=-1}
+2025-05-28 23:33:45.059 [main] INFO  com.pi.CoapClientApplication - Initializing CoAP components...
+2025-05-28 23:33:45.060 [main] INFO  com.pi.CoapObserverManager - CoapObserverManager initialized
+2025-05-28 23:33:45.062 [main] INFO  com.pi.UserInterface - UserInterface initialized
+2025-05-28 23:33:45.062 [main] INFO  com.pi.CoapClientApplication - Starting observers...
+2025-05-28 23:33:45.062 [main] INFO  com.pi.CoapObserverManager - Starting all observers
+2025-05-28 23:33:45.062 [main] INFO  com.pi.CoapObserverManager - Starting battery SOC observer
+2025-05-28 23:33:45.158 [main] INFO  com.pi.CoapObserverManager - Battery SOC observer started
+2025-05-28 23:33:45.159 [main] INFO  com.pi.CoapObserverManager - Starting sensor observers for all floors
+2025-05-28 23:33:45.159 [main] WARN  com.pi.CoapObserverManager - No sensor IP found for floor 0
+2025-05-28 23:33:45.174 [main] INFO  com.pi.CoapObserverManager - Starting sensor observer for floor 1 at coap://[fd00::202:2:2:2]:5683/SENSORS/reading
+2025-05-28 23:33:45.185 [main] INFO  com.pi.CoapObserverManager - Sensor observer started for floor 1
+2025-05-28 23:33:45.185 [main] INFO  com.pi.CoapObserverManager - Started sensor observers for 2 floors
+2025-05-28 23:33:45.185 [main] INFO  com.pi.CoapObserverManager - Starting power observer
+2025-05-28 23:33:45.189 [main] INFO  com.pi.CoapObserverManager - Power observer started
+2025-05-28 23:33:45.189 [main] INFO  com.pi.CoapObserverManager - All observers started successfully. Active count: 3
+2025-05-28 23:33:45.189 [main] INFO  com.pi.CoapClientApplication - Starting automatic battery control...
+2025-05-28 23:33:45.190 [main] INFO  c.p.B.BatteryControlService - Started automatic battery control with 30s interval
+2025-05-28 23:33:45.191 [main] INFO  com.pi.CoapClientApplication - Initialization complete!
+2025-05-28 23:33:45.192 [main] INFO  com.pi.CoapClientApplication - Starting main application loop
+2025-05-28 23:33:45.233 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v0): SOC=0.0
+2025-05-28 23:33:45.318 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v0): Active=2.493, Reactive=0.11
+2025-05-28 23:33:54.041 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v1): Active=1.927, Reactive=0.091
+2025-05-28 23:33:55.925 [main] INFO  com.pi.UserInterface - User requested Dynamic Control command for floor 1: on=1
+2025-05-28 23:33:55.925 [main] INFO  com.pi.CoapRequestManager - Sending Dynamic Control command to floor 1: on=1
+2025-05-28 23:33:56.018 [main] INFO  com.pi.CoapRequestManager - Dynamic Control (Floor 1) Command Response - Code: 2.04, Text: {"status":"Dynamic Control enabled"}, Success: true
+2025-05-28 23:34:00.237 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v0): Light=238.2, Temp=21.282 (Floor 1)
+2025-05-28 23:34:03.933 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v1): Light=252.16, Temp=20.944 (Floor 1)
+2025-05-28 23:34:04.026 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v2): Active=3.171, Reactive=0.068
+2025-05-28 23:34:05.442 [main] INFO  com.pi.UserInterface - User requested Dynamic Control command for floor 1: on=0
+2025-05-28 23:34:05.442 [main] INFO  com.pi.CoapRequestManager - Sending Dynamic Control command to floor 1: on=0
+2025-05-28 23:34:05.514 [main] INFO  com.pi.CoapRequestManager - Dynamic Control (Floor 1) Command Response - Code: 2.04, Text: {"status":"Dynamic Control disabled"}, Success: true
+2025-05-28 23:34:14.085 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v3): Active=1.993, Reactive=0.117
+2025-05-28 23:34:15.224 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:34:15.227 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-1.00
+2025-05-28 23:34:15.233 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 4.00, Text: {"error_code":"BATTERY_EMPTY","message":"cannot set negative se, Success: false
+2025-05-28 23:34:24.072 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v4): Active=1.788, Reactive=0.12
+2025-05-28 23:34:34.124 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v5): Active=4.765, Reactive=0.279
+2025-05-28 23:34:44.077 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v6): Active=2.654, Reactive=0.177
+2025-05-28 23:34:45.198 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:34:45.198 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=7.35
+2025-05-28 23:34:45.205 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":7.35}, Success: true
+2025-05-28 23:34:47.219 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v1): SOC=0.0
+2025-05-28 23:34:49.101 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v2): SOC=0.735
+2025-05-28 23:34:54.126 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v7): Active=2.288, Reactive=0.225
+2025-05-28 23:35:04.141 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v8): Active=1.969, Reactive=0.22
+2025-05-28 23:35:04.166 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v3): SOC=1.47
+2025-05-28 23:35:06.078 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v2): Light=240.2, Temp=21.543 (Floor 1)
+2025-05-28 23:35:14.130 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v9): Active=1.863, Reactive=0.368
+2025-05-28 23:35:15.197 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:35:15.198 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=10.00
+2025-05-28 23:35:15.201 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":10.00}, Success: true
+2025-05-28 23:35:19.131 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v4): SOC=2.47
+2025-05-28 23:35:24.117 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v10): Active=1.538, Reactive=0.195
+2025-05-28 23:35:34.047 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v3): Light=261.52, Temp=22.141 (Floor 1)
+2025-05-28 23:35:34.119 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v11): Active=1.783, Reactive=0.148
+2025-05-28 23:35:34.146 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v5): SOC=3.47
+2025-05-28 23:35:44.096 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v4): Light=279.92, Temp=22.207 (Floor 1)
+2025-05-28 23:35:44.168 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v12): Active=2.064, Reactive=0.256
+2025-05-28 23:35:45.208 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:35:45.210 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-1.00
+2025-05-28 23:35:45.220 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-1.00}, Success: true
+2025-05-28 23:35:54.049 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v5): Light=295.64, Temp=22.047 (Floor 1)
+2025-05-28 23:35:54.143 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v13): Active=2.121, Reactive=0.259
+2025-05-28 23:36:04.162 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v14): Active=2.414, Reactive=0.102
+2025-05-28 23:36:14.036 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v6): Light=267.04, Temp=22.568 (Floor 1)
+2025-05-28 23:36:14.156 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v15): Active=3.557, Reactive=0.075
+2025-05-28 23:36:15.200 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:36:15.200 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=10.00
+2025-05-28 23:36:15.202 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":10.00}, Success: true
+2025-05-28 23:36:19.206 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v6): SOC=4.27
+2025-05-28 23:36:24.196 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v16): Active=3.344, Reactive=0.089
+2025-05-28 23:36:34.209 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v17): Active=3.308, Reactive=0.097
+2025-05-28 23:36:34.217 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v7): SOC=5.27
+2025-05-28 23:36:44.398 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v18): Active=3.491, Reactive=0.2
+2025-05-28 23:36:45.196 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:36:45.197 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-1.00
+2025-05-28 23:36:45.202 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-1.00}, Success: true
+2025-05-28 23:36:54.254 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v19): Active=3.322, Reactive=0.133
+2025-05-28 23:37:04.283 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v20): Active=2.493, Reactive=0.11
+2025-05-28 23:37:14.348 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v21): Active=1.927, Reactive=0.091
+2025-05-28 23:37:15.200 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:37:15.200 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=7.36
+2025-05-28 23:37:15.204 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":7.36}, Success: true
+2025-05-28 23:37:16.135 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v7): Light=269.12, Temp=22.506 (Floor 1)
+2025-05-28 23:37:19.306 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v8): SOC=5.806
+2025-05-28 23:37:24.218 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v8): Light=285.72, Temp=22.214 (Floor 1)
+2025-05-28 23:37:24.296 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v22): Active=3.171, Reactive=0.068
+2025-05-28 23:37:34.229 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v9): Light=302.0, Temp=22.239 (Floor 1)
+2025-05-28 23:37:34.311 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v23): Active=1.993, Reactive=0.117
+2025-05-28 23:37:34.323 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v9): SOC=6.542
+2025-05-28 23:37:44.336 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v24): Active=1.788, Reactive=0.12
+2025-05-28 23:37:45.196 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:37:45.196 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.04
+2025-05-28 23:37:45.200 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.04}, Success: true
+2025-05-28 23:37:49.339 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v10): SOC=7.346
+2025-05-28 23:37:54.237 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v10): Light=278.88, Temp=21.57 (Floor 1)
+2025-05-28 23:37:54.323 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v25): Active=4.765, Reactive=0.279
+2025-05-28 23:38:04.347 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v26): Active=2.654, Reactive=0.177
+2025-05-28 23:38:04.360 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v11): SOC=8.15
+2025-05-28 23:38:14.221 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v11): Light=264.6, Temp=21.909 (Floor 1)
+2025-05-28 23:38:14.329 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v27): Active=2.288, Reactive=0.225
+2025-05-28 23:38:15.196 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:38:15.196 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.62
+2025-05-28 23:38:15.201 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.62}, Success: true
+2025-05-28 23:38:19.352 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v12): SOC=9.012
+2025-05-28 23:38:24.364 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v28): Active=1.969, Reactive=0.22
+2025-05-28 23:38:34.272 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v12): Light=249.6, Temp=21.992 (Floor 1)
+2025-05-28 23:38:34.354 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v29): Active=1.863, Reactive=0.368
+2025-05-28 23:38:34.365 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v13): SOC=9.874
+2025-05-28 23:38:44.266 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v13): Light=234.92, Temp=22.374 (Floor 1)
+2025-05-28 23:38:44.376 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v30): Active=1.538, Reactive=0.195
+2025-05-28 23:38:45.198 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:38:45.199 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=7.18
+2025-05-28 23:38:45.203 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":7.18}, Success: true
+2025-05-28 23:38:49.366 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v14): SOC=10.592
+2025-05-28 23:38:54.285 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v14): Light=247.8, Temp=22.654 (Floor 1)
+2025-05-28 23:38:54.376 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v31): Active=1.783, Reactive=0.148
+2025-05-28 23:39:04.397 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v32): Active=2.064, Reactive=0.256
+2025-05-28 23:39:04.407 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v15): SOC=11.31
+2025-05-28 23:39:14.425 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v33): Active=2.121, Reactive=0.259
+2025-05-28 23:39:15.198 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:39:15.199 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 23:39:15.202 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 23:39:19.427 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v16): SOC=12.11
+2025-05-28 23:39:24.322 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v15): Light=222.44, Temp=21.729 (Floor 1)
+2025-05-28 23:39:24.409 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v34): Active=2.414, Reactive=0.102
+2025-05-28 23:39:34.440 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v35): Active=3.557, Reactive=0.075
+2025-05-28 23:39:34.452 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v17): SOC=12.91
+2025-05-28 23:39:44.466 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v36): Active=3.344, Reactive=0.089
+2025-05-28 23:39:45.197 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:39:45.197 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 23:39:45.201 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 23:39:49.472 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v18): SOC=13.71
+2025-05-28 23:39:54.391 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v16): Light=195.32, Temp=20.745 (Floor 1)
+2025-05-28 23:39:54.464 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v37): Active=3.308, Reactive=0.097
+2025-05-28 23:40:04.364 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v17): Light=209.48, Temp=20.69 (Floor 1)
+2025-05-28 23:40:04.475 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v38): Active=3.491, Reactive=0.2
+2025-05-28 23:40:04.484 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v19): SOC=14.51
+2025-05-28 23:40:14.375 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v18): Light=198.32, Temp=21.011 (Floor 1)
+2025-05-28 23:40:14.483 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v39): Active=3.322, Reactive=0.133
+2025-05-28 23:40:15.199 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:40:15.199 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 23:40:15.202 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 23:40:19.550 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v20): SOC=13.91
+2025-05-28 23:40:24.597 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v40): Active=2.493, Reactive=0.11
+2025-05-28 23:40:34.501 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v19): Light=179.64, Temp=21.492 (Floor 1)
+2025-05-28 23:40:34.554 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v41): Active=1.927, Reactive=0.091
+2025-05-28 23:40:34.565 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v21): SOC=13.31
+2025-05-28 23:40:44.595 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v42): Active=3.171, Reactive=0.068
+2025-05-28 23:40:45.199 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:40:45.200 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=2.05
+2025-05-28 23:40:45.203 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":2.05}, Success: true
+2025-05-28 23:40:54.469 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v20): Light=194.2, Temp=21.058 (Floor 1)
+2025-05-28 23:40:54.628 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v43): Active=1.993, Reactive=0.117
+2025-05-28 23:41:04.587 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v44): Active=1.788, Reactive=0.12
+2025-05-28 23:41:14.510 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v21): Light=204.0, Temp=21.775 (Floor 1)
+2025-05-28 23:41:14.592 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v45): Active=4.765, Reactive=0.279
+2025-05-28 23:41:15.201 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:41:15.201 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=3.64
+2025-05-28 23:41:15.205 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":3.64}, Success: true
+2025-05-28 23:41:19.593 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v22): SOC=14.084
+2025-05-28 23:41:24.513 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v22): Light=220.72, Temp=21.895 (Floor 1)
+2025-05-28 23:41:24.606 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v46): Active=2.654, Reactive=0.177
+2025-05-28 23:41:34.637 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v47): Active=2.288, Reactive=0.225
+2025-05-28 23:41:44.552 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v23): Light=209.04, Temp=22.138 (Floor 1)
+2025-05-28 23:41:44.636 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v48): Active=1.969, Reactive=0.22
+2025-05-28 23:41:45.201 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:41:45.201 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=1.93
+2025-05-28 23:41:45.206 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":1.93}, Success: true
+2025-05-28 23:41:49.698 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v23): SOC=14.641
+2025-05-28 23:41:54.525 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v24): Light=223.68, Temp=21.946 (Floor 1)
+2025-05-28 23:41:54.678 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v49): Active=1.863, Reactive=0.368
+2025-05-28 23:42:04.661 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v50): Active=1.538, Reactive=0.195
+2025-05-28 23:42:14.668 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v51): Active=1.783, Reactive=0.148
+2025-05-28 23:42:15.199 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:42:15.199 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=-6.00
+2025-05-28 23:42:15.205 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":-6.00}, Success: true
+2025-05-28 23:42:24.578 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v25): Light=238.04, Temp=21.79 (Floor 1)
+2025-05-28 23:42:24.687 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v52): Active=2.064, Reactive=0.256
+2025-05-28 23:42:34.710 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v53): Active=2.121, Reactive=0.259
+2025-05-28 23:42:34.723 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v24): SOC=13.634
+2025-05-28 23:42:44.725 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v54): Active=2.414, Reactive=0.102
+2025-05-28 23:42:45.198 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:42:45.198 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 23:42:45.203 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 23:42:49.734 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v25): SOC=14.434
+2025-05-28 23:42:54.612 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v26): Light=252.12, Temp=21.706 (Floor 1)
+2025-05-28 23:42:54.740 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v55): Active=3.557, Reactive=0.075
+2025-05-28 23:43:04.745 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v56): Active=3.344, Reactive=0.089
+2025-05-28 23:43:04.763 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v26): SOC=15.234
+2025-05-28 23:43:14.663 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v27): Light=232.6, Temp=21.668 (Floor 1)
+2025-05-28 23:43:14.757 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v57): Active=3.308, Reactive=0.097
+2025-05-28 23:43:15.197 [pool-1-thread-1] INFO  c.p.B.BatteryControlAlgorithm - Battery setpoint: Price={:.2f}¢/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}
+2025-05-28 23:43:15.197 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Sending Battery command to floor 0: setpoint=8.00
+2025-05-28 23:43:15.200 [pool-1-thread-1] INFO  com.pi.CoapRequestManager - Battery (Floor 0) Command Response - Code: 2.04, Text: {"setpoint":8.00}, Success: true
+2025-05-28 23:43:19.769 [Thread-1] INFO  com.pi.DatabaseManager - Battery data stored (v27): SOC=16.034
+2025-05-28 23:43:24.686 [Thread-1] INFO  com.pi.DatabaseManager - Sensor data stored (v28): Light=247.72, Temp=21.495 (Floor 1)
+2025-05-28 23:43:24.774 [Thread-1] INFO  com.pi.DatabaseManager - Power data stored (v58): Active=3.491, Reactive=0.2
+2025-05-28 23:43:34.564 [main] INFO  com.pi.CoapClientApplication - Shutting down application
+2025-05-28 23:43:34.564 [main] INFO  com.pi.CoapClientApplication - Stopping observers
+2025-05-28 23:43:34.564 [main] INFO  com.pi.CoapObserverManager - Stopping all observers
+2025-05-28 23:43:34.564 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: sensors_floor_1
+2025-05-28 23:43:34.564 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: battery_soc
+2025-05-28 23:43:34.564 [main] INFO  com.pi.CoapObserverManager - Cancelled observation: power
+2025-05-28 23:43:34.564 [main] INFO  com.pi.CoapObserverManager - Shutdown client: sensors_floor_1
+2025-05-28 23:43:34.564 [main] INFO  com.pi.CoapObserverManager - Shutdown client: battery_soc
+2025-05-28 23:43:34.564 [main] INFO  com.pi.CoapObserverManager - Shutdown client: power
+2025-05-28 23:43:34.564 [main] INFO  com.pi.CoapObserverManager - All observers stopped
+2025-05-28 23:43:34.564 [main] INFO  com.pi.CoapClientApplication - Closing database connection
+2025-05-28 23:43:34.564 [main] INFO  com.pi.DatabaseManager - Starting database shutdown
+2025-05-28 23:43:34.564 [main] INFO  com.pi.DatabaseManager - Final version counters: {sensors=28, power=58, battery=27}
+2025-05-28 23:43:34.571 [main] INFO  com.pi.DatabaseManager - Database connection closed
+2025-05-28 23:43:34.571 [main] INFO  com.pi.CoapClientApplication - Stopping battery control service
+2025-05-28 23:43:34.571 [main] INFO  c.p.B.BatteryControlService - Stopped automatic battery control
+2025-05-28 23:43:34.572 [main] INFO  com.pi.UserInterface - UserInterface closed
+2025-05-28 23:43:34.573 [main] INFO  com.pi.CoapClientApplication - Application shutdown complete
+2025-05-28 23:43:34.574 [Thread-0] INFO  com.pi.CoapClientApplication - Received shutdown signal
