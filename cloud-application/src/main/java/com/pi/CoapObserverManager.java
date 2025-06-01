@@ -12,20 +12,20 @@ import java.util.Map;
 import java.util.Set;
 
 public class CoapObserverManager {
-    
+
     private static final Logger logger = LoggerFactory.getLogger(CoapObserverManager.class);
-    
+
     private Map<String, CoapClient> activeClients;
     private Map<String, CoapObserveRelation> activeObservers;
     private DatabaseManager databaseManager;
-    
+
     public CoapObserverManager(DatabaseManager databaseManager) {
         this.activeClients = new ConcurrentHashMap<>();
         this.activeObservers = new ConcurrentHashMap<>();
         this.databaseManager = databaseManager;
         logger.info("CoapObserverManager initialized");
     }
-    
+
     public void startAllObservers() {
         logger.info("Starting all observers");
         startBatteryObserver();
@@ -33,50 +33,40 @@ public class CoapObserverManager {
         startPowerObserver();
         logger.info("All observers started successfully. Active count: {}", activeObservers.size());
     }
-    
+
     // New method to start sensor observers for all floors
     public void startAllFloorSensorObservers() {
         logger.info("Starting sensor observers for all floors");
         Set<Integer> availableFloors = FloorManager.getAvailableFloors();
-        
+
         for (Integer floor : availableFloors) {
             startSensorObserverForFloor(floor);
         }
-        
+
         logger.info("Started sensor observers for {} floors", availableFloors.size());
     }
-    
+
     // Method to start sensor observer for a specific floor (public interface)
     public boolean startSensorObserverForFloor(int floor) {
-        if (!FloorManager.isFloorValid(floor)) {
-            logger.error("Invalid floor number: {}", floor);
-            return false;
-        }
-        
         String observerName = "sensors_floor_" + floor;
-        if (activeObservers.containsKey(observerName)) {
-            logger.warn("Sensor observer for floor {} already exists", floor);
-            return false;
-        }
-        
         String sensorIP = FloorManager.getDeviceIP(floor, "sensor");
+
         if (sensorIP == null) {
             logger.warn("No sensor IP found for floor {}", floor);
             return false;
         }
-        
+
         String coapUrl = "coap://[" + sensorIP + "]:5683/SENSORS/reading";
-        
         logger.info("Starting sensor observer for floor {} at {}", floor, coapUrl);
-        
         CoapClient sensorsClient = new CoapClient(coapUrl);
+
         CoapObserveRelation sensorsRelation = sensorsClient.observe(new CoapHandler() {
             @Override
             public void onLoad(CoapResponse response) {
                 String payload = response.getResponseText();
-                logger.debug("Floor {} sensors notification received - Code: {}, Payload: {}", 
-                           floor, response.getCode(), payload);
-                
+                logger.debug("Floor {} sensors notification received - Code: {}, Payload: {}",
+                        floor, response.getCode(), payload);
+
                 if (isValidPayload(payload, observerName)) {
                     // Store sensor data with floor information
                     databaseManager.storeSensorData(payload, floor);
@@ -90,59 +80,42 @@ public class CoapObserverManager {
                 activeClients.remove(observerName);
             }
         });
-        
+
         activeClients.put(observerName, sensorsClient);
         activeObservers.put(observerName, sensorsRelation);
         logger.info("Sensor observer started for floor {}", floor);
         return true;
     }
-    
+
     // Method to stop sensor observer for a specific floor
     public boolean stopSensorObserverForFloor(int floor) {
         String observerName = "sensors_floor_" + floor;
         return stopObserver(observerName);
     }
-    
+
     private boolean isValidPayload(String payload, String observerType) {
-        if (payload == null || payload.trim().isEmpty()) {
-            logger.warn("Empty payload received for {}", observerType);
-            return false;
-        }
-        
-        String trimmedPayload = payload.trim();
-        
-        // Check for known error messages
-        if ("TooManyObservers".equals(trimmedPayload) || 
-            "NotObservable".equals(trimmedPayload) || 
-            "Error".equals(trimmedPayload)) {
-            logger.warn("Error message received for {}: {}", observerType, trimmedPayload);
-            return false;
-        }
-        
         // Check if it contains version field
-        if (!trimmedPayload.contains("\"v\"")) {
+        if (!payload.contains("\"v\"")) {
             logger.warn("Missing version field for {} - payload: {}", observerType, payload);
             return false;
         }
-        
         return true;
     }
-    
-    // Stop a specific observer by name
+
     public boolean stopObserver(String observerName) {
         CoapObserveRelation relation = activeObservers.get(observerName);
         CoapClient client = activeClients.get(observerName);
-        
+
         if (relation != null && client != null) {
             try {
-                // Cancel the observe relationship
+                // Cancel the observe relationship via a GET with Observe=1
                 relation.proactiveCancel();
                 // Shutdown the client
                 client.shutdown();
-                
+
                 activeObservers.remove(observerName);
                 activeClients.remove(observerName);
-                
+
                 logger.info("Stopped observer: {}", observerName);
                 return true;
             } catch (Exception e) {
@@ -153,9 +126,7 @@ public class CoapObserverManager {
         logger.warn("Observer not found: {}", observerName);
         return false;
     }
-    
 
-    
     private void startBatteryObserver() {
         logger.info("Starting battery SOC observer");
         CoapClient socClient = new CoapClient("coap://[fd00::201:1:1:1]:5683/battery/soc");
@@ -163,9 +134,9 @@ public class CoapObserverManager {
             @Override
             public void onLoad(CoapResponse response) {
                 String payload = response.getResponseText();
-                logger.debug("Battery SOC notification received - Code: {}, Payload: {}", 
-                           response.getCode(), payload);
-                
+                logger.debug("Battery SOC notification received - Code: {}, Payload: {}",
+                        response.getCode(), payload);
+
                 if (isValidPayload(payload, "battery_soc")) {
                     databaseManager.storeBatteryData(payload);
                 }
@@ -178,13 +149,12 @@ public class CoapObserverManager {
                 activeClients.remove("battery_soc");
             }
         });
-        
+
         activeClients.put("battery_soc", socClient);
         activeObservers.put("battery_soc", socRelation);
         logger.info("Battery SOC observer started");
     }
 
-    
     private void startPowerObserver() {
         logger.info("Starting power observer");
         CoapClient powerClient = new CoapClient("coap://[fd00::201:1:1:1]:5683/power");
@@ -192,9 +162,9 @@ public class CoapObserverManager {
             @Override
             public void onLoad(CoapResponse response) {
                 String payload = response.getResponseText();
-                logger.debug("Power notification received - Code: {}, Payload: {}", 
-                           response.getCode(), payload);
-                
+                logger.debug("Power notification received - Code: {}, Payload: {}",
+                        response.getCode(), payload);
+
                 if (isValidPayload(payload, "power")) {
                     databaseManager.storePowerData(payload);
                 }
@@ -207,15 +177,15 @@ public class CoapObserverManager {
                 activeClients.remove("power");
             }
         });
-        
+
         activeClients.put("power", powerClient);
         activeObservers.put("power", powerRelation);
         logger.info("Power observer started");
     }
-    
+
     public void stopAllObservers() {
         logger.info("Stopping all observers");
-        
+
         for (Map.Entry<String, CoapObserveRelation> entry : activeObservers.entrySet()) {
             try {
                 entry.getValue().proactiveCancel();
@@ -224,7 +194,7 @@ public class CoapObserverManager {
                 logger.error("Error cancelling observation {}", entry.getKey(), e);
             }
         }
-        
+
         for (Map.Entry<String, CoapClient> entry : activeClients.entrySet()) {
             try {
                 entry.getValue().shutdown();
@@ -233,29 +203,9 @@ public class CoapObserverManager {
                 logger.error("Error shutting down client {}", entry.getKey(), e);
             }
         }
-        
+
         activeObservers.clear();
         activeClients.clear();
         logger.info("All observers stopped");
-    }
-    
-    public void restartAllObservers() {
-        logger.info("Restarting all observers");
-        stopAllObservers();
-        startAllObservers();
-        logger.info("All observers restarted");
-    }
-    
-    public int getActiveObserverCount() {
-        return activeObservers.size();
-    }
-    
-    public boolean isObserverActive(String observerName) {
-        return activeObservers.containsKey(observerName);
-    }
-    
-    // Get the observe relation for advanced operations
-    public CoapObserveRelation getObserveRelation(String observerName) {
-        return activeObservers.get(observerName);
     }
 }

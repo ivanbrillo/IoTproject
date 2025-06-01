@@ -1,10 +1,5 @@
 package com.pi;
 
-import com.pi.CoapRequestManager;
-import com.pi.DatabaseManager;
-import com.pi.LogViewer;
-import com.pi.FloorManager;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,13 +30,11 @@ public class UserInterface {
         System.out.println("3. Send Temperature Command");
         System.out.println("4. Send Light Command");
         System.out.println("5. Send Battery Command");
-        System.out.println("6. Send Custom Request");
-        System.out.println("7. Send Dynamic Control Command");  
-        System.out.println("8. View Stored Data");
-        System.out.println("9. System Information");
-        System.out.println("10. View Logs");
-        System.out.println("11. Exit");
-        System.out.print("Choose an option (1-11): ");
+        System.out.println("6. Send Dynamic Control Command");
+        System.out.println("7. View Stored Data");
+        System.out.println("8. View Logs");
+        System.out.println("9. Exit");
+        System.out.print("Choose an option (1-9): ");
     }
 
     private int getFloor() {
@@ -82,7 +75,7 @@ public class UserInterface {
             return;
         }
 
-        String setpoint = "20.0";
+        String setpoint = "20.0"; // defualt value used if on=0
 
         if (onState.equals("1")) {
             System.out.print("Enter setpoint temperature: ");
@@ -168,32 +161,16 @@ public class UserInterface {
         int floor = getFloor();
         if (floor == -1)
             return;
-    
+
         System.out.print("Enter dynamic control state (0=disable, 1=enable): ");
         String onState = scanner.nextLine().trim();
-    
+
         if (onState.equals("0") || onState.equals("1")) {
             logger.info("User requested Dynamic Control command for floor {}: on={}", floor, onState);
             requestManager.sendDynamicControlCommand(floor, onState);
         } else {
             System.out.println("Invalid input. Please enter 0 or 1.");
             logger.warn("Invalid Dynamic Control command input received: {}", onState);
-        }
-    }
-
-    // ...existing code for other methods...
-    public void handleCustomRequest() {
-        System.out.print("Enter CoAP URL: ");
-        String url = scanner.nextLine().trim();
-        System.out.print("Enter HTTP method (GET/POST/PUT/DELETE): ");
-        String method = scanner.nextLine().trim();
-
-        if (isValidInput(url) && isValidInput(method)) {
-            logger.info("User requested Custom command: url={}, method={}", url, method);
-            requestManager.sendCustomRequest(url, method);
-        } else {
-            System.out.println("Invalid input. Please try again.");
-            logger.warn("Invalid Custom command input received");
         }
     }
 
@@ -248,8 +225,7 @@ public class UserInterface {
         System.out.println("\n=== Log Viewer ===");
         System.out.println("1. View Recent Logs");
         System.out.println("2. View Last N Lines");
-        System.out.println("3. Clear Logs");
-        System.out.println("4. Back to Main Menu");
+        System.out.println("3. Back to Main Menu");
         System.out.print("Choose option (1-4): ");
     }
 
@@ -273,13 +249,6 @@ public class UserInterface {
                     }
                     break;
                 case 3:
-                    System.out.print("Are you sure you want to clear all logs? (y/N): ");
-                    String confirm = scanner.nextLine().trim();
-                    if ("y".equalsIgnoreCase(confirm) || "yes".equalsIgnoreCase(confirm)) {
-                        logViewer.clearLogs();
-                    }
-                    break;
-                case 4:
                     inLogMenu = false;
                     break;
                 default:
@@ -291,26 +260,6 @@ public class UserInterface {
                 scanner.nextLine();
             }
         }
-    }
-
-    public void displaySystemInfo() {
-        System.out.println("\n=== System Information ===");
-        System.out.println("CoAP Client Manager v1.0");
-        System.out.println("Database: sensors");
-        System.out.println("Available tables: power, temperature, light");
-        System.out.println("Available floors: " + FloorManager.getAvailableFloors());
-        System.out.println("Active observers: 3 (battery, sensors, power)");
-        System.out.println("Status: Running");
-
-        // Runtime information
-        Runtime runtime = Runtime.getRuntime();
-        long totalMemory = runtime.totalMemory();
-        long freeMemory = runtime.freeMemory();
-        long usedMemory = totalMemory - freeMemory;
-
-        System.out.printf("Memory Usage: %.2f MB / %.2f MB%n",
-                usedMemory / 1024.0 / 1024.0,
-                totalMemory / 1024.0 / 1024.0);
     }
 
     public void showStartupMessage() {

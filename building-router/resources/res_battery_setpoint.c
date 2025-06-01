@@ -32,7 +32,7 @@ res_post_handler(coap_message_t *request, coap_message_t *response,
   const char *setpoint_query = NULL;
   float setpoint = 0.0f;
 
-  LOG_INFO_("Received AC control POST request\n");
+  LOG_INFO("Received Battery control POST request\n");
 
   if ((len = coap_get_query_variable(request, "setpoint", &setpoint_query)))
   {

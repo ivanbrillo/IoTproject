@@ -22,7 +22,7 @@ public class DatabaseManager {
     private static final String DB_PASSWORD = "iotubuntu";
 
     private Connection connection;
-    private volatile boolean isShuttingDown = false;
+    private volatile boolean isShuttingDown = false; // needs to be visible by all observer threads immediatly
     private double lastPredValue = 0.0; // Last prediction value for power
 
     // Version counters for each observable
@@ -57,7 +57,7 @@ public class DatabaseManager {
     private boolean shouldStoreData(String observableType, int newVersion) {
         int currentVersion = versionCounters.get(observableType);
 
-        if (isVersionNewer(newVersion, currentVersion)) {
+        if (newVersion > currentVersion) {
             versionCounters.put(observableType, newVersion);
             logger.debug("Version updated for {}: {} -> {}", observableType, currentVersion, newVersion);
             return true;
@@ -66,11 +66,6 @@ public class DatabaseManager {
                     observableType, newVersion, currentVersion);
             return false;
         }
-    }
-
-    private boolean isVersionNewer(int newVersion, int currentVersion) {
-        // Safe comparison that handles int overflow
-        return (newVersion - currentVersion) > 0;
     }
 
     public void storePowerData(String jsonPayload) {
@@ -306,17 +301,6 @@ public class DatabaseManager {
             logger.error("Error retrieving light data", e);
             System.err.println("Error retrieving light data: " + e.getMessage());
         }
-    }
-
-    // Method to get current version counters (for debugging/monitoring)
-    public Map<String, Integer> getVersionCounters() {
-        return new ConcurrentHashMap<>(versionCounters);
-    }
-
-    // Method to reset version counters (if needed for testing)
-    public void resetVersionCounters() {
-        versionCounters.replaceAll((k, v) -> 0);
-        logger.info("Version counters reset to 0");
     }
 
     public void close() {

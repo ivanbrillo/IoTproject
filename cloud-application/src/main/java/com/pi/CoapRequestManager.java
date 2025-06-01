@@ -70,14 +70,14 @@ public class CoapRequestManager {
             System.err.println("No sensor device found for floor " + floor);
             return;
         }
-    
+
         // Validate onState parameter
         if (!onState.equals("0") && !onState.equals("1")) {
             logger.error("Invalid dynamic control state: {}. Must be 0 or 1", onState);
             System.err.println("Invalid state: " + onState + ". Must be 0 or 1");
             return;
         }
-    
+
         String url = String.format("coap://[%s]:5683/dynamic-control?on=%s", ip, onState);
         logger.info("Sending Dynamic Control command to floor {}: on={}", floor, onState);
         sendRequest(url, "Dynamic Control (Floor " + floor + ")");
@@ -138,52 +138,4 @@ public class CoapRequestManager {
         }
     }
 
-    public CoapResponse sendCustomRequest(String url, String method) {
-        CoapClient client = new CoapClient(url);
-        CoapResponse response = null;
-
-        try {
-            logger.info("Sending custom request: URL={}, Method={}", url, method);
-
-            switch (method.toUpperCase()) {
-                case "GET":
-                    response = client.get();
-                    break;
-                case "POST":
-                    response = client.post("", MediaTypeRegistry.TEXT_PLAIN);
-                    break;
-                case "PUT":
-                    response = client.put("", MediaTypeRegistry.TEXT_PLAIN);
-                    break;
-                case "DELETE":
-                    response = client.delete();
-                    break;
-                default:
-                    logger.error("Unsupported method: {}", method);
-                    System.err.println("Unsupported method: " + method);
-                    return null;
-            }
-
-            if (response != null) {
-                logger.info("Custom request response - Code: {}, Text: {}, Success: {}",
-                        response.getCode(), response.getResponseText(), response.isSuccess());
-
-                System.out.println("=== Custom Request Result ===");
-                System.out.println("URL: " + url);
-                System.out.println("Method: " + method);
-                System.out.println("Response Code: " + response.getCode());
-                System.out.println("Response Text: " + response.getResponseText());
-                System.out.println("Success: " + response.isSuccess());
-            }
-
-        } catch (Exception e) {
-            logger.error("Error sending custom request", e);
-            System.err.println("Error sending custom request: " + e.getMessage());
-        } finally {
-            client.shutdown();
-            logger.debug("Custom request client shutdown");
-        }
-
-        return response;
-    }
 }

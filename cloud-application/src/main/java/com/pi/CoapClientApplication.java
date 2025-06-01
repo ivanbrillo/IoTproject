@@ -16,6 +16,7 @@ public class CoapClientApplication {
     private UserInterface userInterface;
     private LogViewer logViewer;
     private BatteryControlService batteryControlService;
+    private final int BATTERY_PERIOD_CONTROL = 30;
 
     public static void main(String[] args) {
         CoapClientApplication app = new CoapClientApplication();
@@ -59,7 +60,7 @@ public class CoapClientApplication {
         observerManager.startAllObservers();
 
         logger.info("Starting automatic battery control...");
-        batteryControlService.startAutomaticControl(30);
+        batteryControlService.startAutomaticControl(BATTERY_PERIOD_CONTROL);
 
         logger.info("Initialization complete!");
     }
@@ -92,22 +93,15 @@ public class CoapClientApplication {
                         userInterface.handleBatteryRequest();
                         break;
                     case 6:
-                        userInterface.handleCustomRequest();
-                        break;
-                    case 7:
                         userInterface.handleDynamicControlRequest();
                         break;
-                    case 8:
+                    case 7:
                         userInterface.handleDataViewing();
                         break;
-                    case 9:
-                        userInterface.displaySystemInfo();
-                        waitForEnter();
-                        break;
-                    case 10:
+                    case 8:
                         userInterface.handleLogViewing();
                         break;
-                    case 11:
+                    case 9:
                         running = false;
                         break;
                     default:
@@ -115,23 +109,13 @@ public class CoapClientApplication {
                 }
 
                 // Small delay to prevent overwhelming the console
-                if (running && choice != 7 && choice != 9) {
+                if (running)
                     Thread.sleep(500);
-                }
 
             } catch (Exception e) {
                 logger.error("Error during operation", e);
                 System.err.println("Error during operation: " + e.getMessage());
             }
-        }
-    }
-
-    private void waitForEnter() {
-        System.out.print("\nPress Enter to continue...");
-        try {
-            System.in.read();
-        } catch (Exception e) {
-            // Ignore
         }
     }
 
@@ -159,12 +143,5 @@ public class CoapClientApplication {
         }
 
         logger.info("Application shutdown complete");
-    }
-
-    // Graceful shutdown hook
-    static {
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            LoggerFactory.getLogger(CoapClientApplication.class).info("Received shutdown signal");
-        }));
     }
 }

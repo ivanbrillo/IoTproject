@@ -30,7 +30,7 @@ res_post_handler(coap_message_t *request, coap_message_t *response,
   int ac_on = -1;
   float setpoint = -1.0f;
 
-  LOG_INFO_("Received AC control POST request\n");
+  LOG_INFO("Received AC control POST request\n");
 
   // Check for 'on' parameter first
   if ((len = coap_get_query_variable(request, "on", &on_query)))

@@ -1,6 +1,5 @@
 package com.pi.BatteryControl;
 
-import java.time.LocalTime;
 import java.util.Random;
 
 public class ElectricityPriceProvider {
@@ -9,7 +8,7 @@ public class ElectricityPriceProvider {
     private static final double PEAK_MULTIPLIER = 1.8;
     private static final double OFF_PEAK_MULTIPLIER = 0.6;
     private static final double RANDOM_VARIATION = 0.2;
-
+    private static int hour = 0;
     private final Random random;
 
     public ElectricityPriceProvider() {
@@ -17,10 +16,7 @@ public class ElectricityPriceProvider {
     }
 
     public double getCurrentPrice() {
-        Random rand = new Random();
-        int hour = rand.nextInt(25); // 0 to 24
-
-        double price = calculateTimeBasedPrice(hour);
+        double price = calculateTimeBasedPrice((hour++) % 25);
 
         double variation = (random.nextDouble() - 0.5) * 2 * RANDOM_VARIATION;
         price = price * (1 + variation);

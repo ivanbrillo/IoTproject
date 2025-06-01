@@ -66,7 +66,7 @@ PROCESS_THREAD(udp_server_process, ev, data)
         memcpy(last_reading, raw, N_FEATURES * sizeof(float));
         last_prediction = predict_power(raw, ++reading_counter);
 
-        LOG_INFO("pred %.3f\n", last_prediction);
+        LOG_INFO("\npred %.3f\n", last_prediction);
 
         res_power.trigger();
         res_energy_modality.trigger();

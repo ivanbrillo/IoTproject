@@ -12,10 +12,6 @@
 static coap_observee_t *obs;
 #define OBS_RESOURCE_URI "energy-modality"
 
-// Safe version comparison macro for signed int32_t that handles overflow
-#define VERSION_IS_NEWER(new_ver, old_ver) \
-  ((int32_t)((new_ver) - (old_ver)) > 0)
-
 // Response structure matching the server
 typedef struct
 {
@@ -54,7 +50,7 @@ notification_callback(coap_observee_t *obs, void *notification,
                response->version, stored_version);
 
       // Only accept if version is higher than stored version
-      if (VERSION_IS_NEWER(response->version, stored_version))
+      if (response->version > stored_version)
       {
         if (response->modality <= 2)
         {

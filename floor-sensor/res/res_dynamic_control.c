@@ -25,7 +25,7 @@ res_dynamic_post_handler(coap_message_t *request, coap_message_t *response,
   size_t len = 0;
   const char *on_query = NULL;
 
-  LOG_INFO_("Received dynamic control POST request\n");
+  LOG_INFO("Received dynamic control POST request\n");
 
   if ((len = coap_get_query_variable(request, "on", &on_query))) {
     if (len == 1 && (on_query[0] == '0' || on_query[0] == '1')) {
