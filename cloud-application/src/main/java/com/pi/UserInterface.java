@@ -3,6 +3,8 @@ package com.pi;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.pi.BatteryControl.BatteryControlService;
+
 import java.util.Scanner;
 
 public class UserInterface {
@@ -30,11 +32,12 @@ public class UserInterface {
         System.out.println("3. Send Temperature Command");
         System.out.println("4. Send Light Command");
         System.out.println("5. Send Battery Command");
-        System.out.println("6. Send Dynamic Control Command");
+        System.out.println("6. Enable/Disable Dynamic Control of Floor Sensors");
         System.out.println("7. View Stored Data");
         System.out.println("8. View Logs");
-        System.out.println("9. Exit");
-        System.out.print("Choose an option (1-9): ");
+        System.out.println("9. Enable/Disable automatic SOC control");
+        System.out.println("10. Exit");
+        System.out.print("Choose an option (1-10): ");
     }
 
     private int getFloor() {
@@ -229,6 +232,14 @@ public class UserInterface {
         System.out.print("Choose option (1-4): ");
     }
 
+    public void displayBatteryMenu() {
+        System.out.println("\n=== Battery SOC Control Viewer ===");
+        System.out.println("1. Activate SOC automatic control");
+        System.out.println("2. Disable SOC automatic control");
+        System.out.println("3. Back to Main Menu");
+        System.out.print("Choose option (1-3): ");
+    }
+
     public void handleLogViewing() {
         boolean inLogMenu = true;
         while (inLogMenu) {
@@ -260,6 +271,25 @@ public class UserInterface {
                 scanner.nextLine();
             }
         }
+    }
+
+    public void handleBatteryViewing(BatteryControlService batteryControlService, int period) {
+        displayBatteryMenu();
+        int choice = getChoice();
+
+        switch (choice) {
+            case 1:
+                batteryControlService.startAutomaticControl(period);
+                break;
+            case 2:
+                batteryControlService.shutdown();
+                break;
+            case 3:
+                break;
+            default:
+                System.out.println("Invalid choice.");
+        }
+
     }
 
     public void showStartupMessage() {

@@ -51,7 +51,7 @@ res_post_handler(coap_message_t *request, coap_message_t *response,
     if (value >= 0.0f && value <= 1000.0f)
     {
       // Set global or hardware light setpoint value here
-      snprintf((char *)buffer, preferred_size, "{\"status\":\"success\", \"setpoint\":%.2f}", value);
+      snprintf((char *)buffer, preferred_size, "{\"status\":\"success\"}");
       coap_set_header_content_format(response, APPLICATION_JSON);
       coap_set_payload(response, buffer, strlen((char *)buffer));
       coap_set_status_code(response, CHANGED_2_04);

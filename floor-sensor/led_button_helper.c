@@ -1,30 +1,29 @@
-#include "os/dev/leds.h"
+#include "contiki.h"
+#include "dev/etc/rgb-led/rgb-led.h"  // for rgb_led_set(), rgb_led_off()
+#include "sys/etimer.h"
 
-#define DISABLE -1
-#define COLOR_GREEN 0
-#define COLOR_YELLOW 1
-#define COLOR_RED 2
+#define DISABLE       -1
+#define COLOR_GREEN    0
+#define COLOR_BLUE     1
+#define COLOR_RED      2
 
-void set_color_led(int color)
-{
-  leds_off(LEDS_ALL); // Turn off all LEDs first
+void set_color_led(int color) {
+  rgb_led_off();
 
-  switch (color)
-  {
-  case COLOR_GREEN:
-    leds_set(LEDS_NUM_TO_MASK(LEDS_GREEN));
-    break;
-  case COLOR_YELLOW:
-    leds_set(LEDS_NUM_TO_MASK(LEDS_YELLOW));
-    break;
-  case COLOR_RED:
-    leds_set(LEDS_NUM_TO_MASK(LEDS_RED));
-    break;
-  case DISABLE:
-    leds_off(LEDS_ALL);
-    break;
-  default:
-    // Unknown color: no LED or handle error
-    break;
+  switch (color) {
+    case COLOR_GREEN:
+      rgb_led_set(RGB_LED_GREEN);
+      break;
+    case COLOR_BLUE:
+      rgb_led_set(RGB_LED_BLUE);
+      break;
+    case COLOR_RED:
+      rgb_led_set(RGB_LED_RED);
+      break;
+    case DISABLE:
+      rgb_led_off();
+      break;
+    default:
+      break;
   }
 }

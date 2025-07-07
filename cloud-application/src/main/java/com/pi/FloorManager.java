@@ -12,13 +12,13 @@ public class FloorManager {
         // Floor 1 devices
         Map<String, String> floor1 = new HashMap<>();
         floor1.put("actuator", "fd00::203:3:3:3"); // AC and Window
-        floor1.put("sensor", "fd00::202:2:2:2"); // Temperature and Light
+        floor1.put("sensor", "fd00::f6ce:3651:2b3e:b419"); // Temperature and Light
         floorDevices.put(1, floor1);
 
         // Floor 0 devices
         Map<String, String> floor0 = new HashMap<>();
-        floor0.put("battery", "fd00::201:1:1:1"); // Battery
-        floor0.put("br", "fd00::201:1:1:1"); // Border Router
+        floor0.put("battery", "fd00::f6ce:36a6:d989:7ca"); // Battery
+        floor0.put("br", "fd00::f6ce:36a6:d989:7ca"); // Border Router
         floorDevices.put(0, floor0);
     }
 

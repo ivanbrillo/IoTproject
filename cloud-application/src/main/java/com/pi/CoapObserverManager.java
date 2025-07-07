@@ -128,8 +128,18 @@ public class CoapObserverManager {
     }
 
     private void startBatteryObserver() {
+
+        String sensorIP = FloorManager.getDeviceIP(0, "battery");
+
+        if (sensorIP == null) {
+            logger.warn("No battery IP found for floor {}", 0);
+            return;
+        }
+
+        String coapUrl = "coap://[" + sensorIP + "]:5683/battery/soc";
+
         logger.info("Starting battery SOC observer");
-        CoapClient socClient = new CoapClient("coap://[fd00::201:1:1:1]:5683/battery/soc");
+        CoapClient socClient = new CoapClient(coapUrl);
         CoapObserveRelation socRelation = socClient.observe(new CoapHandler() {
             @Override
             public void onLoad(CoapResponse response) {
@@ -156,8 +166,18 @@ public class CoapObserverManager {
     }
 
     private void startPowerObserver() {
+
+        String sensorIP = FloorManager.getDeviceIP(0, "battery");
+
+        if (sensorIP == null) {
+            logger.warn("No battery IP found for floor {}", 0);
+            return;
+        }
+
+        String coapUrl = "coap://[" + sensorIP + "]:5683/power";
+
         logger.info("Starting power observer");
-        CoapClient powerClient = new CoapClient("coap://[fd00::201:1:1:1]:5683/power");
+        CoapClient powerClient = new CoapClient(coapUrl);
         CoapObserveRelation powerRelation = powerClient.observe(new CoapHandler() {
             @Override
             public void onLoad(CoapResponse response) {

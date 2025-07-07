@@ -2,6 +2,8 @@ CONTIKI_PROJECT = building-router
 all: $(CONTIKI_PROJECT)
 CONTIKI = ../../..
 
+PLATFORMS_ONLY = zoul nrf52840
+
 # The BR is either native or embedded, and in the latter case must support SLIP
 PLATFORMS_EXCLUDE = z1
 
@@ -23,5 +25,5 @@ MODULES += $(CONTIKI_NG_APP_LAYER_DIR)/coap
 
 PROJECT_SOURCEFILES += ml-prediction.c
 
-
+MODULES_REL += webserver
 include $(CONTIKI)/Makefile.include

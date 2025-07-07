@@ -10,6 +10,10 @@
 #define LOG_LEVEL LOG_LEVEL_INFO
 
 static coap_observee_t *obs;
+static coap_endpoint_t *stored_server_ep = NULL; // Add this to store server endpoint
+
+static struct etimer watchdog_timer;
+#define WATCHDOG_TIMEOUT (60 * CLOCK_SECOND) // 60 seconds
 #define OBS_RESOURCE_URI "energy-modality"
 
 // Response structure matching the server
@@ -46,7 +50,7 @@ notification_callback(coap_observee_t *obs, void *notification,
     {
       energy_modality_response_t *response = (energy_modality_response_t *)payload;
 
-      LOG_INFO("Received version: %d, stored version: %d\n",
+      LOG_INFO("Received version: %ld, stored version: %ld\n",
                response->version, stored_version);
 
       // Only accept if version is higher than stored version
@@ -54,27 +58,34 @@ notification_callback(coap_observee_t *obs, void *notification,
       {
         if (response->modality <= 2)
         {
-          LOG_INFO("Modality PARSED: %d (version %d -> %d)\n",
+          LOG_INFO("Modality PARSED: %d (version %ld -> %ld)\n",
                    response->modality, stored_version, response->version);
 
           modality = response->modality;
-          stored_version = response->version; // Update stored version
+          stored_version = response->version;
           set_color_led(modality);
+
+          // Reset watchdog timer on successful update
+          etimer_reset(&watchdog_timer);
         }
         else
         {
-          LOG_WARN("Unknown modality value: %d (version %d)\n",
+          LOG_WARN("Unknown modality value: %d (version %ld)\n",
                    response->modality, response->version);
         }
       }
       else if (response->version == stored_version)
       {
-        LOG_INFO("Same version (%d), ignoring duplicate\n", response->version);
+        LOG_INFO("Same version (%ld), ignoring duplicate\n", response->version);
+        // Still reset timer for duplicate (server is responding)
+        etimer_reset(&watchdog_timer);
       }
       else
       {
-        LOG_WARN("Received older version %d (current: %d), ignoring\n",
+        LOG_WARN("Received older version %ld (current: %ld), ignoring\n",
                  response->version, stored_version);
+        // Still reset timer for older version (server is responding)
+        etimer_reset(&watchdog_timer);
       }
     }
     else
@@ -86,6 +97,8 @@ notification_callback(coap_observee_t *obs, void *notification,
 
   case OBSERVE_OK:
     LOG_INFO("OBSERVE_OK: %*s\n", len, (char *)payload);
+    // Reset timer on successful observe setup
+    etimer_reset(&watchdog_timer);
     break;
 
   case OBSERVE_NOT_SUPPORTED:
@@ -101,22 +114,46 @@ notification_callback(coap_observee_t *obs, void *notification,
   case NO_REPLY_FROM_SERVER:
     LOG_INFO("NO_REPLY_FROM_SERVER: removing observe registration with token %x%x\n",
              obs->token[0], obs->token[1]);
-    obs = NULL;
+    toggle_observation(stored_server_ep);
+
+    LOG_INFO("Attempting to restart observation\n");
+    toggle_observation(stored_server_ep);
+
     break;
   }
 }
 
 void toggle_observation(coap_endpoint_t *server_ep)
 {
+  stored_server_ep = server_ep;
+
   if (obs)
   {
     LOG_INFO("Stopping observation\n");
     coap_obs_remove_observee(obs);
     obs = NULL;
+    etimer_stop(&watchdog_timer);
   }
   else
   {
     LOG_INFO("Starting observation\n");
     obs = coap_obs_request_registration(server_ep, OBS_RESOURCE_URI, notification_callback, NULL);
+    stored_version = -1;
+    if (obs) {
+      // Start watchdog timer
+      etimer_set(&watchdog_timer, WATCHDOG_TIMEOUT);
+    }
+  }
+}
+
+// Add this function to check the watchdog timer in your main process
+void check_observer_watchdog()
+{
+  if (etimer_expired(&watchdog_timer) && obs != NULL) {
+    LOG_WARN("No energy modality update received in 1min, restarting observer\n");
+    
+    // Toggle twice to restart
+    toggle_observation(stored_server_ep);
+    toggle_observation(stored_server_ep);
   }
 }

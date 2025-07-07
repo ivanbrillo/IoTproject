@@ -1,0 +1,2 @@
+make TARGET=nrf52840 BOARD=dongle building-router.dfu-upload PORT=/dev/ttyACM0
+make TARGET=nrf52840 BOARD=dongle PORT=/dev/ttyACM0 connect-router

@@ -19,7 +19,7 @@ public class BatteryControlService {
     private final BatteryControlAlgorithm controlAlgorithm;
     private final CoapRequestManager requestManager;
     private final DatabaseManager databaseManager;
-    private final ScheduledExecutorService scheduler;
+    private ScheduledExecutorService scheduler;
 
     private boolean isRunning = false;
 
@@ -34,6 +34,10 @@ public class BatteryControlService {
         if (isRunning) {
             logger.warn("Battery control is already running");
             return;
+        }
+
+        if (scheduler.isShutdown()) {
+            scheduler = Executors.newSingleThreadScheduledExecutor();
         }
 
         this.isRunning = true;
@@ -55,7 +59,6 @@ public class BatteryControlService {
         sendBatterySetpoint(setpoint);
 
     }
-
 
     private void sendBatterySetpoint(double setpoint) {
         String setpointString = String.format(Locale.US, "%.2f", setpoint);

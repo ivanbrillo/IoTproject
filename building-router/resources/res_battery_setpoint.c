@@ -66,7 +66,7 @@ res_post_handler(coap_message_t *request, coap_message_t *response,
       }
 
       // Apply setpoint and power ON
-      snprintf((char *)buffer, preferred_size, "{\"setpoint\":%.2f}", setpoint);
+      snprintf((char *)buffer, preferred_size, "{\"success_code\":\"CORRECTLY_SET\"}");
       coap_set_status_code(response, CHANGED_2_04);
       coap_set_header_content_format(response, APPLICATION_JSON);
       coap_set_payload(response, buffer, strlen((char *)buffer));

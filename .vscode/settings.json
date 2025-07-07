@@ -7,7 +7,8 @@
         "stdlib.h": "c",
         "modality-obs.h": "c",
         "leds.h": "c",
-        "simple-udp.h": "c"
+        "simple-udp.h": "c",
+        "log.h": "c"
     },
     "java.configuration.updateBuildConfiguration": "interactive"
 }

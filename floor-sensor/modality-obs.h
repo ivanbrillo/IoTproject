@@ -9,6 +9,7 @@
 extern int8_t modality;
 
 void toggle_observation(coap_endpoint_t* server_ep);
+void check_observer_watchdog();
 
 
 #endif /* ENERGY_OBSERVER_H */

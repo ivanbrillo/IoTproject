@@ -102,6 +102,9 @@ public class CoapClientApplication {
                         userInterface.handleLogViewing();
                         break;
                     case 9:
+                        userInterface.handleBatteryViewing(batteryControlService, BATTERY_PERIOD_CONTROL);
+                        break;
+                    case 10:
                         running = false;
                         break;
                     default:

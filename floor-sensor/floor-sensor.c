@@ -12,13 +12,14 @@
 #include "setpoints-calculator.c"
 #include <locale.h>
 #include <math.h>
+#include "float_helper.h"
 
 #define LOG_MODULE "FLOOR_SENSOR"
 #define LOG_LEVEL LOG_LEVEL_APP
 
 /* FIXME: This server address is hard-coded for Cooja and link-local for unconnected border router. */
 #define SERVER_EP "coap://[fe80::203:3:3:3]"
-#define SERVER_EP2 "coap://[fe80::201:1:1:1]"
+#define SERVER_EP2 "coap://[fe80::f6ce:36a6:d989:7ca]"
 
 #define TOGGLE_INTERVAL 10
 
@@ -88,37 +89,48 @@ PROCESS_THREAD(er_example_client, ev, data)
         // --- AC control request ---
         if (CHANGE_ABOVE_2_PERCENT(last_ac_setpoint, new_ac_setpoint))
         {
-          LOG_WARN("new ac setpoint: %.3f", new_ac_setpoint);
+          LOG_WARN("new ac setpoint: %d \n", (int)new_ac_setpoint);
           last_ac_setpoint = new_ac_setpoint; // update only on send
 
           coap_init_message(request, COAP_TYPE_CON, COAP_POST, 0);
           coap_set_header_uri_path(request, service_urls[0]);
-          snprintf(query_buffer, sizeof(query_buffer), "on=1&setpoint=%.2f", new_ac_setpoint);
+
+          char buff[10];
+          float_to_string(buff, new_ac_setpoint);
+
+          snprintf(query_buffer, sizeof(query_buffer), "on=1&setpoint=%s", buff);
           coap_set_header_uri_query(request, query_buffer);
-          LOG_INFO_COAP_EP(&server_ep);
-          COAP_BLOCKING_REQUEST(&server_ep, request, client_chunk_handler);
+          //LOG_INFO_COAP_EP(&server_ep);
+          //COAP_BLOCKING_REQUEST(&server_ep, request, client_chunk_handler);
         }
 
         // --- Window control request ---
         if (CHANGE_ABOVE_2_PERCENT(last_window_setpoint, new_window_setpoint))
         {
+          LOG_WARN("new window setpoint: %d \n", (int)new_window_setpoint);
+
           last_window_setpoint = new_window_setpoint; // update only on send
 
           coap_init_message(request, COAP_TYPE_CON, COAP_POST, 0);
           coap_set_header_uri_path(request, service_urls[1]);
-          snprintf(query_buffer, sizeof(query_buffer), "setpoint=%.2f", new_window_setpoint);
+
+          char buff[10];
+          float_to_string(buff, new_window_setpoint);
+
+          snprintf(query_buffer, sizeof(query_buffer), "setpoint=%s", buff);
           coap_set_header_uri_query(request, query_buffer);
-          LOG_INFO_COAP_EP(&server_ep);
-          COAP_BLOCKING_REQUEST(&server_ep, request, client_chunk_handler);
+          //LOG_INFO_COAP_EP(&server_ep);
+          //COAP_BLOCKING_REQUEST(&server_ep, request, client_chunk_handler);
         }
       }
 
-      LOG_INFO("Temp: %.2fC | AC Setpoint: %.2fC | Temp target: %.2f\n",
-               current_temperature, last_ac_setpoint, temperature_required);
-      LOG_INFO("Light: %.2f lm | Window Setpoint: %.2f | Light target: %.2f lm\n",
-               current_light, last_window_setpoint, light_required);
+      LOG_INFO("Temp: %dC | AC Setpoint: %dC | Temp target: %d\n",
+               (int)current_temperature, (int)last_ac_setpoint, (int)temperature_required);
+      LOG_INFO("Light: %d lm | Window Setpoint: %d | Light target: %d lm\n",
+               (int)current_light, (int)last_window_setpoint, (int)light_required);
 
       res_sensors.trigger();
+      check_observer_watchdog();
       etimer_reset(&et);
     }
   }

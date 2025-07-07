@@ -35,7 +35,7 @@ PROCESS_THREAD(udp_server_process, ev, data)
 
 #if BORDER_ROUTER_CONF_WEBSERVER
   PROCESS_NAME(webserver_nogui_process);
-  rocess_start(&webserver_nogui_process, NULL);
+  process_start(&webserver_nogui_process, NULL);
 #endif /* BORDER_ROUTER_CONF_WEBSERVER */
 
   coap_activate_resource(&res_power, "power");
@@ -55,7 +55,7 @@ PROCESS_THREAD(udp_server_process, ev, data)
 
     if (ev == button_hal_press_event)
     {
-      modality_disabled = (modality_disabled == 0) ? 1 : 0; // toggle modality_disabled
+      modality_disabled = (modality_disabled == 0) ? 1 : 0;
     }
     else if (ev == PROCESS_EVENT_TIMER)
     {
@@ -66,7 +66,7 @@ PROCESS_THREAD(udp_server_process, ev, data)
         memcpy(last_reading, raw, N_FEATURES * sizeof(float));
         last_prediction = predict_power(raw, ++reading_counter);
 
-        LOG_INFO("\npred %.3f\n", last_prediction);
+        LOG_INFO("\npred %d\n", (int)last_prediction);
 
         res_power.trigger();
         res_energy_modality.trigger();
