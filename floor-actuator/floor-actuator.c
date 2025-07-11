@@ -28,10 +28,8 @@ PROCESS_THREAD(er_example_server, ev, data)
 
   LOG_INFO("Starting Actuators Floor CoAP Server\n");
 
-
   coap_activate_resource(&res_ac_setpoint, "AC/setpoint");
   coap_activate_resource(&res_window_setpoint, "Window/setpoint");
-
 
   while (1) // wait until a new event
   {

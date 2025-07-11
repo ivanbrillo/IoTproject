@@ -12,13 +12,12 @@
 #include "setpoints-calculator.c"
 #include <locale.h>
 #include <math.h>
-#include "float_helper.h"
+#include "res/float_helper.h"
 
 #define LOG_MODULE "FLOOR_SENSOR"
 #define LOG_LEVEL LOG_LEVEL_APP
 
-/* FIXME: This server address is hard-coded for Cooja and link-local for unconnected border router. */
-#define SERVER_EP "coap://[fe80::203:3:3:3]"
+#define SERVER_EP "coap://[fe80::203:3:3:3]" // to be updated with new sensor
 #define SERVER_EP2 "coap://[fe80::f6ce:36a6:d989:7ca]"
 
 #define TOGGLE_INTERVAL 10
@@ -26,7 +25,7 @@
 #define INITIAL_WINDOW 50.0f
 #define INITIAL_AC 21.0f
 
-// Helper lambda/function to check >2% change (absolute relative difference)
+// Macro to check >2% change (absolute relative difference)
 #define CHANGE_ABOVE_2_PERCENT(old, new) (fabsf((new) - (old)) / ((old) != 0 ? fabsf(old) : 1.0f) > 0.02f)
 
 PROCESS(er_example_client, "FLOOR SENSOR CLIENT");
@@ -39,10 +38,10 @@ static coap_endpoint_t server_ep2;
 float last_ac_setpoint = INITIAL_AC;
 float last_window_setpoint = INITIAL_WINDOW;
 
-extern float current_temperature;
+extern float current_temperature;  // by sensors
 extern float current_light;
 
-extern float temperature_required;
+extern float temperature_required; // by Cloud Application
 extern float light_required;
 extern int8_t modality;
 
@@ -100,15 +99,13 @@ PROCESS_THREAD(er_example_client, ev, data)
 
           snprintf(query_buffer, sizeof(query_buffer), "on=1&setpoint=%s", buff);
           coap_set_header_uri_query(request, query_buffer);
-          //LOG_INFO_COAP_EP(&server_ep);
-          //COAP_BLOCKING_REQUEST(&server_ep, request, client_chunk_handler);
+          // COAP_BLOCKING_REQUEST(&server_ep, request, client_chunk_handler);
         }
 
         // --- Window control request ---
         if (CHANGE_ABOVE_2_PERCENT(last_window_setpoint, new_window_setpoint))
         {
           LOG_WARN("new window setpoint: %d \n", (int)new_window_setpoint);
-
           last_window_setpoint = new_window_setpoint; // update only on send
 
           coap_init_message(request, COAP_TYPE_CON, COAP_POST, 0);
@@ -119,8 +116,7 @@ PROCESS_THREAD(er_example_client, ev, data)
 
           snprintf(query_buffer, sizeof(query_buffer), "setpoint=%s", buff);
           coap_set_header_uri_query(request, query_buffer);
-          //LOG_INFO_COAP_EP(&server_ep);
-          //COAP_BLOCKING_REQUEST(&server_ep, request, client_chunk_handler);
+          // COAP_BLOCKING_REQUEST(&server_ep, request, client_chunk_handler);
         }
       }
 

@@ -45,6 +45,7 @@ void quantize_features(const float *input, int16_t *output)
     }
 }
 
+// raw -> last two readings (active, reactive power)
 float predict_power(float *raw, int reading_counter)
 {
     static int16_t qf[N_FEATURES];

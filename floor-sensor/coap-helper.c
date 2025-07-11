@@ -23,5 +23,3 @@ void client_chunk_handler(coap_message_t *response)
   int len = coap_get_payload(response, &chunk);
   LOG_INFO("%.*s \n", len, (char *)chunk);
 }
-
-/*----------------------------------------------------------------------------*/

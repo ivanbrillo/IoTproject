@@ -7,7 +7,7 @@
 #include "sys/log.h"
 #include "float_helper.h"
 
-// Helper lambda/function to check >5% change (absolute relative difference)
+// Macro to check >5% change (absolute relative difference)
 #define CHANGE_ABOVE_5_PERCENT(old, new) (fabsf((new) - (old)) / ((old) != 0 ? fabsf(old) : 1.0f) > 0.05f)
 
 #define LOG_MODULE "SENSOR_RES"

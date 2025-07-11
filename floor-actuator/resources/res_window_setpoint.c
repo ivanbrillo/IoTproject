@@ -8,10 +8,8 @@
 #define LOG_MODULE "WINDOW_RES"
 #define LOG_LEVEL LOG_LEVEL_APP
 
-
 static void res_post_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
 
-/* A simple actuator example that sets a window opening percentage */
 RESOURCE(res_window_setpoint,
          "title=\"WindowSetpoint: ?setpoint=FLOAT, POST\";rt=\"window-setpoint\"",
          NULL,
@@ -19,9 +17,8 @@ RESOURCE(res_window_setpoint,
          NULL,
          NULL);
 
-static void
-res_post_handler(coap_message_t *request, coap_message_t *response,
-                 uint8_t *buffer, uint16_t preferred_size, int32_t *offset)
+static void res_post_handler(coap_message_t *request, coap_message_t *response,
+                             uint8_t *buffer, uint16_t preferred_size, int32_t *offset)
 {
   size_t len = 0;
   const char *query;
@@ -49,7 +46,7 @@ res_post_handler(coap_message_t *request, coap_message_t *response,
     if (value >= 0.0f && value <= 100.0f)
     {
       // Set global or hardware window opening value here
-      snprintf((char *)buffer, preferred_size, "{\"status\":\"success\", \"setpoint\":%.2f}", value);
+      snprintf((char *)buffer, preferred_size, "{\"status\":\"UPDATED_SETPOINT\"}");
       coap_set_header_content_format(response, APPLICATION_JSON);
       coap_set_payload(response, buffer, strlen((char *)buffer));
       coap_set_status_code(response, CHANGED_2_04);
@@ -70,4 +67,3 @@ res_post_handler(coap_message_t *request, coap_message_t *response,
     coap_set_payload(response, buffer, strlen((char *)buffer));
   }
 }
-

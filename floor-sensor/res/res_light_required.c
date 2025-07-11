@@ -13,7 +13,6 @@ float light_required = INITIAL_LIGHT;
 
 static void res_post_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
 
-/* A simple actuator example that sets a window opening percentage */
 RESOURCE(res_light_required,
          "title=\"LightRequired: ?setpoint=FLOAT, POST\";rt=\"window-setpoint\"",
          NULL,
@@ -21,9 +20,8 @@ RESOURCE(res_light_required,
          NULL,
          NULL);
 
-static void
-res_post_handler(coap_message_t *request, coap_message_t *response,
-                 uint8_t *buffer, uint16_t preferred_size, int32_t *offset)
+static void res_post_handler(coap_message_t *request, coap_message_t *response,
+                             uint8_t *buffer, uint16_t preferred_size, int32_t *offset)
 {
   size_t len = 0;
   const char *query;
@@ -50,7 +48,6 @@ res_post_handler(coap_message_t *request, coap_message_t *response,
 
     if (value >= 0.0f && value <= 1000.0f)
     {
-      // Set global or hardware light setpoint value here
       snprintf((char *)buffer, preferred_size, "{\"status\":\"success\"}");
       coap_set_header_content_format(response, APPLICATION_JSON);
       coap_set_payload(response, buffer, strlen((char *)buffer));

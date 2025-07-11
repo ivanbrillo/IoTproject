@@ -10,12 +10,12 @@ float update_temp_setpoint(float current_temp, float setpoint, float temp_requir
     {
         new_setpoint = setpoint + difference / scaling_factor;
     }
-    else
+    else // can be rapid in change if I want a warmer temperature
     {
         new_setpoint = setpoint + difference / 4.0f;
     }
 
-    // Clamp new_setpoint to be within ±2 of temp_required
+    // Clamp new_setpoint to be within +/- 2 of temp_required
     if (new_setpoint > temp_required + 2.0f)
     {
         new_setpoint = setpoint + 2.0f;

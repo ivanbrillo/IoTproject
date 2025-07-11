@@ -6,13 +6,12 @@
 
 /* Log configuration */
 #include "sys/log.h"
-#include <stdlib.h> 
+#include <stdlib.h>
 #define LOG_MODULE "AC_RES"
 #define LOG_LEVEL LOG_LEVEL_APP
 
 static void res_post_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
 
-/* AC Control Resource */
 RESOURCE(res_ac_setpoint,
          "title=\"ACcontrol: ?on=0|1[&setpoint=FLOAT], POST\";rt=\"ac-control\"",
          NULL,
@@ -20,9 +19,8 @@ RESOURCE(res_ac_setpoint,
          NULL,
          NULL);
 
-static void
-res_post_handler(coap_message_t *request, coap_message_t *response,
-                 uint8_t *buffer, uint16_t preferred_size, int32_t *offset)
+static void res_post_handler(coap_message_t *request, coap_message_t *response,
+                             uint8_t *buffer, uint16_t preferred_size, int32_t *offset)
 {
   size_t len = 0;
   const char *on_query = NULL;
@@ -61,7 +59,7 @@ res_post_handler(coap_message_t *request, coap_message_t *response,
         if (endptr != temp_str && *endptr == '\0' && setpoint >= 16.0f && setpoint <= 30.0f)
         {
           // Apply setpoint and power ON
-          snprintf((char *)buffer, preferred_size, "{\"status\":\"AC_ON\",\"setpoint\":%.2f}", setpoint);
+          snprintf((char *)buffer, preferred_size, "{\"status\":\"UPDATED_SETPOINT\"}");
           coap_set_status_code(response, CHANGED_2_04);
           coap_set_header_content_format(response, APPLICATION_JSON);
           coap_set_payload(response, buffer, strlen((char *)buffer));

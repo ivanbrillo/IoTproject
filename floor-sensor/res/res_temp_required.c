@@ -14,7 +14,6 @@ float temperature_required = INITIAL_TEMP;
 
 static void res_post_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
 
-/* A simple actuator example that sets a window opening percentage */
 RESOURCE(res_temp_required,
          "title=\"TempRequired: ?setpoint=FLOAT, POST\";rt=\"window-setpoint\"",
          NULL,
@@ -22,9 +21,8 @@ RESOURCE(res_temp_required,
          NULL,
          NULL);
 
-static void
-res_post_handler(coap_message_t *request, coap_message_t *response,
-                 uint8_t *buffer, uint16_t preferred_size, int32_t *offset)
+static void res_post_handler(coap_message_t *request, coap_message_t *response,
+                             uint8_t *buffer, uint16_t preferred_size, int32_t *offset)
 {
   size_t len = 0;
   const char *query;
@@ -51,7 +49,6 @@ res_post_handler(coap_message_t *request, coap_message_t *response,
 
     if (value >= 17.0f && value <= 30.0f)
     {
-      // Set global or hardware temperature setpoint value here
       snprintf((char *)buffer, preferred_size, "{\"status\":\"success\"}");
       coap_set_header_content_format(response, APPLICATION_JSON);
       coap_set_payload(response, buffer, strlen((char *)buffer));

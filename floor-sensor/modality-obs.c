@@ -10,7 +10,7 @@
 #define LOG_LEVEL LOG_LEVEL_INFO
 
 static coap_observee_t *obs;
-static coap_endpoint_t *stored_server_ep = NULL; // Add this to store server endpoint
+static coap_endpoint_t *stored_server_ep = NULL;
 
 static struct etimer watchdog_timer;
 #define WATCHDOG_TIMEOUT (60 * CLOCK_SECOND) // 60 seconds
@@ -26,13 +26,8 @@ typedef struct
 int8_t modality = 0;
 static int32_t stored_version = -1; // Track the last known version
 
-/*----------------------------------------------------------------------------*/
-/*
- * Handle the response to the observe request and the following notifications
- */
-static void
-notification_callback(coap_observee_t *obs, void *notification,
-                      coap_notification_flag_t flag)
+static void notification_callback(coap_observee_t *obs, void *notification,
+                                  coap_notification_flag_t flag)
 {
   int len = 0;
   const uint8_t *payload = NULL;
@@ -77,14 +72,12 @@ notification_callback(coap_observee_t *obs, void *notification,
       else if (response->version == stored_version)
       {
         LOG_INFO("Same version (%ld), ignoring duplicate\n", response->version);
-        // Still reset timer for duplicate (server is responding)
         etimer_reset(&watchdog_timer);
       }
       else
       {
         LOG_WARN("Received older version %ld (current: %ld), ignoring\n",
                  response->version, stored_version);
-        // Still reset timer for older version (server is responding)
         etimer_reset(&watchdog_timer);
       }
     }
@@ -139,19 +132,20 @@ void toggle_observation(coap_endpoint_t *server_ep)
     LOG_INFO("Starting observation\n");
     obs = coap_obs_request_registration(server_ep, OBS_RESOURCE_URI, notification_callback, NULL);
     stored_version = -1;
-    if (obs) {
+    if (obs)
+    {
       // Start watchdog timer
       etimer_set(&watchdog_timer, WATCHDOG_TIMEOUT);
     }
   }
 }
 
-// Add this function to check the watchdog timer in your main process
 void check_observer_watchdog()
 {
-  if (etimer_expired(&watchdog_timer) && obs != NULL) {
-    LOG_WARN("No energy modality update received in 1min, restarting observer\n");
-    
+  if (etimer_expired(&watchdog_timer) && obs != NULL)
+  {
+    LOG_WARN("No energy modality update received in 60s, restarting observer\n");
+
     // Toggle twice to restart
     toggle_observation(stored_server_ep);
     toggle_observation(stored_server_ep);

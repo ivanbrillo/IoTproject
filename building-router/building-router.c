@@ -24,7 +24,6 @@ extern int8_t modality_disabled;
 PROCESS(udp_server_process, "UDP server");
 AUTOSTART_PROCESSES(&udp_server_process);
 
-/*---------------------------------------------------------------------------*/
 PROCESS_THREAD(udp_server_process, ev, data)
 {
   static struct etimer power_timer;
@@ -86,5 +85,3 @@ PROCESS_THREAD(udp_server_process, ev, data)
 
   PROCESS_END();
 }
-
-/*---------------------------------------------------------------------------*/
