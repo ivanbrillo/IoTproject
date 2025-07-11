@@ -1,7 +1,4 @@
-
 /building-router/build/** 
 /floor-actuator/build/** 
 /floor-sensor/build/** 
-
-/cloud-application/target
-/cloud-application/target
+/cloud-application/target/** 

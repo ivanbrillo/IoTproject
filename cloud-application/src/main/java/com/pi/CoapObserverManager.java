@@ -18,12 +18,11 @@ public class CoapObserverManager {
 
     private final ScheduledExecutorService scheduler;
     private final Map<String, ScheduledFuture<?>> timeoutTasks;
-    private final Map<String, CoapClient> activeClients;
     private final Map<String, CoapObserveRelation> activeObservers;
     private final DatabaseManager databaseManager;
+    private volatile boolean isShuttingDown = false;
 
     public CoapObserverManager(DatabaseManager databaseManager) {
-        this.activeClients = new ConcurrentHashMap<>();
         this.activeObservers = new ConcurrentHashMap<>();
         this.timeoutTasks = new ConcurrentHashMap<>();
         this.scheduler = Executors.newScheduledThreadPool(Runtime.getRuntime().availableProcessors());
@@ -41,7 +40,9 @@ public class CoapObserverManager {
 
     public void stopAllObservers() {
         logger.info("Stopping all observers");
+
         // cancel scheduled timeout tasks
+        isShuttingDown = true;
         timeoutTasks.values().forEach(future -> future.cancel(true));
         timeoutTasks.clear();
 
@@ -50,15 +51,6 @@ public class CoapObserverManager {
             try {
                 rel.proactiveCancel();
                 logger.info("Cancelled observation: {}", name);
-            } catch (Exception ignored) {
-            }
-        }); 
-
-        // shutdown CoAP clients
-        activeClients.forEach((name, client) -> {
-            try {
-                client.shutdown();
-                logger.info("Shutdown client: {}", name);
             } catch (Exception ignored) {
             }
         });
@@ -75,11 +67,13 @@ public class CoapObserverManager {
         }
 
         activeObservers.clear();
-        activeClients.clear();
         logger.info("All observers stopped");
     }
 
     private void scheduleTimeout(String observerName, Runnable timeoutAction) {
+        if (isShuttingDown)
+            return;
+
         // cancel existing
         ScheduledFuture<?> existing = timeoutTasks.get(observerName);
         if (existing != null && !existing.isDone()) {
@@ -121,7 +115,6 @@ public class CoapObserverManager {
             }
         });
 
-        activeClients.put(observerName, client);
         activeObservers.put(observerName, relation);
         // schedule initial timeout
         scheduleTimeout(observerName, () -> handleTimeout(observerName, () -> startSensorObserverForFloor(floor)));
@@ -161,7 +154,6 @@ public class CoapObserverManager {
                 cleanupObserver(observerName);
             }
         });
-        activeClients.put(observerName, client);
         activeObservers.put(observerName, relation);
         scheduleTimeout(observerName,
                 () -> handleTimeout(observerName, CoapObserverManager.this::startBatteryObserver));
@@ -194,7 +186,6 @@ public class CoapObserverManager {
                 cleanupObserver(observerName);
             }
         });
-        activeClients.put(observerName, client);
         activeObservers.put(observerName, relation);
         scheduleTimeout(observerName, () -> handleTimeout(observerName, CoapObserverManager.this::startPowerObserver));
     }
@@ -215,11 +206,6 @@ public class CoapObserverManager {
         CoapObserveRelation relation = activeObservers.remove(observerName);
         if (relation != null) {
             relation.proactiveCancel();
-        }
-        // shutdown client
-        CoapClient client = activeClients.remove(observerName);
-        if (client != null) {
-            client.shutdown();
         }
     }
 
