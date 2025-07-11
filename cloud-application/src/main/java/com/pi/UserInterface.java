@@ -280,9 +280,11 @@ public class UserInterface {
         switch (choice) {
             case 1:
                 batteryControlService.startAutomaticControl(period);
+                System.out.println("Started automatic control");
                 break;
             case 2:
                 batteryControlService.shutdown();
+                System.out.println("Turned off automatic control");
                 break;
             case 3:
                 break;

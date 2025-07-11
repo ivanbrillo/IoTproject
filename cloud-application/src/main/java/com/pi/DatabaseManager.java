@@ -35,9 +35,18 @@ public class DatabaseManager {
 
         // Initialize version counters
         versionCounters.put("power", -1);
-        versionCounters.put("sensors", -1);
+        versionCounters.put("sensors1", -1);
         versionCounters.put("battery", -1);
         logger.info("Version counters initialized: {}", versionCounters);
+    }
+
+    public void resetVersionCounter(String observableType) {
+        if (versionCounters.containsKey(observableType)) {
+            versionCounters.put(observableType, -1);
+            logger.info("Version counter reset for {}: -1", observableType);
+        } else {
+            logger.warn("Unknown observable type: {}", observableType);
+        }
     }
 
     private boolean isConnectionValid() {
@@ -122,7 +131,7 @@ public class DatabaseManager {
             int version = json.get("v").getAsInt();
 
             // Check if we should store this version
-            if (!shouldStoreData("sensors", version)) {
+            if (!shouldStoreData("sensors1", version)) {
                 return;
             }
 
