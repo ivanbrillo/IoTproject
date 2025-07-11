@@ -210,7 +210,7 @@ public class CoapObserverManager {
     }
 
     public boolean stopSensorObserverForFloor(int floor) {
-        String name = "sensors_floor_" + floor;
+        String name = "sensors" + floor;
         return stopObserver(name);
     }
 
