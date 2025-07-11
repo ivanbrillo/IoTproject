@@ -294,7 +294,7 @@ public class UserInterface {
 
     }
 
-    public void showStartupMessage() {
+    public static void showStartupMessage() {
         System.out.println("====================================");
         System.out.println("    CoAP Client Manager Started    ");
         System.out.println("====================================");

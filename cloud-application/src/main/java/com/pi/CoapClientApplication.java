@@ -39,8 +39,7 @@ public class CoapClientApplication {
         logger.info("Starting CoAP Client Application initialization");
 
         logViewer = new LogViewer();
-        userInterface = new UserInterface(null, null, logViewer); // Temporary
-        userInterface.showStartupMessage();
+        UserInterface.showStartupMessage();
 
         // Initialize database connection
         logger.info("Connecting to database...");

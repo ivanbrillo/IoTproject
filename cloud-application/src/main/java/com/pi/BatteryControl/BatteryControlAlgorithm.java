@@ -36,10 +36,10 @@ public class BatteryControlAlgorithm {
         double setpoint = priceBasedSetpoint + powerBalanceAdjustment + socAdjustment;
         setpoint = Math.max(MIN_SETPOINT, Math.min(MAX_SETPOINT, setpoint));
 
-        logger.info(
-                "Battery setpoint: Price={:.2f}$/kWh, Current={:.2f}W, Predicted={:.2f}W, SOC={:.1f}%, Setpoint={:.2f}",
-                currentPrice, currentAvgPower, predictedPower, currentSOC, setpoint);
-
+        logger.info(String.format(
+            "Battery setpoint: Price=%.2f$/kWh, Current=%.2fW, Predicted=%.2fW, SOC=%.1f%%, Setpoint=%.2f",
+            currentPrice, currentAvgPower, predictedPower, currentSOC, setpoint));
+            
         return setpoint;
     }
 
