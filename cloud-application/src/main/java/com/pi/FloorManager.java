@@ -11,7 +11,7 @@ public class FloorManager {
     static {
         // Floor 1 devices
         Map<String, String> floor1 = new HashMap<>();
-        floor1.put("actuator", "fd00::203:3:3:3"); // AC and Window
+        floor1.put("actuator", "fd00::f6ce:368b:7e05:9142"); // AC and Window
         floor1.put("sensor", "fd00::f6ce:3651:2b3e:b419"); // Temperature and Light
         floorDevices.put(1, floor1);
 

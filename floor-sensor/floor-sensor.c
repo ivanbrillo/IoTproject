@@ -17,7 +17,7 @@
 #define LOG_MODULE "FLOOR_SENSOR"
 #define LOG_LEVEL LOG_LEVEL_APP
 
-#define SERVER_EP "coap://[fe80::203:3:3:3]" // to be updated with new sensor
+#define SERVER_EP "coap://[fe80::f6ce:368b:7e05:9142]" 
 #define SERVER_EP2 "coap://[fe80::f6ce:36a6:d989:7ca]"
 
 #define TOGGLE_INTERVAL 10
